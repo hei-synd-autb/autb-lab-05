@@ -1,0 +1,14 @@
+<watchList>
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-0510.0.0" displayIndex="1" displayAddress="1" comment=" " />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-0049.0.0" displayIndex="2" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-0451.0.0" displayIndex="3" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-0109.0.0" displayIndex="4" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="S-0-0082.0.0" displayIndex="5" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="S-0-0083.0.0" displayIndex="6" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="S-0-0084.0.0" displayIndex="7" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-0551.0.0" displayIndex="8" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-0112.0.0" displayIndex="9" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="P-0-1126.0.0" displayIndex="10" displayAddress="1" comment="" />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="S-0-0100.0.0" displayIndex="11" displayAddress="1" comment=" " />
+  <param source="00d34cd8-006c-4121-8975-6ea824d8d3cd" sourceName="ctrlX DRIVE [1] X : Axis / power supply [1] X" element="0" idn="S-0-0101.0.0" displayIndex="12" displayAddress="1" comment=" " />
+</watchList>
