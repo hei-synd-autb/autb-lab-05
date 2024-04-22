@@ -44,16 +44,17 @@ Quelques paramètres qui sont souvent manquant pour permettre le calcul précis 
 ## Limitation
 On reste dans le contexte de l’industrie des machines, ou robotique. Pour un asservissement en position, on utilise majoritairement des moteurs synchrones, Permanent-magnet synchronous motor.
 L’immense majorité des moteurs installés dans l’industrie en Valais sont des moteurs asynchrones dans des fonctionnement en vitesse, pompes, brasseurs. La gamme de système d’entrainement que nous utilisons dans nos laboratoires permettent aussi de piloter des moteurs asynchrones, mais seront probablement un peu cher comparativement à de simples variateurs de fréquence qui permettraient de faire le même travail.
-Mécaniquement
+## Mécaniquement
 Deux catégories de moteur :
-	Linéaire.
-Avantage : dynamique, précis, peu de frottement, pas de jeu mécanique.
-Inconvénient : Cher, dans de nombreux cas, codeur indépendant de la mécanique, mise en service et intégration mécanique plus complexe.
+###	Linéaire.
+- Avantage : dynamique, précis, peu de frottement, pas de jeu mécanique.
+- Inconvénient : Cher, dans de nombreux cas, codeur indépendant de la mécanique, mise en service et intégration mécanique plus complexe.
 Exemple : Etel, Linmot, Jennyscience.
 Application : industrie des machines en général.
-	Rotatif.
+###	Rotatif.
 Tous les cas où un moteur linéaire ne se justifie pas.
-Tension de fonctionnement
+
+# Tension de fonctionnement
 La majorité des moteurs synchrones utilisés dans l’industrie sont conçus pour fonctionner avec un simple redresseur AC/DC, ce qui donne pour une alimentation triphasée de 3 x 400 [Vac] environ 600 [Vdc] puis un convertisseur PWM pour générer les 3 phases du moteur.
 Il faut donc être attentif à la tension d’alimentation supportée par le moteur, certains moteurs donnés en exemple comme Jenny Science et Linmot travaillent avec des tensions différentes.
  
