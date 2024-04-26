@@ -15,6 +15,10 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 # Objectif
 -   Comprendre les principaux éléments d'une commande d'axe électrique destinée à être reliée à un PLC.
 
+
+# Attention: sur ce coup je veux un rapport écrit pour le prochain labo !
+
+
 # Généralités
 
 La majorité des commandes d'axe électrique que l'on trouve actuellement sur le marché sont basés sur une structure similaire.
