@@ -59,6 +59,19 @@ La majorité des moteurs synchrones utilisés dans l’industrie sont conçus po
 
 Dans le laboratoire, on va faire.
 
+# CtrlX Drive Engineering
+Ce logiciel est conçu pour:
+-   Visualiser et si nécessaire modifier les paramètres des axes électriques.
+-   Visualier le comportement de l'axe à l'aide d'un oscilloscope intégré.
+-   Piloter l'axe en mode manuel pour optimiser son comportement.
+-   Lancer une procédure de **Auto-Tuning**.
+
+<figure>
+    <img src="./img/ctrlX Drive Engineering.png"
+         alt="Image lost: ctrlX Drive Engineering">
+    <figcaption>Use CtrlX Drive Engineering</figcaption>
+</figure>
+
 # Connect
 
 Se connecter au drive avec USB-C, utiliser l’axe X.
@@ -70,9 +83,19 @@ Si possible en utilisant son propre PC pour garder le PC labo libre.
     <figcaption>Connection to drive with USB-C</figcaption>
 </figure>
 
+> Il est possible de se connecter de différentes manières.
 
 # Backup
 Sauvegarder les paramètres actuels pour pouvoir les restaurer si nécessaire.
+
+Avant de sauvegarder les paramètres, il est préférable de passer en mode PM, Parameter Mode. Pour cela, le moteur ne doit pas être sous tension.
+
+SelectParameterMode
+<figure>
+    <img src="./img/SelectParameterMode.png"
+         alt="Image lost: SelectParameterMode">
+    <figcaption>Set Axis in PM, Parameter Mode</figcaption>
+</figure>
  
 <figure>
     <img src="./img/Save_Backup_Parameters.png"
@@ -83,23 +106,42 @@ Sauvegarder les paramètres actuels pour pouvoir les restaurer si nécessaire.
 Les paramètres sont numérotés selon le sysème [Sercos](https://www.sercos.org).
 Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en lecture ou en écriture. Certains paramètres ne peuvent être modifiés que quand le moteur est hors couple, voir même quand le drive est en mode Paramter.
 
-- Backup parameters pour les paramètres de configuration.
-- All parameters, archive absolument tous les paramètres. Ceci est utile pour faire un diagnostic, ou dans le cadre d'un cours pour présenter un axe uniquement sous forme de paramètres.
+- **Backup parameter**s pour les paramètres de configuration.
+- **All parameters**, archive absolument tous les paramètres. Ceci est utile pour faire un diagnostic, ou dans le cadre d'un cours pour présenter un axe uniquement sous forme de paramètres.
 
-Il est conseillé, si possible, de passer en mode Parameter, avant de restaurer un set de paramètres.
+Après avec archivé les paramètres, restaurer le mode OM.
 
 <figure>
-    <img src="./img/SetParameterMode.png"
-         alt="Image lost: /img/SetParameterMode">
-    <figcaption>Set Parameter Mode, only if power is off</figcaption>
+    <img src="./img/ActivateOperatingMode.png"
+         alt="Image lost: ActivateOperatingMode">
+    <figcaption>Restore OM Operating Mode</figcaption>
 </figure>
 
 # Scaling
-Change Scaling to Force, it will help to interpret measures during the lab.
+L'axe doit connaitres les paramètres mécaniques du système pour pouvoir convertir la position du codeur en unités qui conviennent à l'application.
+
+Dans notre cas de figure, la position du codeur est convertie, entre autre, en mm pour la position linéaire de l'axe X.
+
+<figure>
+    <img src="./img/AxisMechanicalScaling.png"
+         alt="Image lost: AxisMechanicalScaling">
+    <figcaption>Go to Axis Mechanical Scaling</figcaption>
+</figure>
+
+Pour faciliter l'interprétation des résultats, nous modifions un paramètre afin que le système convertisse le couple du moteur en Force pour la lecture de l'effort linéaire en sortie de la vis à bille.
+
 <figure>
     <img src="./img/ChangeScalingToForce.png"
          alt="Image lost: /img/ChangeScalingToForce">
     <figcaption>Change scaling to force</figcaption>
+</figure>
+
+Il faut noter qu'un changement d'unité ne peut pas se faire sous n'importe quelle condition. L'axe doit être en mode **CM**, **Configuration Mode**, pour autoriser un changement d'unité.
+
+<figure>
+    <img src="./img/ConfigurationMode.png"
+         alt="Image lost: GoToParameterModeAgain">
+    <figcaption>You must be in Configuration Mode to modify a scaling parameter</figcaption>
 </figure>
  
 Parcourir la liste des fonctions : 20 minutes
