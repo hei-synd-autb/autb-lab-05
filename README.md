@@ -15,7 +15,7 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 # Objectif
 -   Comprendre les principaux éléments d'une commande d'axe électrique destinée à être reliée à un PLC.
 
-# Notes d'écriture
+# Généralités
 
 La majorité des commandes d'axe électrique que l'on trouve actuellement sur le marché sont basés sur une structure similaire.
 
@@ -27,7 +27,12 @@ Même si la plupart des éléments que l'on retouve sur ce genre de commande ser
 
 Les produits commerciaux sont développés afin de permettre à un technicien de mettre en service un système le plus rapidement possible sans les bases théoriques qui seraient nécessaires à l'écriture d'une fonction de transfert complexe et le calcul de ses pôles, mais aussi sans connaître les principes d'une commande PWM.
 
-Il est à noter aussi, que souvent l'ensemble des paramètres qui seraient nécessaires aux calculs théoriques ne sont pas disponibles ou doivent être estimés avec des méthodes empiriques.
+Souvent l'ensemble des paramètres qui seraient nécessaires aux calculs théoriques ne sont pas disponibles ou doivent être estimés avec des méthodes empiriques.
+
+## Méthode de Ziegler-Nichols
+John G. Ziegler et Nathaniel B. Nichols ont développé une méthode empirique pour déterminer les paramètres d'un régulateur PID de manière empirique qui consiste au départ à déterminer un point d'oscillation en boucle fermée.
+
+> la méthode de Ziegler-Nichols n'est pas toujours applicable et peut même s'avérer **dangereuse** sur des systèmes de forte puissance.
 
 Quelques paramètres qui sont souvent manquant pour permettre le calcul précis des paramètres d'une fonction de transfert:
 
@@ -35,214 +40,197 @@ Quelques paramètres qui sont souvent manquant pour permettre le calcul précis 
 -   vibrations,
 -   masses en mouvement.
 
-> On notera toutefois que dans de nombreux cas, si des paramètres précis, comme les masses en mouvement, sont disponibles, ils permettent d'arriver plus rapidement à un résultat de bonne qualité. 
+> Dans de nombreux cas, si des paramètres précis, comme **les masses en mouvement**, sont disponibles, ils permettent d'arriver plus rapidement à un résultat de bonne qualité.
 
-# Contenu
+> On gardera en tête qu'il n'existe pas de paramètres uniques pour un même système mécanique. Ces paramètres sont parfois à adapter en fonction du type de trajectoire ou de type de contrôle pour un même axe.
 
-# Raw text from a base word document / to be completed with images.
+**Exemple:** Pour une machine de fraisage, un ensemble de paramètres bien adaptés pour un suivi en position pendant la phase d'usinage à faibe vitesse ne sera pas optimal lorsque que le même axe devra effectuer un mouvment rapide pour une phase de changement d'outil.
 
-## Limitation
-On reste dans le contexte de l’industrie des machines, ou robotique. Pour un asservissement en position, on utilise majoritairement des moteurs synchrones, Permanent-magnet synchronous motor.
-L’immense majorité des moteurs installés dans l’industrie en Valais sont des moteurs asynchrones dans des fonctionnement en vitesse, pompes, brasseurs. La gamme de système d’entrainement que nous utilisons dans nos laboratoires permettent aussi de piloter des moteurs asynchrones, mais seront probablement un peu cher comparativement à de simples variateurs de fréquence qui permettraient de faire le même travail.
-## Mécaniquement
-Deux catégories de moteur :
-###	Linéaire.
-- Avantage : dynamique, précis, peu de frottement, pas de jeu mécanique.
-- Inconvénient : Cher, dans de nombreux cas, codeur indépendant de la mécanique, mise en service et intégration mécanique plus complexe.
-Exemple : Etel, Linmot, Jennyscience.
-Application : industrie des machines en général.
-###	Rotatif.
-Tous les cas où un moteur linéaire ne se justifie pas.
+# Présentation initiale
+Ce travail de laboratoire est précédé d'une phase de présentation des différents paramètres pour la mise en service d'un axe électrique.
 
-# Tension de fonctionnement
-La majorité des moteurs synchrones utilisés dans l’industrie sont conçus pour fonctionner avec un simple redresseur AC/DC, ce qui donne pour une alimentation triphasée de 3 x 400 [Vac] environ 600 [Vdc] pour une alimentation non-régulée puis un convertisseur PWM pour générer les 3 phases du moteur.
-
-Dans le laboratoire, on va faire.
-
-# CtrlX Drive Engineering
-Ce logiciel est conçu pour:
--   Visualiser et si nécessaire modifier les paramètres des axes électriques.
--   Visualier le comportement de l'axe à l'aide d'un oscilloscope intégré.
--   Piloter l'axe en mode manuel pour optimiser son comportement.
--   Lancer une procédure de **Auto-Tuning**.
-
+Cette présentation inclu:
+## Power Supply
+Permet de vérifier l'alimentation en puissance de l'axe électrique. Si nécessaire, de la configurer.
 <figure>
-    <img src="./img/ctrlX Drive Engineering.png"
-         alt="Image lost: ctrlX Drive Engineering">
-    <figcaption>Use CtrlX Drive Engineering</figcaption>
+    <img src="./img/BasePowerSupplyDC.png"
+         alt="Image lost: BasePowerSupplyDC">
+    <figcaption>Power Supply Mains connection overview</figcaption>
 </figure>
 
-# Connect
-
-Se connecter au drive avec USB-C, utiliser l’axe X.
-Si possible en utilisant son propre PC pour garder le PC labo libre.
- 
+# Master Communication
+Ici, on configure la communication du drive avec le PLC, ici, via Ethercat. Dans notre cas, la communication est interne au hardware de l'axe X, puisque celui-ci intègre le PLC dans son processeur.
 <figure>
-    <img src="./img/DriveSelectConnection.png"
-         alt="Image lost: DriveSelectConnection.png">
-    <figcaption>Connection to drive with USB-C</figcaption>
+    <img src="./img/BaseMasterConnectionMDT.png"
+         alt="Image lost: BaseMasterConnectionMDT">
+    <figcaption>Cycle time and registers sent to the drive from PLC</figcaption>
 </figure>
 
-> Il est possible de se connecter de différentes manières.
+# Motor Drive, mechanics and measuring system.
+Configuration du moteur, du codeur et de la mécanique.
 
-# Backup
-Sauvegarder les paramètres actuels pour pouvoir les restaurer si nécessaire.
-
-Avant de sauvegarder les paramètres, il est préférable de passer en mode PM, Parameter Mode. Pour cela, le moteur ne doit pas être sous tension.
-
-SelectParameterMode
+Cette liste de paramètres est en général suffisante pour que le drive puisse piloter un moteur
 <figure>
-    <img src="./img/SelectParameterMode.png"
-         alt="Image lost: SelectParameterMode">
-    <figcaption>Set Axis in PM, Parameter Mode</figcaption>
-</figure>
- 
-<figure>
-    <img src="./img/Save_Backup_Parameters.png"
-         alt="Image lost: /img/Save_Backup_Parameters.png">
-    <figcaption>Save a backup of drive parameters to restore them if needed</figcaption>
+    <img src="./img/BaseMotorDataSheetMinimalSetOfParam.png"
+         alt="Image lost: BaseMotorDataSheetMinimalSetOfParam">
+    <figcaption>Motor parameters</figcaption>
 </figure>
 
-Les paramètres sont numérotés selon le sysème [Sercos](https://www.sercos.org).
-Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en lecture ou en écriture. Certains paramètres ne peuvent être modifiés que quand le moteur est hors couple, voir même quand le drive est en mode Paramter.
+*Noter la valeur manquante : Rated Motor Speed 3320 rpm.*
 
-- **Backup parameter**s pour les paramètres de configuration.
-- **All parameters**, archive absolument tous les paramètres. Ceci est utile pour faire un diagnostic, ou dans le cadre d'un cours pour présenter un axe uniquement sous forme de paramètres.
-
-Après avec archivé les paramètres, restaurer le mode OM.
-
+Le model de température ne pose en principe pas de problème pour un moteur rotatif intégré. Il devra être très finement configuré pour des moteurs linéaires dont la constante de temps thermique dépend d'une mécanique spécifique. 
 <figure>
-    <img src="./img/ActivateOperatingMode.png"
-         alt="Image lost: ActivateOperatingMode">
-    <figcaption>Restore OM Operating Mode</figcaption>
+    <img src="./img/BaseMotorTemperatureModel.png"
+         alt="Image lost: BaseMotorTemperatureModel">
+    <figcaption>Temperature model</figcaption>
 </figure>
 
-# Scaling
-L'axe doit connaitres les paramètres mécaniques du système pour pouvoir convertir la position du codeur en unités qui conviennent à l'application.
+Dans notre cas, la configuration est inutile, puisque le type de codeur numérique est automtiquement reconnu au démarrage du drive.
 
-Dans notre cas de figure, la position du codeur est convertie, entre autre, en mm pour la position linéaire de l'axe X.
-
+Ce type de codeur mémorise aussi les paramètres du moteur qu'il mesure et sont transférés au drive au démarrage.
 <figure>
-    <img src="./img/AxisMechanicalScaling.png"
-         alt="Image lost: AxisMechanicalScaling">
-    <figcaption>Go to Axis Mechanical Scaling</figcaption>
+    <img src="./img/BaseMotorEncoder.png"
+         alt="Image lost: BaseMotorEncoder">
+    <figcaption>Motor encoder configuration</figcaption>
 </figure>
 
-Pour faciliter l'interprétation des résultats, nous modifions un paramètre afin que le système convertisse le couple du moteur en Force pour la lecture de l'effort linéaire en sortie de la vis à bille.
-
+Cette configuration permet, entre autre, au drive de convertir les informations du codeur en position le long de la vis à bille.
 <figure>
-    <img src="./img/ChangeScalingToForce.png"
-         alt="Image lost: /img/ChangeScalingToForce">
-    <figcaption>Change scaling to force</figcaption>
+    <img src="./img/BaseMotorAxisMechanics.png"
+         alt="Image lost: BaseMotorAxisMechanics">
+    <figcaption>Axis mechanic configuration</figcaption>
 </figure>
 
-Il faut noter qu'un changement d'unité ne peut pas se faire sous n'importe quelle condition. L'axe doit être en mode **CM**, **Configuration Mode**, pour autoriser un changement d'unité.
-
+## Operation modes
+Avec Ethercat, l'axe est piloté en mode position, même quand nous utilisons un bloc fontionnel du type MC_MoveVelocity.
+Ce type de fonctionnement reste acceptable pour des vitesses telles que celle de notre moteur, mais insuffisant pour une broche d'usinage à haute vitesse qui tournerai 10 fois plus vite.
 <figure>
-    <img src="./img/ConfigurationMode.png"
-         alt="Image lost: GoToParameterModeAgain">
-    <figcaption>You must be in Configuration Mode to modify a scaling parameter</figcaption>
+    <img src="./img/BaseOperationModePosition.png"
+         alt="Image lost: BaseOperationModePosition">
+    <figcaption>Operation mode, position, velocity, torque and so on.</figcaption>
 </figure>
- 
-Parcourir la liste des fonctions : 20 minutes
-Les paramètres du moteur, à vérifier à partir du Data Sheet MS2N04-D0BQN-CMSH0-NNNNE-NN
-Noter la valeur manquante : Rated Motor Speed 3320 rpm
 
-Noter que avec les moteur MS2N le drive corrige le Torque constant, qui n’est que partiellement constant, en fonction de la température !
+## Limit values
+Permet de protéger le processus, la mécanique, puis le moteur.
 
-# Piloter le moteur en mode manuel
+Ci-dessous, les valeurs limites fournies pour les axes du laboratoire d'automation de la HES-SO Valais/Wallis.
 
+> L'installation d'interrupteurs de fin de course mécaniques ne rendrait pas obligatoirement le système plus robuste, puisque ceux-ci, tout comme les limites de position internes sont paramétrables.
+<figure>
+    <img src="./img/BaseLimitValuesMotion.png"
+         alt="Image lost: BaseLimitValuesMotion">
+    <figcaption>Position and velocity limits</figcaption>
+</figure>
 
-# Trace data
-Tracer une courbe classique Position, vitesse, accélération ou torque et erreur de poursuite. 20 minutes.
+|Axe |Smax [mm]|u[mm/U]    |Vmax[m/s]   |amax [m/s2]   |Mmax[Nm] | d  |i   |
+|----|---------|-----------|------------|--------------|---------|----|----|
+|x   |565      |5.0        |0.3         |15            |8.22     |ccw |1   |
+|y   |350      |5.0        |0.38        |15            |6.76     |ccw |1   |
+|z   |320      |5.0        |0.57        |15            |2.39     |cw  |1   |
 
-# Mesurer la force nécessaire a faible vitesse constante
-	Comparer avec les spécifications du moteur
-# Mesurer la force nécessaire pour vaincre le frottement statique.
+Noter ci-dessous, que la limite de couple est une relation directe entre le courant maximal admissible et la constante de couple du moteur [Nm/A].
+<figure>
+    <img src="./img/BaseLimitsTorque.png"
+         alt="Image lost: BaseLimitsTorque">
+    <figcaption>Torque/Force limits</figcaption>
+</figure>
 
-# Estimer la masse en mouvement à l’aide de l’auto-tuning.
+## Drive Control
 
-# Faire un tuning manuel est le comparer avec l’auto-tuning.
+Les paramètres du régulateur de courant sont estimés par le drive en fonction des paramètres électriques du moteur. Sauf très rares exceptions, on ne modifiera jamais les paramètres de ce régulateur.
+<figure>
+    <img src="./img/BaseDriveControlMotorControlDependsOfMotor.png"
+         alt="Image lost: BaseDriveControlMotorControlDependsOfMotor">
+    <figcaption>Motor operation and configuration</figcaption>
+</figure>
 
-> Attention, feed-forward ; P-0-1126.0.0 à 0 !
+Cette méthode sert à derminer la position du codeur relative aux aimants dans le cas ou cette information n'aurait pas pu être calibrée par le fournisseur du moteur. En principe inutile pour un moteur rotatif, souvent indispensable pour l'utilisation d'un moteur linéaire avec une mécanique *faite maison*.
+<figure>
+    <img src="./img/BaseDriveMotorCommutationSetting.png"
+         alt="Image lost: BaseDriveMotorCommutationSetting">
+    <figcaption>Commuation setting if position of encoder relative to magnets is unknown at startup</figcaption>
+</figure>
 
-> Conditions de départ :
-- S-0-0100 = 1000 * l’inertie du moteur = 1000 * P-0-0510.
-- S-0-0101 = 0 [ms] sans intégrateur
-- P-0-0510 = 0.0001600
+Le principal travail de l'automaticien consiste à trouver les bons paramètres P et I du régulateur de vitesse.
+Le paramètre command accel feedforward n'est utile que si l'axe est piloté en mode vitesse. On se référa à l'explication de ce paramètre pour le réguateur de position.
+<figure>
+    <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
+         alt="Image lost: BaseDriveControlAxisControlVelocityDependsOfMechanic">
+    <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
+</figure>
 
-- Donc 0.16
+On travail en général uniquement sur le gain du régulateur, et celui-ci, dans la pratique, est souvent laissé à **1**.
+<figure>
+    <img src="./img/BaseDriveAxisPositionDependsOfProcess.png"
+         alt="Image lost: BaseDriveAxisPositionDependsOfProcess">
+    <figcaption>Settings of the position controller</figcaption>
+</figure>
 
-Avec mon essai S-0-0100, commence à siffler vers 0.5, je mets 0.25
-Je passe S-0-0101 à 10 ms pour commencer, siffle vers 0.6, je fixe à 1.2
-Ensuite, je trace.
- 
-Les valeurs à afficher sur la fenêtre de paramètres
-On peut aussi importer cette liste, voir WatchListForTuning.ipg ou la sauver.
- 
-# Visualise your data
- 
-Tracer les courbes sur 4 secondes pour :
-S-0-0084	Force
-S-0-0051	Position
-S-0-0040	Vitesse
-S-0-0347	Erreur de vitesse
+### Feed Forward
+On pourra adapter la réactivité du système en utilisant le paramètre de **Feed-Forward**. Sans rentrer dans les détails de la fonction de transfert qui n'est de toute façon pas au programme de l'ensemble de la classe, on peut expliquer intuitivement ce paramètre relativement simplement.
 
- 
-Start et automatic scaling quand le signal est disponible
- 
-Commenter le graph
-Mesure de vitesse.
- 
- 
-Position
-Vérifier ce qui se passe en mode position avec S-0-0104 = 1
- 
-Passer en mode positionning
- 
-Tracer cette fois l’erreur de poursuite S-0-0189
+Ce que dit le documentation du fournisseur:
 
+> The acceleration command value obtained from double differentiation of the position command value is multiplied with the content of ``S-0-0348`` and added to the torque/force command value at the velocity controller output.
 
-Maximiser l’affichage de l’erreur de poursuite
- 
+> For optimum parameterization of the acceleration feedforward, the following parameters are specified in ``S-0-0348``
 
-Comparer avec l’auto-tuning
- 
-Configuré sans feed-forward et sans filtre.
+-   Total mass (motor + load) in kg (linear motor)
+-   Total mass inertia (motor + load), in relation to the motor output shaft, in gm2 (rotary motor)
 
- 
- 
-Afficher les résultats et commenter
+> The drive firmware automatically adjusts the unit and decimal places to the type of construction of the motor (rotary or linear) entered in ``P-0-4014, Motor type``.
 
-Comparer Load Inertia : 0.0003421 avec celle du moteur 0.0001600
-Votre commentaire…
-Tracer à nouveau et comparer
-Essayer avec Feed-Forward et comparer
-Mon résultat avec Auto-tuning
- 
-Fin du Tuning
-Mesure du frottement dynamique
-Utiliser le mode vitesse, mais sur +- 50 mm pour faire cette mesure, augmenter le temps de mesure sur la trace
-Faire des mesures à 600 mm/min
-Puis 1200, 1800 et 2400…6000 (soit 100 mm/s)
-Utiliser click droit pour visualiser les données :
- 
-Note : j’ai 328 N à 600
-386 à 1200	
-430 à 1800
-462 à 2400
-485 à 3000
-554 à 6000
-Mesurer le courant du moteur à 6000 et à partir du courant nominal estimer la charge du moteur.
-Mesurer la température du moteur.
-Aller chatouller les limites de couple du drive
-Frottement dynamique
-Passer en mode couple et prudemment estimer la force minimale pour commencer à bouger le moteur.
- 
+-   rotary motor: $\ [mN*m / rad/s^2] → [g*m^2] $
+-   Linear motor: $\ [mN / mm/s2 → kg] $
 
-En finalité
-Préparer un mouvement sur +/2 50 mm avec une vitesse de 600 mm.
-Proposer votre tunning idéal, le justifier et le commenter.
-Ne pas quitter la salle avant le feu vert d’un prof ou assistant qui puisse vérifier que votre tuning permet à l’axe de fonctionner correctement.
+### Feed Forward, le principe
+Il est probablement un peu plus simple d'expliquer le principe sur la base d'un moteur linéaire. Pour lequel la force est équivalente au courant muliplié par la constante de force. **Le principe du Feed Forward est d'ailleurs particulièrement efficace pour un moteur en prise directe sur la charge tel un moteur linéaire** ou un moteur couple.
+Prenons les caractéristiques d'un moteur linéaire d'origine Etel.
 
-# Ne pas quitter la salle avant d'avoir restauré les paramètres !
+<figure align="center">
+    <img src="./img/Etel_csm_ILFplus_with_forced_air_4c8ca2632a.jpg"
+         alt="Image Lost: Etel_csm_ILFplus_with_forced_air_4c8ca2632a">
+    <figcaption>Etel ILF+ avec refroidissement à air forcé</figcaption>
+</figure>
+
+> Caractéristiques partielles d'un moteur ILF+03-030 / KA / Free Air Cooling
+
+|    |                  |Unit   | ILF+03-030 KA|
+|----|------------------|-------|--------------|
+|Fc  |Continuous Force  |N      | 21.5         |
+|Ic  |Continuous Current|Arms   | 0.745        |
+|Kt  |Force constant    |N/Arms | 29.5         |
+
+$\ Fc \approx Ic * Kt $
+
+$\ F = m*a = dv/dt$ ou $dp / {dt}^2 $
+
+D'ou: $\ Ic * Kt \approx dv/dt$ ou $dp / {dt}^2  $
+Si l'on divise le tout par la constant $\ Kt $, on obtient:
+
+$$\ I = \dfrac{dp/{dt}^2}{Kt} $$
+
+Le Feed Forward consiste à ajouter en entrée du régulateur de courant la deuxième dérivée de la variation de position de commande. Ainsi, pour chaque variation de la position, le régulateur de courant du moteur reçoit directement la variation de courant nécessaire pour modifier la position du moteur. C'est très efficace pour un suivi précis en position, par contre, ce système peut s'avérer *agressif* pour la mécanique si les différences de position au niveau de la trajectoire de commande ne sont pas correctement maitrisée. Nous verrons dans le cadre du dernir labo comment maitriser efficacement les variation de position d'une trajectoire.
+
+> Idéalement, si le Feed Forward est correctement dimensionné, les régulateurs de position et de vitesse intermédiaires ne devraient servir qu'à corriger les perturbations liées au frottement et aux vibrations.
+
+Dans le schéma ci-dessus, c'est la raison d'être du voyant **Lagless operation**. Fonctionnement sans décalage ou sans erreur de poursuite, l'erreur de poursuite étant la différence entre la position commandée et la position mesurée par le codeur.
+
+## Error reaction
+
+Il ne faut pas confondre ce signal avec les signaux STO mentionnés dans la fonction de sécurité. Ce signal donne une commande d'arrêt immédiat à l'axe.
+<figure align="center">
+    <img src="./img/BaseErrorE_Stop.png"
+         alt="Image lost: BaseErrorE_Stop">
+    <figcaption>Evaluating the E-Stop signal</figcaption>
+</figure>
+
+## Drive-integrated safety
+Ces signaux sont utilisé pour garantir un arrêt sécurisé des axes via un circuit d'arrêt d'urgence selon ISO 13849-1
+<figure align="center">
+    <img src="./img/BaseSafetySTO.png"
+         alt="Image lost: BaseSafetySTO">
+    <figcaption>Evaluating the E-Stop signal</figcaption>
+</figure>
+
+[Fin de l'introduction, passage à la phase active.](README_JobStart.md)
