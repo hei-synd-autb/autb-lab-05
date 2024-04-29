@@ -139,6 +139,8 @@ Noter ci-dessous, que la limite de couple est une relation directe entre le cour
     <figcaption>Torque/Force limits</figcaption>
 </figure>
 
+> Pour le labo, modifier les valeurs Force Limit positives ``S-0-0082`` et négatives ``S-0-0083`` à +1500 [N] et -1500 [S],
+
 ## Drive Control
 
 Les paramètres du régulateur de courant sont estimés par le drive en fonction des paramètres électriques du moteur. Sauf très rares exceptions, on ne modifiera jamais les paramètres de ce régulateur.
