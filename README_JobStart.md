@@ -122,6 +122,11 @@ Soit aller dans la fenêtre des limites mentionnée en introduction.
 
 Calculer la force théorique maximale de la vis à bille. A cette valeur il faudrait multiplier le rendement de la vis à bille, **estimée entre 0.5 et 0.9**. A mettre dans votre rapport.
 
+On connait les caractéristiques de la vis à bille.
+|Axe |Smax [mm]|u[mm/U]    |Vmax[m/s]   |amax [m/s2]   |Mmax[Nm] | d  |i   |
+|----|---------|-----------|------------|--------------|---------|----|----|
+|x   |565      |5.0        |0.3         |15            |8.22     |ccw |1   |
+
 # Piloter le moteur en mode manuel
 <figure>
     <img src="./img/EasyStartupMode.png"
