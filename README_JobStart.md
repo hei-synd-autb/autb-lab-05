@@ -117,10 +117,22 @@ Soit aller dans la fenêtre des limites mentionnée en introduction.
 
 ### Les limites à modifier
 -   ``P-0-0109.0.0 ``   :   1766
--   ``S-0-0082.0.0``    :   1000
--   ``S-0-0083.0.0``    :   1000
+-   ``S-0-0082.0.0``    :   1500
+-   ``S-0-0083.0.0``    :   -1500
 
-Calculer la force théorique maximale de la vis à bille. A cette valeur il faudrait multiplier le rendement de la vis à bille, **estimée entre 0.5 et 0.9**. A mettre dans votre rapport.
+> Le système ne fait pas automatiquement une conversion Coule/Force au niveau des limites quand on change d'unité, c'est pourquoi ces limites doivent être adaptées si on change d'unité.
+
+> Si ces limites sont trop faibles le système ne pourra pas travailler correctement, en particulier lors des phases d'accélération et de décélération.
+
+> A contrario, si ces limites sont trop grandes, il y a un risque d'endommager la mécanique.
+
+Calculer la force théorique maximale de la vis à bille.
+A la force théorique il faudrait multiplier le rendement de la vis à bille, **estimée entre 0.5 et 0.9**. A mettre dans votre rapport.
+
+On connait les caractéristiques de la vis à bille.
+|Axe |Smax [mm]|u[mm/U]    |Vmax[m/s]   |amax [m/s2]   |Mmax[Nm] | d  |i   |
+|----|---------|-----------|------------|--------------|---------|----|----|
+|x   |565      |5.0        |0.3         |15            |8.22     |ccw |1   |
 
 # Piloter le moteur en mode manuel
 <figure>
@@ -166,6 +178,17 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
          alt="Image lost: OscilloscopeScaleData">
     <figcaption>Scale data</figcaption>
 </figure>
+
+# Frottement statique.
+-   Mesurer la force nécessaire pour vaincre le frottement statique.
+    Pour ceci, utiliser le mode **Torque/Force Control** et augmenter **petit à petit** les % de la commande de force.
+
+	Quel est approximativemnt la force nécessaire pour vaincre le frottement dynamique ?
+    Quel pourcentage du couple du moteur est utilisé pour cette opération ?
+
+> La commande à l'entrée du régulateur de courant/couple/force, correspond à la sortie du régulateur de vitesse qui est ici désactivé.
+
+> L'intégrateur du régulateur de vitesse fait d'une certaine manière la même chose que ce que vous faites. **Il augmente la force en fontion du temps**. C'est une des raisons pour lesquelles un intégrateur est limité, sinon il augmenterai indéfiniment le courant sur le moteur. Dans le cas d'un axe qui serait bloqué le moteur chauffe rapidement, c'est souvent un signe du blocage mécanique.
 
 # Faire un tuning manuel est le comparer avec l’auto-tuning.
 
@@ -253,7 +276,7 @@ Tracer les courbes sur 4 secondes pour :
 -   ``S-0-0084``	Force
 -   ``S-0-0051``	Position
 -   ``S-0-0040``	Vitesse
--   ``S-0-0347``	Erreur de vitesse
+-   ``S-0-0189``	Erreur de poursuite
 
 Start et automatic scaling quand le signal est disponible
  
@@ -289,12 +312,13 @@ Votre commentaire…
 
 Essayer avec Feed-Forward et comparer
 
-
 # Frottement dynamique
 -   Mesurer la force nécessaire a faible vitesse constante
--   Utiliser le mode **Velocity Control**, mais sur +- 50 mm pour faire cette mesure, augmenter le temps de mesure sur la trace
+-   Utiliser le mode **Drive-controlled positioning**, mais sur +- 50 mm pour faire cette mesure, augmenter le temps de mesure sur la trace.
 -   Faire des mesures à 600 mm/min
--   Puis 1200, 1800 et 2400…6000 (soit 100 mm/s)
+-   Puis 6000 mm/min (soit 100 mm/s)
+
+> Il serait préférable d'utiliser le mode vitesse, mais celui-ci a actuellement un **bug** et ne fait pas de mouvement aller-retour sur certaines machines.
 
     Comparer avec les spécifications du moteur.
 
@@ -304,13 +328,6 @@ Utiliser click droit pour visualiser les données :
          alt="Image lost: OscilloscopeShowCharValues">
     <figcaption>Show characteristic values</figcaption>
 </figure>
-
-
-# Frottement statique.
--   Mesurer la force nécessaire pour vaincre le frottement statique.
-    Pour ceci, utiliser le mode **Torque/Force Control** et augmenter **petit à petit** les % de la commande de force.
-
-	Comparer avec les spécifications du moteur.
 
 # En finalité
 ## Préparer un mouvement avec
