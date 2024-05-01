@@ -12,7 +12,7 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
 # LAB 05 Mise en service d'un axe électrique avec une vis à bille.
 
-Job start with:
+Job starts with:
 
 # CtrlX Drive Engineering
 Ce logiciel est conçu pour:
@@ -29,9 +29,9 @@ Ce logiciel est conçu pour:
 
 # Connect
 
-Se connecter au drive avec USB-C, utiliser l’axe X.
-Si possible en utilisant son propre PC pour garder le PC labo libre.
- 
+Se connecter au drive avec USB-C, utiliser l'axe X. 
+Possible en utilisant son propre PC pour garder le PC labo libre pour d'autres tâches.
+
 <figure>
     <img src="./img/DriveSelectConnection.png"
          alt="Image lost: DriveSelectConnection.png">
@@ -214,22 +214,22 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
 ### Réglage empirique
 Basé sur la méthode Ziegler et Nichols
 
-> Idéalement, faire tourner le moteur en mode vitesse à environ 20 rpm à l’aide du « Easy Startup Mode ». Si la mécanique ne le permet pas, travailler à vitesse nulle.
+> Idéalement, faire tourner le moteur en mode vitesse à environ 20 rpm à l’aide du **Easy Startup Mode**. Si la mécanique ne le permet pas, travailler à vitesse nulle. **Comme nous avons un système linéaire à limite finie, nout travaillon à vitesse nulle**.
 
-> Attention, feed-forward ; P-0-1126.0.0 à 0 !
+> Attention, feed-forward ; ``P-0-1126.0.0`` à 0 !
 
 ### Gain S-0-0100
 > Conditions de départ :
--   Régulateur de position S-0-0104 = 1
+-   Régulateur de position ``S-0-0104`` = 1
 $$\ S-0-0100 = 1000 * l’inertie du moteur = 1000 * P-0-0510 $$
--   S-0-0101 = 0 [ms] sans intégrateur
--   P-0-0510 = 0.0001600
+-   ``S-0-0101`` = 0 [ms] sans intégrateur
+-   ``P-0-0510`` = 0.0001600
 
-- Donc 0.16
+> Donc démarrer avec ``S-0-0100`` = **0.16**
 
-Augmenter progressivement le gain jusqu’à ce que le système commence à vibrer.
+Augmenter **progressivement** le gain jusqu'à ce que le système commence à vibrer. 
 
-En principe, la vibration est audible. Sinon, visualiser le signal S-0-0100 sur l’oscilloscope.
+En principe, la vibration est audible, sinon, visualiser le signal ``S-0-0100`` sur l’oscilloscope.
 
 <figure>
     <img src="./img/VelocityControllerVibrationExample.png"
@@ -237,7 +237,7 @@ En principe, la vibration est audible. Sinon, visualiser le signal S-0-0100 sur 
     <figcaption>Velocity controller vibration</figcaption>
 </figure>
 
--   Diminuer le gain jusqu’à ce que la vibration cesse. C’est le gain critique.
+-   Diminuer le gain jusqu'à ce que la vibration cesse. C’est le gain critique.
 -   Diviser le gain critique par 2.
 
 #### Exemple :
@@ -246,14 +246,14 @@ En principe, la vibration est audible. Sinon, visualiser le signal S-0-0100 sur 
 -   S-0-0100 estimé à 0.065 / 2 = 0.0325
 
 ### Temps d’intégration S-0-0101
-Diminuer progressivement le temps d’intégration S-0-0101 (en partant d’environ 100 ms) jusqu’à atteindre le point d’oscillation.
-Augmenter le temps d’intégration jusqu’à faire cesser l’oscillation. La valeur obtenue est le temps critique.
-Multiplier ensuite la valeur par 2 pour obtenir la valeur finale de S-0-0101.
+-   Diminuer progressivement le temps d’intégration ``S-0-0101`` (en partant d’environ 100 ms) jusqu’à atteindre le point d’oscillation.
+-   Augmenter le temps d’intégration jusqu’à faire cesser l’oscillation. La valeur obtenue est le temps critique.
+-   Multiplier ensuite la valeur par 2 pour obtenir la valeur finale de ``S-0-0101``.
 
 #### Exemple :
-Temps de départ : S-0-0101 = 100 ms
+Temps de départ : ``S-0-0101`` = 100 ms
 L’oscillation apparaît à 0.6 et disparait à 0.7. La valeur critique est de 0.07
-S-0-0101 estimé à 0.7 * 2 = 1.4
+``S-0-0101`` estimé à 0.7 * 2 = 1.4
 
 ### Visualisation avec l’oscilloscope
 Ici, affichage du couple en rouge et de la vitesse en bleu.
@@ -283,7 +283,7 @@ Start et automatic scaling quand le signal est disponible
 Commenter le graph
 
 ## Comparer avec l'auto tuning
-Mémorisez vos valeurs de S-0-0100 et S-0-0101 et les comparer avec le tuning automatique.
+        Mémorisez vos valeurs de S-0-0100 et ``S-0-0101`` et les comparer avec le tuning automatique.
 <figure>
     <img src="./img/AutoTuning_1.png"
          alt="Image lost: AutoTuning_1">
@@ -356,3 +356,4 @@ Sachant que:
 
 
 # Ne pas quitter la salle avant d'avoir restauré les paramètres !
+# Après avoir chargé les paramètres, remettre le drive en mode **OM**, Operating Mode!

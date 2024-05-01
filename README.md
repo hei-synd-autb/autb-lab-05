@@ -139,7 +139,7 @@ Noter ci-dessous, que la limite de couple est une relation directe entre le cour
     <figcaption>Torque/Force limits</figcaption>
 </figure>
 
-> Pour le labo, modifier les valeurs Force Limit positives ``S-0-0082`` et négatives ``S-0-0083`` à +1500 [N] et -1500 [S],
+> Pour le labo, modifier les valeurs Force Limit positives ``S-0-0082`` et négatives ``S-0-0083`` à +1500 [N] et -1500 [S].
 
 ## Drive Control
 
@@ -158,7 +158,9 @@ Cette méthode sert à derminer la position du codeur relative aux aimants dans 
 </figure>
 
 Le principal travail de l'automaticien consiste à trouver les bons paramètres P et I du régulateur de vitesse.
-Le paramètre command accel feedforward n'est utile que si l'axe est piloté en mode vitesse. On se référa à l'explication de ce paramètre pour le réguateur de position.
+
+Le paramètre **acceleration feedforward** du régulateur de vitesse n'est utile que si l'axe est piloté en mode vitesse. On se référa à l'explication de ce paramètre pour le réguateur de position.
+
 <figure>
     <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
          alt="Image lost: BaseDriveControlAxisControlVelocityDependsOfMechanic">

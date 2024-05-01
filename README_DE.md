@@ -10,52 +10,52 @@ Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
-# LAB 05 Mise en service d'un axe électrique avec une vis à bille.
+# LAB 05 Inbetriebnahme einer elektrischen Achse mit Kugelumlaufspindel.
 
-# Objectif
--   Comprendre les principaux éléments d'une commande d'axe électrique destinée à être reliée à un PLC.
-
-
-# Attention: sur ce coup je veux un rapport écrit pour le prochain labo !
+# Zielsetzung
+- Verstehen Sie die Hauptelemente einer elektrischen Achssteuerung, die an eine SPS angeschlossen werden soll.
 
 
-# Généralités
+# Achtung: Aus diesem Anlass möchte ich einen schriftlichen Bericht für das nächste Labor!
 
-La majorité des commandes d'axe électrique que l'on trouve actuellement sur le marché sont basés sur une structure similaire.
 
-Même si la plupart des éléments que l'on retouve sur ce genre de commande seront vus dans d'autres cours,
+# Allgemein
 
--   Commande avancée.
--   Moteurs électriques.
--   Electronique de puissance.
+Die meisten derzeit auf dem Markt befindlichen elektrischen Achssteuerungen basieren auf einem ähnlichen Aufbau.
 
-Les produits commerciaux sont développés afin de permettre à un technicien de mettre en service un système le plus rapidement possible sans les bases théoriques qui seraient nécessaires à l'écriture d'une fonction de transfert complexe et le calcul de ses pôles, mais aussi sans connaître les principes d'une commande PWM.
+Auch wenn die meisten Elemente, die wir bei diesem Befehlstyp finden, in anderen Kursen zu sehen sind,
 
-Souvent l'ensemble des paramètres qui seraient nécessaires aux calculs théoriques ne sont pas disponibles ou doivent être estimés avec des méthodes empiriques.
+- Erweiterter Befehl.
+-   Elektromotoren.
+- Leistungselektronik.
 
-## Méthode de Ziegler-Nichols
-John G. Ziegler et Nathaniel B. Nichols ont développé une méthode empirique pour déterminer les paramètres d'un régulateur PID de manière empirique qui consiste au départ à déterminer un point d'oscillation en boucle fermée.
+Kommerzielle Produkte werden entwickelt, um es einem Techniker zu ermöglichen, ein System so schnell wie möglich in Betrieb zu nehmen, ohne über die theoretischen Grundlagen zu verfügen, die zum Schreiben einer komplexen Übertragungsfunktion und zur Berechnung ihrer Pole erforderlich wären, aber auch ohne die Prinzipien der PWM-Steuerung zu kennen.
 
-> la méthode de Ziegler-Nichols n'est pas toujours applicable et peut même s'avérer **dangereuse** sur des systèmes de forte puissance.
+Oft sind nicht alle Parameter verfügbar, die für theoretische Berechnungen notwendig wären, oder müssen mit empirischen Methoden geschätzt werden.
 
-Quelques paramètres qui sont souvent manquant pour permettre le calcul précis des paramètres d'une fonction de transfert:
+## Ziegler-Nichols-Methode
+John G. Ziegler und Nathaniel B. Nichols entwickelten eine empirische Methode zur empirischen Bestimmung der Parameter eines PID-Reglers, bei der zunächst ein Oszillationspunkt im geschlossenen Regelkreis bestimmt wird.
 
--   frottements,
--   vibrations,
--   masses en mouvement.
+> Die Ziegler-Nichols-Methode ist nicht immer anwendbar und kann bei Hochleistungssystemen sogar **gefährlich** sein.
 
-> Dans de nombreux cas, si des paramètres précis, comme **les masses en mouvement**, sont disponibles, ils permettent d'arriver plus rapidement à un résultat de bonne qualité.
+Einige Parameter, die oft fehlen, um eine genaue Berechnung der Parameter einer Übertragungsfunktion zu ermöglichen:
 
-> On gardera en tête qu'il n'existe pas de paramètres uniques pour un même système mécanique. Ces paramètres sont parfois à adapter en fonction du type de trajectoire ou de type de contrôle pour un même axe.
+- Reibung,
+-   Vibes,
+- Massen bewegen.
 
-**Exemple:** Pour une machine de fraisage, un ensemble de paramètres bien adaptés pour un suivi en position pendant la phase d'usinage à faibe vitesse ne sera pas optimal lorsque que le même axe devra effectuer un mouvment rapide pour une phase de changement d'outil.
+> Wenn präzise Parameter wie **bewegte Massen** vorliegen, ist es in vielen Fällen möglich, schneller ein qualitativ gutes Ergebnis zu erzielen.
 
-# Présentation initiale
-Ce travail de laboratoire est précédé d'une phase de présentation des différents paramètres pour la mise en service d'un axe électrique.
+> Wir werden bedenken, dass es für dasselbe mechanische System keine eindeutigen Parameter gibt. Diese Parameter müssen manchmal je nach Art der Flugbahn oder Art der Steuerung derselben Achse angepasst werden.
 
-Cette présentation inclu:
+**Beispiel:** Für eine Fräsmaschine ist ein Satz von Parametern, die gut für die Positionsverfolgung während der Bearbeitungsphase mit niedriger Geschwindigkeit geeignet sind, nicht optimal, wenn dieselbe Achse für eine Bearbeitungsphase eine schnelle Bewegung ausführen muss.
+
+# Erstpräsentation
+Dieser Laborarbeit geht eine Phase der Präsentation der verschiedenen Parameter für die Inbetriebnahme einer elektrischen Achse voraus.
+
+Diese Präsentation beinhaltet:
 ## Power Supply
-Permet de vérifier l'alimentation en puissance de l'axe électrique. Si nécessaire, de la configurer.
+Ermöglicht die Überprüfung der Stromversorgung der elektrischen Achse. Konfigurieren Sie es bei Bedarf.
 <figure>
     <img src="./img/BasePowerSupplyDC.png"
          alt="Image lost: BasePowerSupplyDC">
@@ -63,7 +63,7 @@ Permet de vérifier l'alimentation en puissance de l'axe électrique. Si nécess
 </figure>
 
 # Master Communication
-Ici, on configure la communication du drive avec le PLC, ici, via Ethercat. Dans notre cas, la communication est interne au hardware de l'axe X, puisque celui-ci intègre le PLC dans son processeur.
+Hier konfigurieren wir die Kommunikation des Antriebs mit der SPS, hier über Ethercat. In unserem Fall erfolgt die Kommunikation innerhalb der X-Achsen-Hardware, da sie die SPS in ihren Prozessor integriert.
 <figure>
     <img src="./img/BaseMasterConnectionMDT.png"
          alt="Image lost: BaseMasterConnectionMDT">
@@ -71,34 +71,34 @@ Ici, on configure la communication du drive avec le PLC, ici, via Ethercat. Dans
 </figure>
 
 # Motor Drive, mechanics and measuring system.
-Configuration du moteur, du codeur et de la mécanique.
+Konfiguration von Motor, Encoder und Mechanik.
 
-Cette liste de paramètres est en général suffisante pour que le drive puisse piloter un moteur
+Diese Parameterliste reicht im Allgemeinen aus, damit der Antrieb einen Motor steuern kann.
 <figure>
     <img src="./img/BaseMotorDataSheetMinimalSetOfParam.png"
          alt="Image lost: BaseMotorDataSheetMinimalSetOfParam">
     <figcaption>Motor parameters</figcaption>
 </figure>
 
-*Noter la valeur manquante : Rated Motor Speed 3320 rpm.*
+*Beachten Sie den fehlenden Wert: Rated motor speed 3320 [rpm].*
 
-Le model de température ne pose en principe pas de problème pour un moteur rotatif intégré. Il devra être très finement configuré pour des moteurs linéaires dont la constante de temps thermique dépend d'une mécanique spécifique. 
+Für einen integrierten Rotationsmotor stellt das Temperaturmodell grundsätzlich kein Problem dar. Für Linearmotoren, deren thermische Zeitkonstante von der spezifischen Mechanik abhängt, muss es sehr fein konfiguriert werden.
 <figure>
     <img src="./img/BaseMotorTemperatureModel.png"
          alt="Image lost: BaseMotorTemperatureModel">
     <figcaption>Temperature model</figcaption>
 </figure>
 
-Dans notre cas, la configuration est inutile, puisque le type de codeur numérique est automtiquement reconnu au démarrage du drive.
+In unserem Fall erübrigt sich die Konfiguration, da der Typ des digitalen Gebers beim Starten des Antriebs automatisch erkannt wird.
 
-Ce type de codeur mémorise aussi les paramètres du moteur qu'il mesure et sont transférés au drive au démarrage.
+Dieser Encodertyp speichert auch die Motorparameter, die er misst und beim Start an den Antrieb überträgt.
 <figure>
     <img src="./img/BaseMotorEncoder.png"
          alt="Image lost: BaseMotorEncoder">
     <figcaption>Motor encoder configuration</figcaption>
 </figure>
 
-Cette configuration permet, entre autre, au drive de convertir les informations du codeur en position le long de la vis à bille.
+Diese Konfiguration ermöglicht es dem Antrieb unter anderem, Informationen vom Encoder in die Position entlang der Kugelumlaufspindel umzuwandeln.
 <figure>
     <img src="./img/BaseMotorAxisMechanics.png"
          alt="Image lost: BaseMotorAxisMechanics">
@@ -106,8 +106,8 @@ Cette configuration permet, entre autre, au drive de convertir les informations 
 </figure>
 
 ## Operation modes
-Avec Ethercat, l'axe est piloté en mode position, même quand nous utilisons un bloc fontionnel du type MC_MoveVelocity.
-Ce type de fonctionnement reste acceptable pour des vitesses telles que celle de notre moteur, mais insuffisant pour une broche d'usinage à haute vitesse qui tournerai 10 fois plus vite.
+Bei Ethercat wird die Achse im Positionsmodus gesteuert, auch wenn wir einen Funktionsblock vom Typ MC_MoveVelocity verwenden.
+Für Drehzahlen wie die unseres Motors bleibt diese Betriebsart akzeptabel, reicht aber für eine Hochgeschwindigkeits-Bearbeitungsspindel, die zehnmal schneller dreht, nicht aus.
 <figure>
     <img src="./img/BaseOperationModePosition.png"
          alt="Image lost: BaseOperationModePosition">
@@ -115,11 +115,11 @@ Ce type de fonctionnement reste acceptable pour des vitesses telles que celle de
 </figure>
 
 ## Limit values
-Permet de protéger le processus, la mécanique, puis le moteur.
+Ermöglicht den Schutz des Prozesses, der Mechanik und dann des Motors.
 
-Ci-dessous, les valeurs limites fournies pour les axes du laboratoire d'automation de la HES-SO Valais/Wallis.
+Nachfolgend die für die Achsen des Automatisierungslabors der HES-SO Valais/Wallis vorgesehenen Grenzwerte.
 
-> L'installation d'interrupteurs de fin de course mécaniques ne rendrait pas obligatoirement le système plus robuste, puisque ceux-ci, tout comme les limites de position internes sont paramétrables.
+> Der Einbau von mechanischen Endschaltern würde das System nicht unbedingt robuster machen, da diese ebenso wie die internen Positionsgrenzen konfigurierbar sind.
 <figure>
     <img src="./img/BaseLimitValuesMotion.png"
          alt="Image lost: BaseLimitValuesMotion">
@@ -128,42 +128,49 @@ Ci-dessous, les valeurs limites fournies pour les axes du laboratoire d'automati
 
 |Axe |Smax [mm]|u[mm/U]    |Vmax[m/s]   |amax [m/s2]   |Mmax[Nm] | d  |i   |
 |----|---------|-----------|------------|--------------|---------|----|----|
-|x   |565      |5.0        |0.3         |15            |8.22     |ccw |1   |
+|x   |565      |5.0        |0.3         |15            |**8.22** |ccw |1   |
 |y   |350      |5.0        |0.38        |15            |6.76     |ccw |1   |
 |z   |320      |5.0        |0.57        |15            |2.39     |cw  |1   |
 
-Noter ci-dessous, que la limite de couple est une relation directe entre le courant maximal admissible et la constante de couple du moteur [Nm/A].
+Beachten Sie weiter unten, dass die Drehmomentgrenze eine direkte Beziehung zwischen dem maximal zulässigen Strom und der Motordrehmomentkonstante [Nm/A] ist.
+
 <figure>
     <img src="./img/BaseLimitsTorque.png"
          alt="Image lost: BaseLimitsTorque">
     <figcaption>Torque/Force limits</figcaption>
 </figure>
 
+> Ändern Sie für das Labor die positiven Kraftgrenzwerte ``S-0-0082`` und die negativen ``S-0-0083`` in +1500 [N] und -1500 [S].
+
 ## Drive Control
 
-Les paramètres du régulateur de courant sont estimés par le drive en fonction des paramètres électriques du moteur. Sauf très rares exceptions, on ne modifiera jamais les paramètres de ce régulateur.
+Die Parameter des Stromreglers werden vom Antrieb anhand der elektrischen Parameter des Motors geschätzt. Mit sehr seltenen Ausnahmen werden wir die Parameter dieses Reglers niemals ändern.
 <figure>
     <img src="./img/BaseDriveControlMotorControlDependsOfMotor.png"
          alt="Image lost: BaseDriveControlMotorControlDependsOfMotor">
     <figcaption>Motor operation and configuration</figcaption>
 </figure>
 
-Cette méthode sert à derminer la position du codeur relative aux aimants dans le cas ou cette information n'aurait pas pu être calibrée par le fournisseur du moteur. En principe inutile pour un moteur rotatif, souvent indispensable pour l'utilisation d'un moteur linéaire avec une mécanique *faite maison*.
+Diese Methode wird verwendet, um die Position des Encoders relativ zu den Magneten zu bestimmen, falls diese Informationen nicht vom Motorlieferanten kalibriert werden konnten. Im Prinzip unbrauchbar für einen Rotationsmotor, oft unerlässlich für den Einsatz eines Linearmotors mit *selbstgebauter* Mechanik.
+
 <figure>
     <img src="./img/BaseDriveMotorCommutationSetting.png"
          alt="Image lost: BaseDriveMotorCommutationSetting">
     <figcaption>Commuation setting if position of encoder relative to magnets is unknown at startup</figcaption>
 </figure>
 
-Le principal travail de l'automaticien consiste à trouver les bons paramètres P et I du régulateur de vitesse.
-Le paramètre command accel feedforward n'est utile que si l'axe est piloté en mode vitesse. On se référa à l'explication de ce paramètre pour le réguateur de position.
+Die Hauptaufgabe des Automatisierungsingenieurs besteht darin, die richtigen P- und I-Parameter des Tempomaten zu finden
+.
+Der Parameter **Acceleration Feedforward** des Geschwindigkeitsreglers ist nur sinnvoll, wenn die Achse im Geschwindigkeitsmodus gefahren wird. Wir verweisen auf die Erläuterung dieses Parameters für den Positionsregler.
+
 <figure>
     <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
          alt="Image lost: BaseDriveControlAxisControlVelocityDependsOfMechanic">
     <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
 </figure>
 
-On travail en général uniquement sur le gain du régulateur, et celui-ci, dans la pratique, est souvent laissé à **1**.
+Wir arbeiten im Allgemeinen nur an der Verstärkung des Reglers, und diese bleibt in der Praxis oft bei **1**.
+
 <figure>
     <img src="./img/BaseDriveAxisPositionDependsOfProcess.png"
          alt="Image lost: BaseDriveAxisPositionDependsOfProcess">
@@ -171,33 +178,34 @@ On travail en général uniquement sur le gain du régulateur, et celui-ci, dans
 </figure>
 
 ### Feed Forward
-On pourra adapter la réactivité du système en utilisant le paramètre de **Feed-Forward**. Sans rentrer dans les détails de la fonction de transfert qui n'est de toute façon pas au programme de l'ensemble de la classe, on peut expliquer intuitivement ce paramètre relativement simplement.
+Mit dem Parameter **Feed-Forward** können wir die Reaktionsfähigkeit des Systems anpassen. Ohne auf die Details der Übertragungsfunktion einzugehen, die ohnehin nicht im Programm der gesamten Klasse enthalten ist, können wir diesen Parameter intuitiv relativ einfach erklären.
 
-Ce que dit le documentation du fournisseur:
+Was in der Herstellerdokumentation steht:
 
-> The acceleration command value obtained from double differentiation of the position command value is multiplied with the content of ``S-0-0348`` and added to the torque/force command value at the velocity controller output.
+> Der aus der doppelten Differenzierung des Lagesollwerts resultierende Beschleunigungssollwert wird mit dem Inhalt von „S-0-0348“ multipliziert und am Ausgang des Geschwindigkeitsreglers zum Drehmoment-/Kraftsollwert addiert.
 
-> For optimum parameterization of the acceleration feedforward, the following parameters are specified in ``S-0-0348``
+> Zur optimalen Parametrierung der Beschleunigungsvorsteuerung sind in „S-0-0348“ folgende Parameter festgelegt
 
--   Total mass (motor + load) in kg (linear motor)
--   Total mass inertia (motor + load), in relation to the motor output shaft, in gm2 (rotary motor)
+- Gesamtmasse (Motor + Last) in kg (Linearmotor)
+- Gesamtmassenträgheit (Motor + Last), bezogen auf die Motorausgangswelle, in gm2 (Rotationsmotor)
 
-> The drive firmware automatically adjusts the unit and decimal places to the type of construction of the motor (rotary or linear) entered in ``P-0-4014, Motor type``.
+> Die Antriebsfirmware passt die Einheit und die Nachkommastellen automatisch an die in „P-0-4014, Motortyp“ eingetragene Bauart des Motors (rotatorisch oder linear) an.
 
 -   rotary motor: $\ [mN*m / rad/s^2] → [g*m^2] $
 -   Linear motor: $\ [mN / mm/s2 → kg] $
 
-### Feed Forward, le principe
-Il est probablement un peu plus simple d'expliquer le principe sur la base d'un moteur linéaire. Pour lequel la force est équivalente au courant muliplié par la constante de force. **Le principe du Feed Forward est d'ailleurs particulièrement efficace pour un moteur en prise directe sur la charge tel un moteur linéaire** ou un moteur couple.
-Prenons les caractéristiques d'un moteur linéaire d'origine Etel.
+### Feed Forward, das Prinzip
+Etwas einfacher ist es wahrscheinlich, das Prinzip anhand eines Linearmotors zu erklären. Dabei entspricht die Kraft dem Strom multipliziert mit der Kraftkonstante. **Das Feed-Forward-Prinzip ist besonders effektiv für einen Motor, der direkt mit der Last verbunden ist, wie z. B. einen Linearmotor** oder einen Torquemotor.
+
+Nehmen wir die Eigenschaften eines originalen Etel-Linearmotors.
 
 <figure align="center">
     <img src="./img/Etel_csm_ILFplus_with_forced_air_4c8ca2632a.jpg"
          alt="Image Lost: Etel_csm_ILFplus_with_forced_air_4c8ca2632a">
-    <figcaption>Etel ILF+ avec refroidissement à air forcé</figcaption>
+    <figcaption>Etel ILF+ mit forcierter Luftkühlung</figcaption>
 </figure>
 
-> Caractéristiques partielles d'un moteur ILF+03-030 / KA / Free Air Cooling
+> Teileigenschaften eines ILF+03-030-Motors / KA / Free Air Cooling
 
 |    |                  |Unit   | ILF+03-030 KA|
 |----|------------------|-------|--------------|
@@ -209,20 +217,21 @@ $\ Fc \approx Ic * Kt $
 
 $\ F = m*a = dv/dt$ ou $dp / {dt}^2 $
 
-D'ou: $\ Ic * Kt \approx dv/dt$ ou $dp / {dt}^2  $
-Si l'on divise le tout par la constant $\ Kt $, on obtient:
+Wovon: $\ Ic * Kt \approx dv/dt$ ou $dp / {dt}^2  $
+Wenn wir alles durch die Konstante $\ Kt $ dividieren, erhalten wir:
 
 $$\ I = \dfrac{dp/{dt}^2}{Kt} $$
 
-Le Feed Forward consiste à ajouter en entrée du régulateur de courant la deuxième dérivée de la variation de position de commande. Ainsi, pour chaque variation de la position, le régulateur de courant du moteur reçoit directement la variation de courant nécessaire pour modifier la position du moteur. C'est très efficace pour un suivi précis en position, par contre, ce système peut s'avérer *agressif* pour la mécanique si les différences de position au niveau de la trajectoire de commande ne sont pas correctement maitrisée. Nous verrons dans le cadre du dernir labo comment maitriser efficacement les variation de position d'une trajectoire.
+Feed Forward besteht aus der Addition der zweiten Ableitung der Regelpositionsänderung zum aktuellen Reglereingang. Somit erhält der Motorstromregler für jede Positionsänderung direkt die Stromänderung, die zur Änderung der Position des Motors erforderlich ist. Dies ist für eine präzise Positionsverfolgung sehr effektiv, jedoch kann sich dieses System als *aggressiv* für die Mechanik erweisen, wenn die Positionsunterschiede auf der Ebene der Steuertrajektorie nicht korrekt kontrolliert werden. Im letzten Labor werden wir sehen, wie man die Positionsschwankungen einer Flugbahn effektiv steuern kann.
 
-> Idéalement, si le Feed Forward est correctement dimensionné, les régulateurs de position et de vitesse intermédiaires ne devraient servir qu'à corriger les perturbations liées au frottement et aux vibrations.
+> Idealerweise sollten die Zwischenpositions- und Geschwindigkeitsregler bei korrekter Dimensionierung des Feed Forward nur zur Korrektur von Störungen im Zusammenhang mit Reibung und Vibrationen verwendet werden.
 
-Dans le schéma ci-dessus, c'est la raison d'être du voyant **Lagless operation**. Fonctionnement sans décalage ou sans erreur de poursuite, l'erreur de poursuite étant la différence entre la position commandée et la position mesurée par le codeur.
+Im obigen Diagramm ist dies der Zweck des Indikators **Lagless operation**. Betrieb ohne Offset oder Schleppfehler, wobei der Schleppfehler die Differenz zwischen der Sollposition und der vom Encoder gemessenen Position ist.
 
 ## Error reaction
 
-Il ne faut pas confondre ce signal avec les signaux STO mentionnés dans la fonction de sécurité. Ce signal donne une commande d'arrêt immédiat à l'axe.
+Dieses Signal sollte nicht mit den in der Sicherheitsfunktion genannten STO-Signalen verwechselt werden. Dieses Signal gibt der Achse einen sofortigen Stoppbefehl.
+
 <figure align="center">
     <img src="./img/BaseErrorE_Stop.png"
          alt="Image lost: BaseErrorE_Stop">
@@ -230,11 +239,12 @@ Il ne faut pas confondre ce signal avec les signaux STO mentionnés dans la fonc
 </figure>
 
 ## Drive-integrated safety
-Ces signaux sont utilisé pour garantir un arrêt sécurisé des axes via un circuit d'arrêt d'urgence selon ISO 13849-1
+Ces signaux sont utilisé pour garantir un arrêt sécurisé des axes via un circuit d'arrêt d'urgence selon ISO 13849-1.
+
 <figure align="center">
     <img src="./img/BaseSafetySTO.png"
          alt="Image lost: BaseSafetySTO">
     <figcaption>Evaluating the E-Stop signal</figcaption>
 </figure>
 
-[Fin de l'introduction, passage à la phase active.](README_JobStart.md)
+[Ende der Einführung, Übergang zur aktiven Phase.](README_JobStart_DE.md)
