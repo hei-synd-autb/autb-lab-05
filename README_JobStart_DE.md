@@ -331,8 +331,11 @@ Klicken Sie mit der rechten Maustaste, um die Daten anzuzeigen:
 </figure>
 
 # Letzten Endes
+
+> Sie können die im Anhang bereitgestellten PLC- und Node-RED-Programme verwenden, um den Betrieb in den Zuständen **Auto** und **Execute** zu überprüfen.
+
 ## Bereiten Sie eine Bewegung mit vor
-$\ +/- 50 [mm]$ mit einer Geschwindigkeit von $\ 6000 [mm/min]$ und einer Beschleunigung von 1 $\ m/s^2 $.
+$\ +/- 50 [mm]$ mit einer Geschwindigkeit von $\ 0.3 [m/s]$ und einer Beschleunigung von $\ 1 [m/s^2] $.
 - Stärke in Rot
 - Geschwindigkeit in Blau
 - Die Position in Grün
@@ -346,7 +349,7 @@ Wissend, dass:
 |![](./img/TuningZuVermeiden.png)|![](./img/TuningMieux.png)|
 
 
-# Hilfsfragen
+## Hilfsfragen
 - Wie hoch ist die Spannung am DC-Bus?
 - Welche Register sendet die SPS an den Antrieb?
 - Welches Register ermöglicht es der SPS, die Position des Motors zu erkennen?
@@ -356,5 +359,6 @@ Wissend, dass:
 - Wozu dient die Bremse an der Z-Achse?
 
 
-# Verlassen Sie den Raum nicht, bis Sie die Einstellungen wiederhergestellt haben!
-# Nach dem Laden der Parameter den Antrieb wieder in den **OM**-Modus, Operating Mode, versetzen!
+## Verlassen Sie den Raum nicht, bis Sie die Einstellungen wiederhergestellt haben!
+
+## Nach dem Laden der Parameter den Antrieb wieder in den **OM**-Modus, Operating Mode, versetzen!

@@ -16,7 +16,7 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 - Verstehen Sie die Hauptelemente einer elektrischen Achssteuerung, die an eine SPS angeschlossen werden soll.
 
 
-# Achtung: Aus diesem Anlass möchte ich einen schriftlichen Bericht für das nächste Labor!
+> Bei der Inbetriebnahme eines Systems empfiehlt es sich, **während** der Inbetriebnahme einen Bericht zu erstellen. <p><b style="color:red;">Ich bitte Sie, dies in einer Word-Datei zu tun, die Sie vor Verlassen des Labors an Moodle senden.</b></p> Dies ist die Quittung für Ihre Teilnahme. Format: ``Lab_05_Name_aa_Name_bb.docx``.
 
 
 # Allgemein

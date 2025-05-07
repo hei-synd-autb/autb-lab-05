@@ -331,8 +331,11 @@ Utiliser click droit pour visualiser les données :
 </figure>
 
 # En finalité
+
+> Vous pouvez utiliser les programmes PLC et Node-RED fournis en annexe pour vérfier le fonctionnemet en état **Automatic** et **Execute**.
+
 ## Préparer un mouvement avec
-$\ +/- 50 [mm]$ avec une vitesse de $\ 6000 [mm/min]$ et une accélération de 1 $\ m/s^2 $.
+$\ +/- 50 [mm]$ avec une vitesse de $\ 0.3 [m/s]$ et une accélération de $\ 1 [m/s^2] $.
 -   La force en rouge
 -   La vitesse en bleu
 -   La position en vert
@@ -346,7 +349,7 @@ Sachant que:
 |![](./img/TuningZuVermeiden.png)|![](./img/TuningMieux.png)|
 
 
-# Questions auxiliaires
+## Questions auxiliaires
 -   Quels est la tension sur le bus DC ?
 -   Quels sont les registres que le PLC envoie au drive?
 -   Quel registre permet au PLC de connaitre la position du moteur ?
@@ -356,5 +359,5 @@ Sachant que:
 -   A quoi sert le frein sur l'axe Z ?
 
 
-# Ne pas quitter la salle avant d'avoir restauré les paramètres !
-# Après avoir chargé les paramètres, remettre le drive en mode **OM**, Operating Mode!
+## Ne pas quitter la salle avant d'avoir restauré les paramètres !
+## Après avoir chargé les paramètres, remettre le drive en mode **OM**, Operating Mode!

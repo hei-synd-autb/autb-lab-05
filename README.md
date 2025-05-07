@@ -17,6 +17,9 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 # Objectif
 -   Comprendre les principaux éléments d'une commande d'axe électrique destinée à être reliée à un PLC.
 
+> La meilleure pratique lors de la mise en service d’un système est de remplir un rapport **pendant** la mise en service. <p><b style="color:red;">C’est ce que je vous demande de faire sur un fichier Word à remettre dans Moodle avant de quitter le labo.</b></p>. C’est la quittance de votre participation. Format: ``Lab_05_Name_aa_Name_bb.docx``.
+
+
 
 # Généralités
 
