@@ -1,4 +1,4 @@
-<h1 align="left">
+<h1 align="left"> 
   <br>
   <img src="./img/hei-en.png" alt="HEI-Vs Logo" width="350">
   <br>
@@ -10,14 +10,15 @@ Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
-# LAB 05 Mise en service d'un axe électrique avec une vis à bille.
+# LAB 05 (suite)
+Mise en service d'un axe électrique avec une vis à bille.
 
 Job starts with:
 
 # CtrlX Drive Engineering
 Ce logiciel est conçu pour:
 -   Visualiser et si nécessaire modifier les paramètres des axes électriques.
--   Visualier le comportement de l'axe à l'aide d'un oscilloscope intégré.
+-   Visualiser le comportement de l'axe à l'aide d'un oscilloscope intégré.
 -   Piloter l'axe en mode manuel pour optimiser son comportement.
 -   Lancer une procédure de **Auto-Tuning**.
 
@@ -58,8 +59,8 @@ SelectParameterMode
     <figcaption>Save a backup of drive parameters to restore them if needed</figcaption>
 </figure>
 
-Les paramètres sont numérotés selon le sysème [Sercos](https://www.sercos.org).
-Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en lecture ou en écriture. Certains paramètres ne peuvent être modifiés que quand le moteur est hors couple, voir même quand le drive est en mode Paramter.
+Les paramètres sont numérotés selon le système [Sercos](https://www.sercos.org).
+Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en lecture ou en écriture. Certains paramètres ne peuvent être modifiés que quand le moteur est hors couple, voir même quand le drive est en mode Parameter.
 
 - **Backup parameter**s pour les paramètres de configuration.
 - **All parameters**, archive absolument tous les paramètres. Ceci est utile pour faire un diagnostic, ou dans le cadre d'un cours pour présenter un axe uniquement sous forme de paramètres.
@@ -73,9 +74,9 @@ Après avec archivé les paramètres, restaurer le mode OM.
 </figure>
 
 # Scaling
-L'axe doit connaitres les paramètres mécaniques du système pour pouvoir convertir la position du codeur en unités qui conviennent à l'application.
+L'axe doit connaitre les paramètres mécaniques du système pour pouvoir convertir la position du codeur en unités qui conviennent à l'application.
 
-Dans notre cas de figure, la position du codeur est convertie, entre autre, en mm pour la position linéaire de l'axe X.
+Dans notre cas de figure, la position du codeur est convertie, entre autres, en mm pour la position linéaire de l'axe X.
 
 <figure>
     <img src="./img/AxisMechanicalScaling.png"
@@ -183,12 +184,12 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
 -   Mesurer la force nécessaire pour vaincre le frottement statique.
     Pour ceci, utiliser le mode **Torque/Force Control** et augmenter **petit à petit** les % de la commande de force.
 
-	Quel est approximativemnt la force nécessaire pour vaincre le frottement dynamique ?
+	Quel est approximativement la force nécessaire pour vaincre le frottement dynamique ?
     Quel pourcentage du couple du moteur est utilisé pour cette opération ?
 
 > La commande à l'entrée du régulateur de courant/couple/force, correspond à la sortie du régulateur de vitesse qui est ici désactivé.
 
-> L'intégrateur du régulateur de vitesse fait d'une certaine manière la même chose que ce que vous faites. **Il augmente la force en fontion du temps**. C'est une des raisons pour lesquelles un intégrateur est limité, sinon il augmenterai indéfiniment le courant sur le moteur. Dans le cas d'un axe qui serait bloqué le moteur chauffe rapidement, c'est souvent un signe du blocage mécanique.
+> L'intégrateur du régulateur de vitesse fait d'une certaine manière la même chose que ce que vous faites. **Il augmente la force en fonction du temps**. C'est une des raisons pour lesquelles un intégrateur est limité, sinon il augmenterait indéfiniment le courant sur le moteur. Dans le cas d'un axe qui serait bloqué le moteur chauffe rapidement, c'est souvent un signe du blocage mécanique.
 
 # Faire un tuning manuel est le comparer avec l’auto-tuning.
 
@@ -210,11 +211,11 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
     <figcaption>Velocity controller transfer function</figcaption>
 </figure>
 
-## Procedure
+## Procédure
 ### Réglage empirique
 Basé sur la méthode Ziegler et Nichols
 
-> Idéalement, faire tourner le moteur en mode vitesse à environ 20 rpm à l’aide du **Easy Startup Mode**. Si la mécanique ne le permet pas, travailler à vitesse nulle. **Comme nous avons un système linéaire à limite finie, nout travaillon à vitesse nulle**.
+> Idéalement, faire tourner le moteur en mode vitesse à environ 20 rpm à l’aide du **Easy Startup Mode**. Si la mécanique ne le permet pas, travailler à vitesse nulle. **Comme nous avons un système linéaire à limite finie, nous travaillons à vitesse nulle**.
 
 > Attention, feed-forward ; ``P-0-1126.0.0`` à 0 !
 
@@ -350,7 +351,7 @@ Sachant que:
 -   Quels sont les registres que le PLC envoie au drive?
 -   Quel registre permet au PLC de connaitre la position du moteur ?
 -   Pourquoi est-il, dans notre cas, inutile de configurer le codeur ?
--   Combien de points par tour le moteur de l'axe X reçoit-il via le bus Ethercat lorsque la limite de vitesse de l'axe X est atteinte ?
+-   Combien de points par tour le moteur de l'axe X reçoit-il via le bus EtherCAT lorsque la limite de vitesse de l'axe X est atteinte ?
 -   Expliquer pourquoi le moteur de l'axe X semble surdimensionné par rapport au couple maximal admissible par la vis à billes.
 -   A quoi sert le frein sur l'axe Z ?
 

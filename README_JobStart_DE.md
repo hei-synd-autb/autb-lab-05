@@ -10,7 +10,8 @@ Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
-# LAB 05 Inbetriebnahme einer elektrischen Achse mit Kugelumlaufspindel.
+# LAB 05 (Fortsetzung)
+## Inbetriebnahme einer elektrischen Achse mit Kugelumlaufspindel.
 
 Job starts with:
 

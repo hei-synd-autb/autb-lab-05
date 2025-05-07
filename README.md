@@ -10,20 +10,19 @@ Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 
-# LAB 05 Mise en service d'un axe électrique avec une vis à bille.
+# LAB 05 
+## Mise en service d'un axe électrique avec une vis à bille.
+
 
 # Objectif
 -   Comprendre les principaux éléments d'une commande d'axe électrique destinée à être reliée à un PLC.
-
-
-# Attention: sur ce coup je veux un rapport écrit pour le prochain labo !
 
 
 # Généralités
 
 La majorité des commandes d'axe électrique que l'on trouve actuellement sur le marché sont basés sur une structure similaire.
 
-Même si la plupart des éléments que l'on retouve sur ce genre de commande seront vus dans d'autres cours,
+Même si la plupart des éléments que l'on trouve sur ce genre de commande seront vus dans d'autres cours,
 
 -   Commande avancée.
 -   Moteurs électriques.
@@ -48,12 +47,12 @@ Quelques paramètres qui sont souvent manquant pour permettre le calcul précis 
 
 > On gardera en tête qu'il n'existe pas de paramètres uniques pour un même système mécanique. Ces paramètres sont parfois à adapter en fonction du type de trajectoire ou de type de contrôle pour un même axe.
 
-**Exemple:** Pour une machine de fraisage, un ensemble de paramètres bien adaptés pour un suivi en position pendant la phase d'usinage à faibe vitesse ne sera pas optimal lorsque que le même axe devra effectuer un mouvment rapide pour une phase de changement d'outil.
+**Exemple:** Pour une machine de fraisage, un ensemble de paramètres bien adaptés pour un suivi en position pendant la phase d'usinage à faible vitesse ne sera pas optimal lorsque que le même axe devra effectuer un mouvement rapide pour une phase de changement d'outil.
 
 # Présentation initiale
 Ce travail de laboratoire est précédé d'une phase de présentation des différents paramètres pour la mise en service d'un axe électrique.
 
-Cette présentation inclu:
+Cette présentation inclut:
 ## Power Supply
 Permet de vérifier l'alimentation en puissance de l'axe électrique. Si nécessaire, de la configurer.
 <figure>
@@ -63,7 +62,7 @@ Permet de vérifier l'alimentation en puissance de l'axe électrique. Si nécess
 </figure>
 
 # Master Communication
-Ici, on configure la communication du drive avec le PLC, ici, via Ethercat. Dans notre cas, la communication est interne au hardware de l'axe X, puisque celui-ci intègre le PLC dans son processeur.
+Ici, on configure la communication du drive avec le PLC, ici, via EtherCAT. Dans notre cas, la communication est interne au hardware de l'axe X, puisque celui-ci intègre le PLC dans son processeur.
 <figure>
     <img src="./img/BaseMasterConnectionMDT.png"
          alt="Image lost: BaseMasterConnectionMDT">
@@ -89,7 +88,7 @@ Le model de température ne pose en principe pas de problème pour un moteur rot
     <figcaption>Temperature model</figcaption>
 </figure>
 
-Dans notre cas, la configuration est inutile, puisque le type de codeur numérique est automtiquement reconnu au démarrage du drive.
+Dans notre cas, la configuration est inutile, puisque le type de codeur numérique est automatiquement reconnu au démarrage du drive.
 
 Ce type de codeur mémorise aussi les paramètres du moteur qu'il mesure et sont transférés au drive au démarrage.
 <figure>
@@ -98,7 +97,7 @@ Ce type de codeur mémorise aussi les paramètres du moteur qu'il mesure et sont
     <figcaption>Motor encoder configuration</figcaption>
 </figure>
 
-Cette configuration permet, entre autre, au drive de convertir les informations du codeur en position le long de la vis à bille.
+Cette configuration permet, entre autres, au drive de convertir les informations du codeur en position le long de la vis à bille.
 <figure>
     <img src="./img/BaseMotorAxisMechanics.png"
          alt="Image lost: BaseMotorAxisMechanics">
@@ -106,7 +105,7 @@ Cette configuration permet, entre autre, au drive de convertir les informations 
 </figure>
 
 ## Operation modes
-Avec Ethercat, l'axe est piloté en mode position, même quand nous utilisons un bloc fontionnel du type MC_MoveVelocity.
+Avec EtherCAT, l'axe est piloté en mode position, même quand nous utilisons un bloc fonctionnel du type MC_MoveVelocity.
 Ce type de fonctionnement reste acceptable pour des vitesses telles que celle de notre moteur, mais insuffisant pour une broche d'usinage à haute vitesse qui tournerai 10 fois plus vite.
 <figure>
     <img src="./img/BaseOperationModePosition.png"
@@ -150,7 +149,7 @@ Les paramètres du régulateur de courant sont estimés par le drive en fonction
     <figcaption>Motor operation and configuration</figcaption>
 </figure>
 
-Cette méthode sert à derminer la position du codeur relative aux aimants dans le cas ou cette information n'aurait pas pu être calibrée par le fournisseur du moteur. En principe inutile pour un moteur rotatif, souvent indispensable pour l'utilisation d'un moteur linéaire avec une mécanique *faite maison*.
+Cette méthode sert à déterminer la position du codeur relative aux aimants dans le cas où cette information n'aurait pas pu être calibrée par le fournisseur du moteur. En principe inutile pour un moteur rotatif, souvent indispensable pour l'utilisation d'un moteur linéaire avec une mécanique *faite maison*.
 <figure>
     <img src="./img/BaseDriveMotorCommutationSetting.png"
          alt="Image lost: BaseDriveMotorCommutationSetting">
@@ -159,7 +158,7 @@ Cette méthode sert à derminer la position du codeur relative aux aimants dans 
 
 Le principal travail de l'automaticien consiste à trouver les bons paramètres P et I du régulateur de vitesse.
 
-Le paramètre **acceleration feedforward** du régulateur de vitesse n'est utile que si l'axe est piloté en mode vitesse. On se référa à l'explication de ce paramètre pour le réguateur de position.
+Le paramètre **acceleration feedforward** du régulateur de vitesse n'est utile que si l'axe est piloté en mode vitesse. On se référa à l'explication de ce paramètre pour le régulateur de position.
 
 <figure>
     <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
@@ -167,7 +166,7 @@ Le paramètre **acceleration feedforward** du régulateur de vitesse n'est utile
     <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
 </figure>
 
-On travail en général uniquement sur le gain du régulateur, et celui-ci, dans la pratique, est souvent laissé à **1**.
+On travaille en général uniquement sur le gain du régulateur, et celui-ci, dans la pratique, est souvent laissé à **1**.
 <figure>
     <img src="./img/BaseDriveAxisPositionDependsOfProcess.png"
          alt="Image lost: BaseDriveAxisPositionDependsOfProcess">
@@ -192,7 +191,7 @@ Ce que dit le documentation du fournisseur:
 -   Linear motor: $\ [mN / mm/s2 → kg] $
 
 ### Feed Forward, le principe
-Il est probablement un peu plus simple d'expliquer le principe sur la base d'un moteur linéaire. Pour lequel la force est équivalente au courant muliplié par la constante de force. **Le principe du Feed Forward est d'ailleurs particulièrement efficace pour un moteur en prise directe sur la charge tel un moteur linéaire** ou un moteur couple.
+Il est probablement un peu plus simple d'expliquer le principe sur la base d'un moteur linéaire. Pour lequel la force est équivalente au courant multiplié par la constante de force. **Le principe du Feed Forward est d'ailleurs particulièrement efficace pour un moteur en prise directe sur la charge tel un moteur linéaire** ou un moteur couple.
 Prenons les caractéristiques d'un moteur linéaire d'origine Etel.
 
 <figure align="center">
@@ -213,12 +212,12 @@ $\ Fc \approx Ic * Kt $
 
 $\ F = m*a = dv/dt$ ou $dp / {dt}^2 $
 
-D'ou: $\ Ic * Kt \approx dv/dt$ ou $dp / {dt}^2  $
+D'oû: $\ Ic * Kt \approx dv/dt$ ou $dp / {dt}^2  $
 Si l'on divise le tout par la constant $\ Kt $, on obtient:
 
 $$\ I = \dfrac{dp/{dt}^2}{Kt} $$
 
-Le Feed Forward consiste à ajouter en entrée du régulateur de courant la deuxième dérivée de la variation de position de commande. Ainsi, pour chaque variation de la position, le régulateur de courant du moteur reçoit directement la variation de courant nécessaire pour modifier la position du moteur. C'est très efficace pour un suivi précis en position, par contre, ce système peut s'avérer *agressif* pour la mécanique si les différences de position au niveau de la trajectoire de commande ne sont pas correctement maitrisée. Nous verrons dans le cadre du dernir labo comment maitriser efficacement les variation de position d'une trajectoire.
+Le Feed Forward consiste à ajouter en entrée du régulateur de courant la deuxième dérivée de la variation de position de commande. Ainsi, pour chaque variation de la position, le régulateur de courant du moteur reçoit directement la variation de courant nécessaire pour modifier la position du moteur. C'est très efficace pour un suivi précis en position, par contre, ce système peut s'avérer *agressif* pour la mécanique si les différences de position au niveau de la trajectoire de commande ne sont pas correctement maitrisées. Nous verrons dans le cadre du dernir labo comment maitriser efficacement les variations de position d'une trajectoire.
 
 > Idéalement, si le Feed Forward est correctement dimensionné, les régulateurs de position et de vitesse intermédiaires ne devraient servir qu'à corriger les perturbations liées au frottement et aux vibrations.
 
@@ -234,7 +233,7 @@ Il ne faut pas confondre ce signal avec les signaux STO mentionnés dans la fonc
 </figure>
 
 ## Drive-integrated safety
-Ces signaux sont utilisé pour garantir un arrêt sécurisé des axes via un circuit d'arrêt d'urgence selon ISO 13849-1
+Ces signaux sont utilisés pour garantir un arrêt sécurisé des axes via un circuit d'arrêt d'urgence selon ISO 13849-1
 <figure align="center">
     <img src="./img/BaseSafetySTO.png"
          alt="Image lost: BaseSafetySTO">
