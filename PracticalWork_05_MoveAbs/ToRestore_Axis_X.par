@@ -1,0 +1,4722 @@
+SERCOS-ASCII
+5/7/2025 9:20:30 AM
+Axis_x
+FWA-XD1-AXS-V-0402N-NN-04 | XCS2-W0023ARN-02AX3T0NNET-S0402N2NNNN0NN | MS2N04-D0BQN-CMSH0-NNNNE-NN | CUS2-02X3-T0NNNN
+1
+|
+S-0-0001
+Application synchronization: NC cycle time
+01100000000100010000000000000001
+us
+125
+32000
+2000
+|
+S-0-0002
+SoE protocol: Sercos cycle time (TScyc)
+01100000000100010000000000000001
+us
+250
+65000
+2000
+|
+S-0-0015
+SoE protocol: Telegram type parameter
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0111
+|
+S-0-0016
+SoE protocol: Configuration list of AT
+01100000010101010000000000000001
+--
+--
+--
+4
+30
+S-0-2058
+S-0-0051
+|
+S-0-0024
+SoE protocol: Configuration list of MDT
+01100000010101010000000000000001
+--
+--
+--
+4
+30
+S-0-2057
+S-0-0047
+|
+S-0-0026
+Signal status word: Configuration list
+00000000010101010000000000000001
+--
+--
+--
+0
+32
+|
+S-0-0027
+Signal control word: Configuration list
+00000000010101010000000000000001
+--
+--
+--
+0
+32
+|
+S-0-0032
+Axis operation modes: Primary operation mode
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.1011
+|
+S-0-0033
+Axis operation modes: Secondary operation mode 1
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0034
+Axis operation modes: Secondary operation mode 2
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0035
+Axis operation modes: Secondary operation mode 3
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0038
+Velocity limitation: Limit value, positive
+00000011001000100000000000000001
+mm/min
+0.000
+30500.000
+0.000
+|
+S-0-0039
+Velocity limitation: Limit value, negative
+00000011001000100000000000000001
+mm/min
+-30500.000
+0.000
+0.000
+|
+S-0-0041
+Homing speeds: Speed during search for switch
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+1000.000
+|
+S-0-0042
+Homing acceleration
+00000011000100100000000000000001
+mm/s-Ý
+0.000
+500000.000
+1000.000
+|
+S-0-0043
+Axis polarity: Velocity
+01100000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0111
+0000.0000.0000.0000
+|
+S-0-0044
+Velocity data scaling: Type
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0100.0001
+|
+S-0-0045
+Velocity data scaling: Factor
+01100000000100010000000000000001
+--
+1
+65535
+1
+|
+S-0-0046
+Velocity data scaling: Exponent
+01100000001000010000000000000001
+--
+-10
+0
+-6
+|
+S-0-0049
+Travel range limitation: Limit value, positive
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+272.5000
+|
+S-0-0050
+Travel range limitation: Limit value, negative
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+-272.5000
+|
+S-0-0052
+Homing configuration ENC_1: Home offset
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0054
+Homing configuration ENC_2: Home offset
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0055
+Axis polarity: Position
+01100000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0001.1111
+0000.0000.0001.1111
+|
+S-0-0057
+Position status: Position window
+00000100000100100000000000000001
+mm
+0.0000
+5000.0000
+0.1000
+|
+S-0-0076
+Position data scaling: Type
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0100.0001
+|
+S-0-0077
+Position data scaling: Factor
+01100000000100010000000000000001
+--
+1
+65535
+1
+|
+S-0-0078
+Position data scaling: Exponent
+01100000001000010000000000000001
+--
+-10
+0
+-7
+|
+S-0-0079
+Position data scaling: Rotational resolution
+01100000000100100000000000000001
+--
+1
+4294967295
+3600000
+|
+S-0-0082
+Torque/force limitation: Limit value, positive
+00000001001000010000000000000001
+%
+0.0
+409.2
+176.6
+|
+S-0-0083
+Torque/force limitation: Limit value, negative
+00000001001000010000000000000001
+%
+-409.2
+0.0
+-176.6
+|
+S-0-0085
+Axis polarity: Torque/force
+01100000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0111
+0000.0000.0000.0000
+|
+S-0-0086
+Torque/force data scaling: Type
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0100.0000
+|
+S-0-0091
+Velocity limitation: Max profile velocity
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+18000.000
+|
+S-0-0092
+Torque/force limitation: Limit value, bipolar
+00000001000100010000000000000001
+%
+0.0
+409.2
+176.6
+|
+S-0-0093
+Torque/force data scaling: Factor
+01100000000100010000000000000001
+--
+1
+65535
+1
+|
+S-0-0094
+Torque/force data scaling: Exponent
+01100000001000010000000000000001
+--
+-15
+6
+-1
+|
+S-0-0097
+Class 2 diagnostics: Mask
+00000000000000010000000000000001
+--
+--
+--
+1111.1111.1111.1111
+|
+S-0-0098
+Class 3 diagnostics: Mask
+00000000000000010000000000000001
+--
+--
+--
+1111.1111.1111.1111
+|
+S-0-0100
+Velocity controller: Proportional gain
+00000011000100100000000000000001
+Nm/(rad/s)
+0.000
+4294967.295
+0.209
+|
+S-0-0101
+Velocity controller: Integral action time
+00000001000100010000000000000001
+ms
+0.0
+6553.5
+14.2
+|
+S-0-0103
+Maximum travel range: Modulo format
+01100100000100100000000000000001
+mm
+0.0000
+5000.0000
+360.0000
+|
+S-0-0104
+Position controller: Proportional gain
+00000010000100010000000000000001
+1000/min
+0.00
+655.35
+1.05
+|
+S-0-0106
+Motor current control: Proportional gain 1
+00000010000100100000000000000001
+V/A
+0.00
+42949672.95
+46.00
+|
+S-0-0107
+Motor current control: Integral action time 1
+00000001000100010000000000000001
+ms
+0.0
+6553.5
+4.0
+|
+S-0-0108
+Feedrate override: Value
+00000010000100010000000000000001
+%
+0.00
+600.00
+100.00
+|
+S-0-0109
+Motor basic data: Peak current
+01100011000100100000000000000001
+A
+0.000
+20000.000
+17.300
+|
+S-0-0111
+Motor basic data: Motor rated current
+01100011000100100000000000000001
+A
+0.000
+20000.000
+3.480
+|
+S-0-0113
+Motor basic data: Max. motor speed
+01100100000100100000000000000001
+rpm
+0.0001
+250000.0000
+6000.0000
+|
+S-0-0115
+Encoder function and properties ENC_2: Value
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-0121
+Gear ratio: Motor shaft revolutions
+01100000000100100000000000000001
+Rev
+1
+4294967295
+10
+|
+S-0-0122
+Gear ratio: Driving shaft revolutions
+01100000000100100000000000000001
+Rev
+1
+4294967295
+10
+|
+S-0-0123
+Feed constant: Value
+01100100000100100000000000000001
+mm/Rev
+0.0001
+107374.1823
+5.0000
+|
+S-0-0124
+Velocity status: Standstill window
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+200.000
+|
+S-0-0125
+Velocity status: Threshold value
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+10000.000
+|
+S-0-0126
+Torque/force status: Threshold value
+00000001000100010000000000000001
+%
+0.0
+409.2
+100.0
+|
+S-0-0138
+Acceleration limitation: Bipolar profile limit value
+01000011000100100000000000000001
+mm/s-Ý
+0.000
+500000.000
+15000.000
+|
+P-0-1768
+Parking axis: Permanent configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-0141
+Motor identification: Type
+00000000010001000000000000000001
+--
+--
+--
+27 80 MS2N04-D0BQN-CMSH0-NNNNE-NN
+|
+S-0-0147
+Homing function: Configuration
+00000000000000010000000000000001
+--
+--
+--
+0000.0100.0111.0101
+|
+S-0-0150
+Homing configuration ENC_1: Reference offset
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0151
+Homing configuration ENC_2: Reference offset
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0157
+Velocity status: Static window
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+1000.000
+|
+S-0-0158
+Inverter DC bus: Power threshold value
+00000000000100100000000000000001
+W
+0
+2147483647
+0
+|
+S-0-0159
+Position controller, monitor: Following error window
+00000100000100100000000000000001
+mm
+0.0000
+5000.0000
+10.0000
+|
+S-0-0160
+Acceleration data scaling: Type
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0100.0001
+|
+S-0-0161
+Acceleration data scaling: Factor
+01100000000100010000000000000001
+--
+1
+65535
+1
+|
+S-0-0162
+Acceleration data scaling: Exponent
+01100000001000010000000000000001
+--
+-10
+0
+-6
+|
+S-0-0163
+Velocity controller: Counterbalance value
+00000001001000010000000000000001
+%
+-409.2
+409.2
+0.0
+|
+S-0-0165
+Distance-coded reference offset: A
+01000000000100100000000000000001
+DP
+0
+4294967295
+1001
+|
+S-0-0166
+Distance-coded reference offset: B
+01000000000100100000000000000001
+DP
+0
+4294967295
+1000
+|
+S-0-0169
+Touch probe control: Control word
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-0177
+Set absolute position configuration ENC_1: Offset
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0178
+Set absolute position configuration ENC_2: Offset
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0193
+Positioning profile: Jerk
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+2147483.647
+0.000
+|
+S-0-0201
+Motor temperature monitoring: Warning threshold
+01000001001000010000000000000001
+-ÝC
+-50.0
+400.0
+140.0
+|
+S-0-0204
+Motor temperature monitoring: Shutdown threshold
+01100001001000010000000000000001
+-ÝC
+-50.0
+400.0
+145.0
+|
+S-0-0206
+Axis delay time: On
+01000001000100100000000000000001
+ms
+0.0
+10000.0
+0.0
+|
+S-0-0207
+Axis delay time: Off
+01000001000100100000000000000001
+ms
+0.0
+10000.0
+0.0
+|
+S-0-0208
+Temperature data scaling: Type
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-0259
+Positioning profile: Profile velocity
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+100.000
+|
+S-0-0260
+Positioning profile: Acceleration
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+1000.000
+|
+S-0-0261
+Position status: Coarse window
+00000100001000100000000000000001
+mm
+0.0000
+5000.0000
+0.5000
+|
+S-0-0265
+Diagnostic message: Language selection
+00000000000100010000000000000001
+--
+0
+4
+0
+|
+S-0-0267
+Password: Value
+00000000010001000000000000000001
+--
+--
+--
+3 39 007
+|
+S-0-0272
+Velocity status: Percentage window
+00000010000100010000000000000001
+%
+0.00
+100.00
+0.00
+|
+S-0-0273
+Axis shutdown: Maximum drive off delay time
+01000001000100100000000000000001
+ms
+500.0
+100000.0
+10000.0
+|
+S-0-0277
+Encoder function and properties ENC_1: Value
+01100000000000010000000000000001
+--
+--
+--
+0000.0001.0100.0000
+|
+S-0-0278
+Maximum travel range: Absolute format
+01100100001000100000000000000001
+mm
+0.0000
+107374.1823
+5000.0000
+|
+S-0-0284
+Axis operation modes: Secondary operation mode 4
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0285
+Axis operation modes: Secondary operation mode 5
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0286
+Axis operation modes: Secondary operation mode 6
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0287
+Axis operation modes: Secondary operation mode 7
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0010
+|
+S-0-0299
+Home switch: Virtual shift
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+S-0-0301
+SoE protocol: Allocation of real-time control bit 1
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+S-0-0303
+SoE protocol: Allocation of real-time control bit 2
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+S-0-0305
+SoE protocol: Allocation of real-time status bit 1
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+S-0-0307
+SoE protocol: Allocation of real-time status bit 2
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+S-0-0328
+Signal status word: Assign list signal
+00000000000101010000000000000001
+--
+0
+31
+0
+32
+|
+S-0-0329
+Signal control word: Assign list signal
+00000000000101010000000000000001
+--
+0
+31
+0
+32
+|
+S-0-0348
+Acceleration feedforward: Gain position control loop
+00000100000100100000000000000001
+mNm/(rad/s-Ý)
+0.0000
+214748.3647
+0.0000
+|
+S-0-0349
+Jerk limitation: Value
+00000011000100100000000000000001
+mm/s-Ý
+0.000
+2147483.647
+0.000
+|
+S-0-0359
+Positioning profile: Deceleration
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+1000.000
+|
+S-0-0370
+MUX command 1: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0371
+MUX feedback 1: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0372
+Drive Halt: Quick stop deceleration signed
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+15000.000
+|
+S-0-0391
+Position difference monitor enc.1 - enc.2: Window
+00000100000100100000000000000001
+mm
+0.0000
+5000.0000
+0.0000
+|
+S-0-0393
+Positioning profile: Command value mode
+00000000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0111
+0000.0000.0000.0010
+|
+S-0-0413
+SoE protocol: Bit number of real-time control bit 1
+00000000000100010000000000000001
+--
+0
+15
+0
+|
+S-0-0414
+SoE protocol: Bit number of real-time control bit 2
+00000000000100010000000000000001
+--
+0
+15
+0
+|
+S-0-0415
+SoE protocol: Bit number of real-time status bit 1
+00000000000100010000000000000001
+--
+0
+15
+0
+|
+S-0-0416
+SoE protocol: Bit number of real-time status bit 2
+00000000000100010000000000000001
+--
+0
+15
+0
+|
+S-0-0417
+Positioning profile: Velocity threshold in modulo mode
+00000011000100100000000000000001
+mm/min
+0.000
+30500.000
+0.000
+|
+S-0-0418
+Positioning profile: Target position window in modulo mode
+00000100000100100000000000000001
+mm
+0.0000
+5000.0000
+0.1000
+|
+S-0-0426
+Touch probe configuration 1: Signal selection 1
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+S-0-0427
+Touch probe configuration 2: Signal selection 2
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+S-0-0429
+Axis shutdown: Emergency stop deceleration
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+0.000
+|
+S-0-0446
+Acceleration data scaling: Ramp reference velocity
+01100011000100100000000000000001
+mm/min
+0.001
+30500.000
+30000.000
+|
+S-0-0448
+Set absolute position function: Control word
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0001
+|
+S-0-0490
+MUX command 2: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0491
+MUX command 3: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0492
+MUX command 4: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0493
+MUX command 5: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0494
+MUX command 6: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0495
+MUX command 7: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0496
+MUX command 8: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0500
+MUX feedback 2: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0501
+MUX feedback 3: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0502
+MUX feedback 4: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0503
+MUX feedback 5: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0504
+MUX feedback 6: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0505
+MUX feedback 7: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0506
+MUX feedback 8: Configuration list
+01100000010101010000000000000001
+--
+--
+--
+0
+64
+|
+S-0-0520
+Axis control: Control word control loop
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0100
+|
+S-0-0524
+Touch probe dead time compensation 1: Positive edge
+00000011001000100000000000000001
+us
+0.000
+50000.000
+0.000
+|
+S-0-0525
+Touch probe dead time compensation 1: Negative edge
+00000011001000100000000000000001
+us
+0.000
+50000.000
+0.000
+|
+S-0-0526
+Touch probe dead time compensation 2: Positive edge
+00000011001000100000000000000001
+us
+0.000
+50000.000
+0.000
+|
+S-0-0527
+Touch probe dead time compensation 2: Negative edge
+00000011001000100000000000000001
+us
+0.000
+50000.000
+0.000
+|
+S-0-0530
+Fixed stop: Torque/force limit value
+00000001000100010000000000000001
+%
+0.0
+409.2
+0.0
+|
+S-0-0532
+Travel range limitation: Configuration
+00000000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0111
+0000.0000.0000.0000
+|
+S-0-0533
+Motor basic data: Motor rated torque
+01100011000100100000000000000001
+Nm
+--
+--
+4.650
+|
+S-0-0534
+Motor basic data: Maximum torque
+01100011000100100000000000000001
+Nm
+--
+--
+19.026
+|
+S-0-0540
+Velocity status: Velocity window time
+00000000000100010000000000000001
+ms
+--
+--
+0
+|
+S-0-0541
+Position status: Position window time
+00000000000100010000000000000001
+ms
+--
+--
+0
+|
+S-0-0561
+Power limitation: Withdrawal from DC bus
+00000000001000100000000000000001
+W
+0
+2147483647
+2147483647
+|
+S-0-0562
+Power limitation: Supply to DC bus
+00000000001000100000000000000001
+W
+-2147483648
+0
+-2147483647
+|
+S-0-0563
+DC bus current limitation: Withdrawal value
+00000011001000100000000000000001
+A
+0.000
+2147483.647
+2147483.647
+|
+S-0-0564
+DC bus current limitation: Feeding value
+00000011001000100000000000000001
+A
+-2147483.648
+0.000
+-2147483.648
+|
+S-0-2400
+Encoder basic interface OPT_2: Data out
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2411
+Encoder basic interface OPT_2: Refresh time
+01100011000100100000000000000001
+us
+--
+--
+0.000
+|
+S-0-2420
+Encoder basic interface OPT_2: Resolution, position
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2421
+Encoder basic interface OPT_2: Position overflow threshold
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+0
+|
+S-0-2422
+Encoder basic interface OPT_2: Absolute position range
+01100000000101100000000000000001
+Rev
+--
+--
+8
+8
+0
+0
+|
+P-0-3867
+Encoder basic interface OPT_2: Abs. position range, internal
+01100000000101100000000000000001
+--
+--
+--
+8
+8
+0
+0
+|
+S-0-2425
+Encoder basic interface OPT_3: Data out
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2436
+Encoder basic interface OPT_3: Refresh time
+01100011000100100000000000000001
+us
+--
+--
+0.000
+|
+S-0-2445
+Encoder basic interface OPT_3: Resolution, position
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2446
+Encoder basic interface OPT_3: Position overflow threshold
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+0
+|
+S-0-2447
+Encoder basic interface OPT_3: Absolute position range
+01100000000101100000000000000001
+Rev
+--
+--
+8
+8
+0
+0
+|
+P-0-3869
+Encoder basic interface OPT_3: Abs. position range, internal
+01100000000101100000000000000001
+--
+--
+--
+8
+8
+0
+0
+|
+S-0-2450
+Encoder basic interface ONBOARD: Data out
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2461
+Encoder basic interface ONBOARD: Refresh time
+01100011000100100000000000000001
+us
+--
+--
+125.000
+|
+S-0-2470
+Encoder basic interface ONBOARD: Resolution, position
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+1048576
+0
+|
+S-0-2471
+Encoder basic interface ONBOARD: Position overflow threshold
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+1
+|
+S-0-2472
+Encoder basic interface ONBOARD: Absolute position range
+01100000000101100000000000000001
+Rev
+--
+--
+8
+8
+4096
+0
+|
+P-0-3871
+Encoder basic interface ONBOARD: Abs. position range, internal
+01100000000101100000000000000001
+--
+--
+--
+8
+8
+0
+1
+|
+S-0-2500
+Phys. encoder configuration OPT_2: Type
+01100000000100010000000000000001
+--
+--
+--
+65535
+|
+S-0-2501
+Phys. encoder configuration OPT_2: Properties
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2504
+Phys. encoder configuration OPT_2: Dist.-coded ref. offset A
+01100000000100100000000000000001
+--
+--
+--
+0
+|
+S-0-2505
+Phys. encoder configuration OPT_2: Dist.-coded ref. offset B
+01100000000100100000000000000001
+--
+--
+--
+0
+|
+S-0-2506
+Phys. encoder configuration OPT_2: Protocol configuration
+01100000001100100000000000000001
+--
+--
+--
+0x00000000
+|
+S-0-2507
+Phys. encoder configuration OPT_2: Max. initialization speed
+01100000000100100000000000000001
+rpm
+--
+--
+0
+|
+S-0-2520
+Phys. encoder configuration OPT_2: Resolution (analog)
+01100000000101100000000000000001
+DP/Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2521
+Phys. encoder configuration OPT_2: Resolution (digital)
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+0
+0
+|
+P-0-3872
+Phys. encoder configuration OPT_2: Configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2525
+Phys. encoder configuration OPT_3: Type
+01100000000100010000000000000001
+--
+--
+--
+65535
+|
+S-0-2526
+Phys. encoder configuration OPT_3: Properties
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2529
+Phys. encoder configuration OPT_3: Dist.-coded ref. offset A
+01100000000100100000000000000001
+--
+--
+--
+0
+|
+S-0-2530
+Phys. encoder configuration OPT_3: Dist.-coded ref. offset B
+01100000000100100000000000000001
+--
+--
+--
+0
+|
+S-0-2531
+Phys. encoder configuration OPT_3: Protocol configuration
+01100000001100100000000000000001
+--
+--
+--
+0x00000000
+|
+S-0-2532
+Phys. encoder configuration OPT_3: Max. initialization speed
+01100000000100100000000000000001
+rpm
+--
+--
+0
+|
+S-0-2545
+Phys. encoder configuration OPT_3: Resolution (analog)
+01100000000101100000000000000001
+DP/Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2546
+Phys. encoder configuration OPT_3: Resolution (digital)
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+0
+0
+|
+P-0-3876
+Phys. encoder configuration OPT_3: Configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2550
+Phys. encoder configuration ONBOARD: Type
+01100000000100010000000000000001
+--
+--
+--
+105
+|
+S-0-2551
+Phys. encoder configuration ONBOARD: Properties
+01100000000000010000000000000001
+--
+--
+--
+1000.0000.0000.0000
+|
+S-0-2556
+Phys. encoder configuration ONBOARD: Protocol configuration
+01100000001100100000000000000001
+--
+--
+--
+0x00000000
+|
+S-0-2557
+Phys. encoder configuration ONBOARD: Max. initialization speed
+01100000000100100000000000000001
+rpm
+--
+--
+12000
+|
+S-0-2570
+Phys. encoder configuration ONBOARD: Resolution (analog)
+01100000000101100000000000000001
+DP/Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2571
+Phys. encoder configuration ONBOARD: Resolution (digital)
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+1048576
+0
+|
+P-0-3880
+Phys. encoder configuration ONBOARD: Configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-2230
+Virtual encoder OPT_2: Interface
+01100000000100010000000000000001
+--
+0
+3
+0
+|
+P-0-2234
+Virtual encoder ONBOARD: Interface
+01100000000100010000000000000001
+--
+0
+3
+0
+|
+S-0-2800
+Encoder extended in, config. ENC_1: Configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2811
+Encoder extended in, config. ENC_1: Refresh time
+01100011000100100000000000000001
+us
+--
+--
+125.000
+|
+S-0-2820
+Encoder extended in, config. ENC_1: Resolution, position
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+1048576
+0
+|
+S-0-2821
+Encoder extended in, config. ENC_1: Overflow threshold pos.
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+1
+|
+S-0-2822
+Encoder extended in, config. ENC_1: Absolute position range
+01100000000101100000000000000001
+Rev
+--
+--
+8
+8
+4096
+0
+|
+S-0-2823
+Encoder extended in, config. ENC_1: Resolution (analog)
+01100000000101100000000000000001
+DP/Rev
+--
+--
+8
+8
+0
+0
+|
+P-0-3884
+Absolute encoder buffer ENC_1: Serial number
+01100000010001000000000000000001
+--
+--
+--
+20 22 00000418566037832136
+|
+P-0-3885
+Encoder extended in, config. ENC_1: Abs. pos. range, intern.
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+1
+|
+S-0-2825
+Encoder extended in, config. ENC_2: Configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-2836
+Encoder extended in, config. ENC_2: Refresh time
+01100011000100100000000000000001
+us
+--
+--
+0.000
+|
+S-0-2845
+Encoder extended in, config. ENC_2: Resolution, position
+01100000000101100000000000000001
+Incr/Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2846
+Encoder extended in, config. ENC_2: Overflow threshold pos.
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+0
+|
+S-0-2847
+Encoder extended in, config. ENC_2: Absolute position range
+01100000000101100000000000000001
+Rev
+--
+--
+8
+8
+0
+0
+|
+S-0-2848
+Encoder extended in, config. ENC_2: Resolution (analog)
+01100000000101100000000000000001
+DP/Rev
+--
+--
+8
+8
+0
+0
+|
+P-0-3886
+Absolute encoder buffer ENC_2: Serial number
+01100000010001000000000000000001
+--
+--
+--
+0 22 
+|
+P-0-3887
+Encoder extended in, config. ENC_2: Abs. pos. range, intern.
+01100000000101100000000000000001
+Incr
+--
+--
+8
+8
+0
+0
+|
+S-0-0822
+Torque/force control: Value
+00000001000100010000000000000001
+%
+0.0
+6553.5
+0.0
+|
+S-0-0823
+Torque/force control: Time
+00000001000100010000000000000001
+ms
+0.0
+6553.5
+0.0
+|
+S-0-0826
+Torque/force status: Window
+00000001000100010000000000000001
+%
+0.0
+409.2
+0.0
+|
+S-0-0915
+SoE protocol: Telegram type parameter FSoE
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+S-0-1002
+MCI timing: Cycle time (tScyc)
+01100011000100100000000000000001
+us
+250.000
+65000.000
+2000.000
+|
+S-0-1006
+MCI timing: AT0 transmission starting time (t1)
+01100011000100100000000000000001
+us
+0.000
+65000.000
+100.000
+|
+S-0-1007
+MCI timing: Feedback capture point (TSync)
+01100011000100100000000000000001
+us
+--
+--
+500.000
+|
+S-0-1023
+MCI timing: Maximum synchronization jitter
+01100011000100100000000000000001
+us
+0.200
+50.000
+2.000
+|
+S-0-0000
+S-0-0000
+00000000001100010000000000000001
+--
+--
+--
+0x0000
+|
+S-0-1040
+MCI identification: Drive address
+01100000000100010000000000000001
+--
+0
+250
+1
+|
+P-0-3865
+MCI connection 1: Allowed data losses
+01100000000100010000000000000001
+--
+1
+65535
+2
+|
+P-0-2331
+MCI connection 2: Allowed data losses
+01100000000100010000000000000001
+--
+1
+65535
+1
+|
+S-0-0916
+MCI connection 3: Configuration list SoE
+01100000010101010000000000000001
+--
+--
+--
+0
+40
+|
+P-0-2414
+MCI connection 4: Allowed data losses
+01100000000100010000000000000001
+--
+1
+65535
+1
+|
+S-0-0924
+MCI connection 4: Configuration list SoE
+01100000010101010000000000000001
+--
+--
+--
+0
+40
+|
+S-0-0142
+Application: Type
+00000000010001000000000000000001
+--
+--
+--
+6 40 Axis_x
+|
+S-0-2001
+Power supply, topology: List of supplied drives
+01000000000101010000000000000001
+--
+--
+--
+2
+20
+1
+|
+S-0-2046
+Power supply operation modes: Primary operation mode
+01100000001100010000000000000001
+--
+--
+--
+0x0037
+|
+S-0-2064
+Power supply DC bus: Capacitance measured value
+01100001000100100000000000000001
+-ÝF
+--
+--
+300.7
+|
+P-0-0001
+Inverter power section: Switching frequency
+01100000000100010000000000000001
+Hz
+4000
+8000
+4000
+|
+P-0-0004
+Velocity controller: Filter time constant
+00000000000100010000000000000001
+us
+0
+65535
+300
+|
+P-0-0006
+Diagnostic message: Configuration
+01000000001100010000000000000001
+--
+0x0000
+0x0001
+0x0000
+|
+P-0-0008
+E-Stop function: Configuration
+01000000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0111
+0000.0000.0000.0001
+|
+P-0-0016
+Inverter power section: Configuration
+01000000000000100000000000000001
+--
+--
+--
+0000.0000.0000.0000.0000.0000.0010.0000
+|
+P-0-0018
+Motor basic data: Number of pole pairs / pole pair distance
+01100000000100010000000000000001
+Pole pairs
+1
+200
+5
+|
+P-0-0019
+Position initialization: Value
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+P-0-0020
+Oscilloscope function: Operation mode
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0023
+Oscilloscope channel 1: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0051
+|
+P-0-0024
+Oscilloscope channel 2: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0040
+|
+P-0-0025
+Oscilloscope trigger: Mask
+00000000001100100000000000000001
+--
+--
+--
+0x00000001
+|
+P-0-0026
+Oscilloscope trigger: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0051
+|
+P-0-0027
+Oscilloscope trigger: Level
+00000100001000100000000000000001
+--
+--
+--
+10.0000
+|
+P-0-0030
+Oscilloscope trigger: Edge
+00000000000100010000000000000001
+--
+1
+4
+1
+|
+P-0-0031
+Oscilloscope function: Time resolution
+00000000000100100000000000000001
+us
+125
+8000000
+2000
+|
+P-0-0032
+Oscilloscope function: Size of memory
+00000000000100010000000000000001
+--
+1
+6553
+4000
+|
+P-0-0033
+Oscilloscope trigger: Number of measured values after event
+00000000000100010000000000000001
+--
+0
+6553
+3200
+|
+P-0-0040
+Velocity feedforward: Gain
+00000010000100010000000000000001
+%
+0.00
+120.00
+100.00
+|
+P-0-0041
+Position command filter: Time const., cyclic pos. control
+00000000000100100000000000000001
+us
+0
+128000
+0
+|
+P-0-0045
+Motor control function: Configuration 1
+01100000000000100000000000000001
+--
+--
+--
+0000.0000.0000.0000.0000.0000.0000.0000
+|
+P-0-0051
+Motor basic data: Torque/force constant
+01100010000100010000000000000001
+Nm/A
+0.01
+655.35
+1.43
+|
+P-0-0062
+Inverter power section: Velocity threshold, PWM switching
+01100100000100100000000000000001
+rpm
+0.0000
+250000.0000
+2100.0000
+|
+P-0-0077
+Encoder interface assignment ENC_1: Value
+01100000000100010000000000000001
+--
+0
+10
+10
+|
+P-0-0078
+Encoder interface assignment ENC_2: Value
+01100000000100010000000000000001
+--
+0
+10
+0
+|
+P-0-0082
+Motor current control: Current filter time
+00000000000100010000000000000001
+us
+0
+65535
+0
+|
+P-0-0095
+Absolute encoder monitoring ENC_1: Window
+01100100001000100000000000000001
+mm
+0.0000
+5000.0000
+1.0000
+|
+P-0-0096
+Absolute encoder monitoring ENC_2: Window
+01100100001000100000000000000001
+mm
+0.0000
+5000.0000
+1.0000
+|
+P-0-0099
+Position command processing: Filter time constant
+00000010000100010000000000000001
+ms
+0.00
+655.35
+0.00
+|
+P-0-0101
+STO function: Configuration
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0109
+Torque/force limitation: Peak limit value
+00000001000100010000000000000001
+%
+0.0
+409.2
+176.6
+|
+P-0-0113
+Axis mechanical data: Velocity limit, bipolar
+01000100000100100000000000000001
+rpm
+0.0000
+250000.0000
+0.0000
+|
+P-0-0114
+DC bus supply: Undervoltage threshold
+01100000000100010000000000000001
+V
+0
+750
+200
+|
+P-0-0117
+Externally controlled error reaction: Configuration
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-3892
+Externally controlled error reaction: Reaction time F2/F3
+01000000000100010000000000000001
+ms
+0
+60000
+0
+|
+P-0-3893
+Externally controlled error reaction: Reaction time F4/F6/F7
+01000000000100010000000000000001
+ms
+0
+60000
+0
+|
+P-0-0118
+DC bus supply: Configuration
+01100000000000010000000000000001
+--
+--
+--
+1000.0000.0000.0000
+|
+P-0-0119
+Axis shutdown: Best possible shutdown
+01000000001100010000000000000001
+--
+--
+--
+0x0000
+|
+P-0-0121
+Gearbox encoder ENC_1: Revolutions, mechanical side
+01100000000100100000000000000001
+Rev
+1
+65535
+1
+|
+P-0-0122
+Gearbox encoder ENC_1: Revolutions, encoder side
+01100000000100100000000000000001
+Rev
+1
+65535
+1
+|
+P-0-0123
+Feed constant encoder 2: Value
+01100100001000100000000000000001
+mm/Rev
+0.0000
+214748.3647
+10.0000
+|
+P-0-0124
+Gearbox encoder ENC_2: Revolutions, mechanical side
+01100000000100100000000000000001
+Rev
+1
+65535
+1
+|
+P-0-0125
+Gearbox encoder ENC_2: Revolutions, encoder side
+01100000000100100000000000000001
+Rev
+1
+65535
+1
+|
+P-0-0142
+Position control synchronization: Acceleration
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+100.000
+|
+P-0-0143
+Position control synchronization: Velocity
+00000011001000100000000000000001
+mm/min
+0.000
+30500.000
+100.000
+|
+P-0-0147
+Oscilloscope channel 3: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0084
+|
+P-0-0148
+Oscilloscope channel 4: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0189
+|
+P-0-0151
+Position control synchronization: Window for modulo format
+00000100001000100000000000000001
+mm
+0.0000
+5000.0000
+10.0000
+|
+P-0-0153
+Home switch: Optimum distance to reference mark
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+P-0-0154
+Position control synchronization: Direction
+00000000001100010000000000000001
+--
+0x0000
+0x0002
+0x0000
+|
+P-0-0161
+Axis control optimization: Periodic time
+00000000000100100000000000000001
+ms
+2
+4194304
+1000
+|
+P-0-0163
+Axis control optimization: Damping factor
+00000001000100010000000000000001
+--
+0.5
+10.0
+3.0
+|
+P-0-0164
+Axis control optimization: Application
+00000000000100010000000000000001
+--
+0
+4
+4
+|
+P-0-0165
+Axis control optimization: Control word
+00000000000000100000000000000001
+--
+--
+--
+0000.0000.0000.0000.0000.0010.1111.1011
+|
+P-0-0166
+Axis control optimization: End position negative
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+P-0-0167
+Axis control optimization: End position positive
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+P-0-0168
+Axis control optimization: Max. accel. to be parameterized
+01000011001000100000000000000001
+mm/s-Ý
+--
+--
+2153.151
+|
+P-0-0169
+Axis control optimization: Travel distance
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+P-0-0170
+Axis control optimization: Acceleration
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+10.000
+|
+P-0-0171
+Axis control optimization: Velocity
+00000011001000100000000000000001
+mm/min
+0.000
+30500.000
+1000.000
+|
+P-0-0180
+Acceleration feedforward: Smoothing time constant
+00000000000100010000000000000001
+us
+0
+10000
+0
+|
+P-0-0181
+Axis control optimization: Antiresonance frequency
+00000001000101100000000000000001
+Hz
+0.0
+100000.0
+20
+20
+0.0
+0.0
+0.0
+0.0
+0.0
+|
+P-0-0182
+Axis control optimization: Resonance frequency
+00000001000101100000000000000001
+Hz
+0.0
+100000.0
+20
+20
+1718.7
+0.0
+0.0
+0.0
+0.0
+|
+P-0-0185
+Encoder function extended ENC_2: Control word
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0187
+Cyclic position control: Mode
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0001
+|
+P-0-0200
+Touch probe acceptance window 2: Lower limit value
+00000100001000100000000000000001
+mm
+--
+--
+0.0000
+|
+P-0-0201
+Touch probe acceptance window 2: Upper limit value
+00000100001000100000000000000001
+mm
+--
+--
+0.0000
+|
+P-0-0204
+Touch probe acceptance window 1: Lower limit value
+00000100001000100000000000000001
+mm
+--
+--
+0.0000
+|
+P-0-0205
+Touch probe acceptance window 1: Upper limit value
+00000100001000100000000000000001
+mm
+--
+--
+0.0000
+|
+P-0-0206
+Touch probe acceptance window 1: Max. number of failures
+00000000000100010000000000000001
+--
+--
+--
+0
+|
+P-0-0207
+Touch probe acceptance window 2: Max. number of failures
+00000000000100010000000000000001
+--
+--
+--
+0
+|
+P-0-0226
+Touch probe function, extended: Control word
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0240
+Position controller: Balancing filter, time constant
+00000000000100010000000000000001
+us
+0
+10000
+0
+|
+P-0-0244
+Encoder slip monitor: Window
+00000001000100100000000000000001
+%
+0.0
+2000.0
+0.0
+|
+P-0-0250
+System identification: Value
+00000000010001000000000000000001
+--
+--
+--
+48 500 #S4H#3SA#020#R030H00073#R030531058#CKK-145-NN-1!
+|
+P-0-2320
+System identification: Data list
+00000000001101100000000000000001
+--
+--
+--
+0
+160
+|
+P-0-2759
+System identification: ctrlX DRIVE Engineering view manager
+00000000001101100000000000000001
+--
+--
+--
+0
+80
+|
+P-0-0270
+Oscilloscope channel 5: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0164
+|
+P-0-0271
+Oscilloscope channel 6: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+P-0-0272
+Oscilloscope channel 7: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+P-0-0273
+Oscilloscope channel 8: Signal selection
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+P-0-0279
+Oscilloscope trend mode: Time resolution
+00000000000100010000000000000001
+ms
+1
+65535
+1
+|
+P-0-0300
+Digital inputs: Assignment list
+01000000010101010000000000000001
+--
+--
+--
+12
+12
+S-0-0000
+S-0-0000
+P-0-0223
+S-0-0000
+S-0-0000
+S-0-0000
+|
+P-0-0301
+Digital inputs: Bit numbers
+01000000001001010000000000000001
+--
+--
+--
+12
+12
+0
+0
+0
+0
+0
+0
+|
+P-0-0310
+Digital outputs: Assignment list
+01000000010101010000000000000001
+--
+--
+--
+2
+2
+S-0-0145
+|
+P-0-0311
+Digital outputs: Bit numbers
+01000000001001010000000000000001
+--
+--
+--
+2
+2
+0
+|
+P-0-2790
+Performance load AXC: Prewarning threshold
+00000010000100010000000000000001
+%
+0.00
+100.00
+90.00
+|
+P-0-0395
+Average value filter for display: Signal selection
+00000000010101010000000000000001
+--
+--
+--
+8
+8
+S-0-0000
+S-0-0000
+S-0-0000
+S-0-0000
+|
+P-0-0397
+Average value filter for display: Time constant
+00000011000101100000000000000001
+ms
+0.000
+2000.000
+16
+16
+0.000
+0.000
+0.000
+0.000
+|
+P-0-0398
+Average value filter for display: Filter type
+00000000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.1111
+0000.0000.0000.0000
+|
+P-0-0399
+Simulation mode: Configuration
+01100000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0001
+0000.0000.0000.0000
+|
+P-0-0441
+Inverter thermal model: Load warning threshold
+00000000000100010000000000000001
+%
+0
+110
+80
+|
+P-0-0448
+Motor torque model: Temperature-dependent coefficient
+01100001000100010000000000000001
+%
+0.0
+6553.5
+8.0
+|
+P-0-0449
+Motor torque model: Speed-dependent coefficient
+01100101000100010000000000000001
+Hz
+--
+--
+0.00033
+|
+P-0-0456
+Position command processing: Delay
+00000000000100010000000000000001
+--
+0
+64
+0
+|
+P-0-0468
+Motor thermal model: Prewarning threshold
+00000001000100010000000000000001
+%
+0.0
+110.0
+95.0
+|
+P-0-0469
+Brake resistor thermal model: Prewarning threshold
+00000000000100010000000000000001
+%
+0
+110
+90
+|
+P-0-0472
+Synchron. motor data: Motor saturation current
+01100011000100100000000000000001
+A
+0.000
+20000.000
+4.325
+|
+P-0-0480
+Patch function 1: Source pointer
+00000000001100100000000000000001
+--
+--
+--
+0x00000000
+|
+P-0-0481
+Patch function 1: Attribute
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0011.0000
+|
+P-0-0482
+Patch function 1: Bit mask
+00000000001100100000000000000001
+--
+--
+--
+0xFFFFFFFF
+|
+P-0-0483
+Patch function 1: Exponent
+00000000001000010000000000000001
+--
+-32
+32
+0
+|
+P-0-0486
+Patch function 2: Source pointer
+00000000001100100000000000000001
+--
+--
+--
+0x00000000
+|
+P-0-0487
+Patch function 2: Attribute
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0011.0000
+|
+P-0-0488
+Patch function 2: Bit mask
+00000000001100100000000000000001
+--
+--
+--
+0xFFFFFFFF
+|
+P-0-0489
+Patch function 2: Exponent
+00000000001000010000000000000001
+--
+-32
+32
+0
+|
+P-0-0492
+Symbol-based patch function 1: Data source
+00000000010001000000000000000001
+--
+--
+--
+0 256 
+|
+P-0-0494
+Symbol-based patch function 2: Data source
+00000000010001000000000000000001
+--
+--
+--
+0 256 
+|
+P-0-0496
+Symbol-based patch function 3: Data source
+00000000010001000000000000000001
+--
+--
+--
+0 256 
+|
+P-0-0498
+Symbol-based patch function 4: Data source
+00000000010001000000000000000001
+--
+--
+--
+0 256 
+|
+P-0-0505
+Motor temperature monitoring: Lower limit
+01100001001000010000000000000001
+-ÝC
+-50.0
+400.0
+-19.9
+|
+P-0-0506
+Ident. commutation offset saturation method: Amplitude
+00000000000100010000000000000001
+V
+0
+1000
+0
+|
+P-0-0507
+Ident. commutation offset saturation method: Frequency
+00000000000100010000000000000001
+Hz
+0
+1000
+500
+|
+P-0-0508
+Commutation offset: Value
+01100000000100010000000000000001
+--
+0
+1024
+321
+|
+P-0-0509
+Commutation offset: Coarse value
+00000000000100010000000000000001
+--
+0
+1024
+0
+|
+P-0-0510
+Motor basic data: Rotor inertia
+01100111000100100000000000000001
+kgm-Ý
+0.0000000
+429.4967295
+0.0001600
+|
+P-0-0512
+Motor temperature sensor: Type
+01100000000100010000000000000001
+--
+0
+--
+18
+|
+P-0-0513
+Motor temperature sensor: Charact. values
+01100000000101100000000000000001
+Ohm
+0
+500000000
+120
+120
+842
+882
+921
+960
+1000
+1039
+1077
+1116
+1157
+1193
+1232
+1270
+1308
+1347
+1385
+1422
+1460
+1498
+1535
+1573
+1610
+1647
+1684
+1721
+1758
+1795
+1831
+1868
+1904
+1940
+|
+P-0-0514
+Ident. commutation offset sine-wave method: Amplitude
+00000000000100010000000000000001
+%
+0
+1000
+0
+|
+P-0-0515
+Commutation offset: Value 2
+00000000000100010000000000000001
+--
+0
+1024
+0
+|
+P-0-0516
+Commutation function: Speed smoothing time constant
+00000000000100010000000000000001
+us
+0
+8000
+0
+|
+P-0-0517
+Ident. commutation offset saturation method: Harmonics rate
+00000001000100010000000000000001
+%
+1.0
+10.0
+4.0
+|
+P-0-0518
+Ident. commutation offset saturation method: Factor current
+00000010000100010000000000000001
+--
+0.00
+10.00
+0.00
+|
+P-0-0520
+Ident. commutation offset sine-wave method: Frequency
+00000000000100010000000000000001
+Hz
+0
+1000
+4
+|
+P-0-0522
+Ident. commutation offset: Control word
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0001.0000
+|
+P-0-0525
+Brake control: Configuration
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0528
+Induction motor control: Flux controller p-gain
+00000010000100010000000000000001
+--
+0.00
+100.00
+1.00
+|
+P-0-0529
+Induction motor control: Scaling of stall current limit
+00000000000100010000000000000001
+%
+10
+150
+100
+|
+P-0-0530
+Induction motor control: Slip increase
+01000010000100010000000000000001
+1/100K
+1.00
+2.00
+1.50
+|
+P-0-0532
+Induction motor control: Premagnetization factor
+00000000000100010000000000000001
+%
+10
+200
+100
+|
+P-0-0533
+Motor voltage control: Proportional gain
+00000011000100010000000000000001
+A/V
+0.000
+65.535
+0.011
+|
+P-0-0534
+Motor voltage control: Integral action time
+00000001000100010000000000000001
+ms
+0.0
+6553.5
+5.0
+|
+P-0-0535
+Motor voltage control: Voltage command value 2
+00000001000100010000000000000001
+%
+0.0
+100.0
+10.0
+|
+P-0-0536
+Motor voltage control: Voltage command value 1
+00000001000100010000000000000001
+%
+50.0
+100.0
+90.0
+|
+P-0-0537
+Motor thermal model: Configuration
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0540
+Brake control: Nominal brake torque
+01100011000100100000000000000001
+Nm
+0.000
+2147483.647
+0.000
+|
+P-0-1677
+Brake control economic: Release maintain voltage
+01100001000100010000000000000001
+V
+0.0
+24.0
+0.0
+|
+P-0-0545
+Brake check: Maximum static friction at released brake
+00000001001000010000000000000001
+%
+0.0
+409.2
+0.0
+|
+P-0-0547
+Brake check: Nominal load of holding system
+00000001001000010000000000000001
+%
+0.0
+409.2
+0.0
+|
+P-0-0548
+Brake check: Position window for brake check
+00000100001000100000000000000001
+mm
+0.0000
+5000.0000
+0.0000
+|
+P-0-0550
+Brake check interval: Time interval
+01000001000100100000000000000001
+s
+900.0
+604800.0
+28800.0
+|
+P-0-0553
+Brake check: Factor
+00000010000100010000000000000001
+--
+1.00
+100.00
+1.30
+|
+P-0-0556
+Axis configuration: Word
+01000000000000100000000000000001
+--
+--
+--
+0000.0000.0000.0000.0010.0000.0000.0001
+|
+P-0-0558
+Drive Halt: Configuration
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0559
+Position data scaling: Incremental scaling
+01100000000100100000000000000001
+Incr
+--
+--
+1048576
+|
+P-0-0560
+Actuator function: Configuration
+01100000000100010000000000000001
+--
+--
+--
+0
+|
+P-0-0564
+Acceleration limitation: Motor limit value
+01000011001000100000000000000001
+rad/s-Ý
+0.000
+2147483.647
+0.000
+|
+P-0-0568
+V/Hz (U/f) control: Voltage boost
+00000010001000010000000000000001
+V
+-50.00
+50.00
+0.00
+|
+P-0-0569
+V/Hz (U/f) control: Stator frequency slope, maximum value
+00000010000100100000000000000001
+Hz/s
+0.01
+3000.00
+200.00
+|
+P-0-0570
+V/Hz (U/f) control: Stall protection proportional gain
+00000010000100010000000000000001
+%
+0.00
+500.00
+100.00
+|
+P-0-0571
+V/Hz (U/f) control: Stall protection integral action time
+00000001000100010000000000000001
+ms
+0.0
+6500.0
+1.5
+|
+P-0-0572
+V/Hz (U/f) control: Slip compensation factor
+00000010000100010000000000000001
+%
+0.00
+320.00
+0.00
+|
+P-0-0573
+V/Hz (U/f) control: IxR boost factor
+00000010000100010000000000000001
+%
+0.00
+320.00
+0.00
+|
+P-0-0574
+V/Hz (U/f) control: Oscillation damping factor
+00000010001000010000000000000001
+%
+-320.00
+320.00
+0.00
+|
+P-0-0575
+V/Hz (U/f) velocity search: Current factor
+00000010000100010000000000000001
+%
+1.00
+320.00
+60.00
+|
+P-0-0576
+V/Hz (U/f) velocity search: Finding point slip factor
+00000010001000010000000000000001
+%
+-320.00
+320.00
+100.00
+|
+P-0-0577
+V/Hz (U/f) control: Square characteristic, lowering factor
+01000010000100010000000000000001
+%
+0.00
+100.00
+50.00
+|
+P-0-0578
+V/Hz (U/f) control: DC braking current
+01000011001000100000000000000001
+A
+0.000
+17.300
+0.000
+|
+P-0-0579
+V/Hz (U/f) control: DC braking time
+00000000000100010000000000000001
+ms
+0
+60000
+500
+|
+P-0-0591
+SVC control: Configuration
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-1692
+SVC control: Flux stabilization, damping factor
+00000010000100010000000000000001
+--
+0.00
+655.35
+0.50
+|
+P-0-1693
+SVC control: Limitation of flux stabilization
+00000010000100010000000000000001
+--
+0.00
+625.35
+10.00
+|
+P-0-1694
+SVC control: Current controller, p-gain adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+1.00
+|
+P-0-1695
+SVC control: Current controller, Tn adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+1.00
+|
+P-0-1696
+SVC control: Velocity feedback filter time
+00000010000100010000000000000001
+ms
+0.00
+625.25
+4.00
+|
+P-0-1697
+SVC control: Motor resistance adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+1.00
+|
+P-0-1698
+SVC control: Motor inductance adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+1.00
+|
+P-0-1699
+SVC control: EMF adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+1.00
+|
+P-0-1700
+SVC control: Low velocity threshold adjustment
+00000010000100010000000000000001
+--
+0.00
+625.35
+1.00
+|
+P-0-1701
+SVC control: Load-dependent standstill current increase gain
+00000010000100010000000000000001
+%
+0.00
+625.35
+0.00
+|
+P-0-1702
+SVC control: Velocity controller, p-gain adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+0.12
+|
+P-0-1703
+SVC control: Velocity controller, Tn adjustment factor
+00000010000100010000000000000001
+--
+0.00
+625.35
+8.10
+|
+P-0-1704
+SVC control: Current at standstill
+00000011000100100000000000000001
+A
+0.000
+20000.000
+0.000
+|
+P-0-1705
+SVC control: Low velocity range, maximum frequency slope
+00000010000100100000000000000001
+Hz/s
+0.00
+42949672.95
+10.00
+|
+P-0-1706
+SVC control: Heavy starting, gain
+00000010000100100000000000000001
+--
+0.00
+42949672.95
+0.00
+|
+P-0-0600
+Induction motor data: Rated slip frequency
+00000010000100010000000000000001
+Hz
+0.00
+100.00
+0.10
+|
+P-0-0601
+Motor data identification: Configuration
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-0614
+V/Hz (U/f) control: User-defined characteristics, freq.
+01000001000101010000000000000001
+Hz
+0.0
+599.9
+8
+8
+0.0
+50.0
+50.0
+50.0
+|
+P-0-0615
+V/Hz (U/f) control: User-defined characteristics, voltages
+01000001000101010000000000000001
+V
+0.0
+540.0
+8
+8
+0.0
+400.0
+400.0
+400.0
+|
+P-0-0640
+Motor thermal model 1 config.: Cooling type
+01000000000100010000000000000001
+--
+0
+4
+0
+|
+P-0-0641
+Position command filter: Time const., internal interpolation
+00000000000100100000000000000001
+us
+0
+1024000
+0
+|
+P-0-2252
+ABG filter: Factor alpha
+01100110001000100000000000000001
+--
+0.000000
+1.000000
+0.300000
+|
+P-0-2253
+ABG filter: Factor beta
+01100110001000100000000000000001
+--
+0.000000
+1.000000
+0.009000
+|
+P-0-2254
+ABG filter: Factor gamma
+01100110000100100000000000000001
+--
+0.000000
+1.000000
+0.000000
+|
+P-0-2255
+ABG filter: Tolerance window
+00000000001101100000000000000001
+--
+--
+--
+8
+8
+0x00000000
+0x00000000
+|
+P-0-2256
+ABG filter: Control word
+01100000001100010000000000000001
+--
+--
+--
+0x0000
+|
+P-0-2261
+ABG filter: Velocity limitation value
+00000000000100100000000000000001
+--
+0
+2147483647
+0
+|
+P-0-2262
+ABG filter: Acceleration limitation value
+00000000000100100000000000000001
+--
+0
+2147483647
+0
+|
+P-0-0834
+Brake resistor: Switching threshold, command value
+01100000000100010000000000000001
+V
+--
+--
+820
+|
+P-0-0853
+Motor basic data: Max. DC bus voltage
+01100001001000010000000000000001
+V
+420.0
+1500.0
+900.0
+|
+P-0-0858
+Brake resistor external: Type data
+01100100000101100000000000000001
+--
+--
+--
+12
+12
+0.0000
+0.0000
+0.0000
+|
+P-0-0860
+Power supply, device: Configuration word
+01100000000000100000000000000001
+--
+--
+--
+0000.0000.0000.0011.0000.0000.0000.0000
+|
+P-0-1120
+Velocity control loop filter: Filter type
+00000000000101010000000000000001
+--
+0
+4
+6
+6
+3
+0
+0
+|
+P-0-1121
+Velocity control loop filter: Limit frequency of low pass
+00000001000101010000000000000001
+Hz
+4.0
+3800.0
+16
+16
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+|
+P-0-1122
+Velocity control loop filter: Bandwidth
+00000001000101010000000000000001
+Hz
+10.0
+1000.0
+16
+16
+1000.0
+1000.0
+1000.0
+1000.0
+1000.0
+1000.0
+1000.0
+1000.0
+|
+P-0-1123
+Velocity control loop filter: Center frequency
+00000001000101010000000000000001
+Hz
+4.0
+3800.0
+16
+16
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+3800.0
+|
+P-0-1124
+Velocity control loop filter: Notch depth
+00000000000101010000000000000001
+dB
+--
+--
+16
+16
+48
+48
+48
+48
+48
+48
+48
+48
+|
+P-0-1125
+Velocity control loop filter: Drop
+00000000000101010000000000000001
+dB
+--
+--
+16
+16
+0
+0
+0
+0
+0
+0
+0
+0
+|
+P-0-1126
+Acceleration feedforward: Gain velocity control loop
+00000100000100100000000000000001
+mNm/(rad/s-Ý)
+0.0000
+429496.7295
+0.0000
+|
+P-0-1140
+Velocity control loop filter: Numerator natural frequency
+00000001000101010000000000000001
+Hz
+0.0
+4000.0
+16
+16
+1718.7
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+|
+P-0-1141
+Velocity control loop filter: Denominator natural frequency
+00000001000101010000000000000001
+Hz
+0.0
+4000.0
+16
+16
+1718.7
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+|
+P-0-1142
+Velocity control loop filter: Numerator damping
+00000100000101100000000000000001
+--
+0.0000
+10.0000
+32
+32
+0.0020
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+|
+P-0-1143
+Velocity control loop filter: Denominator damping
+00000100000101100000000000000001
+--
+0.0000
+10.0000
+32
+32
+0.5000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+|
+P-0-1152
+Cmd value generator: Target parameter assignment
+00000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+P-0-1153
+Cmd value generator: Control word
+00000000001100010000000000000001
+--
+--
+--
+0x0001
+|
+P-0-1154
+Cmd value generator: Offset
+00000100001000100000000000000001
+--
+-214748.3648
+214748.3647
+0.0000
+|
+P-0-1155
+Cmd value generator: Amplitude
+00000100001000100000000000000001
+--
+-214748.3648
+214748.3647
+0.0000
+|
+P-0-1156
+Cmd value generator: Signal period 1
+00000011000100100000000000000001
+s
+0.000
+4294967.295
+0.000
+|
+P-0-1157
+Cmd value generator: Signal period 2
+00000011000100100000000000000001
+s
+0.000
+4294967.295
+0.000
+|
+P-0-1158
+Cmd value generator: Periodic time
+00000011000100100000000000000001
+s
+0.000
+4294967.295
+10.000
+|
+P-0-1201
+Velocity profile: Acceleration 1
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+0.000
+|
+P-0-1202
+Velocity profile: Final speed 1
+00000011001000100000000000000001
+mm/min
+0.000
+30500.000
+0.000
+|
+P-0-1203
+Velocity profile: Acceleration 2
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+0.000
+|
+P-0-1211
+Velocity profile: Deceleration 1
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+0.000
+|
+P-0-1213
+Velocity profile: Deceleration 2
+00000011001000100000000000000001
+mm/s-Ý
+0.000
+500000.000
+0.000
+|
+P-0-1220
+Velocity control mode: Configuration
+01000000000000010000000000000001
+--
+0b0000.0000.0000.0000
+0b0000.0000.0000.0001
+0000.0000.0000.0001
+|
+P-0-1222
+Velocity profile: Filter time constant
+00000000000100010000000000000001
+ms
+0
+10000
+0
+|
+P-0-1451
+Easy Startup/techfunc mode positioning: Velocity
+00000011000100100000000000000001
+mm/min
+--
+--
+600.000
+|
+P-0-1452
+Easy Startup/techfunc mode positioning: Acceleration
+00000011001000100000000000000001
+mm/s-Ý
+--
+--
+2000.000
+|
+P-0-1453
+Easy Startup/techfunc mode positioning: Deceleration
+00000011001000100000000000000001
+mm/s-Ý
+--
+--
+2000.000
+|
+P-0-1456
+Easy Startup/techfunc mode positioning: Jerk
+00000011001000100000000000000001
+mm/s-Ý
+--
+--
+0.000
+|
+P-0-1461
+Easy Startup/techfunc mode velocity: Acceleration ramp
+00000011001000100000000000000001
+mm/s-Ý
+--
+--
+500.000
+|
+P-0-1463
+Easy Startup/techfunc mode velocity: Deceleration ramp
+00000011001000100000000000000001
+mm/s-Ý
+--
+--
+500.000
+|
+P-0-1466
+Easy Startup/techfunc mode torque/force: Ramp
+00000001001000010000000000000001
+%
+--
+--
+0.0
+|
+P-0-1467
+Easy Startup/techfunc mode torque/force: Ramp time
+00000001000100010000000000000001
+ms
+--
+--
+0.0
+|
+P-0-1480
+Easy Startup/techfunc mode velocity: Control word
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0001.0110
+|
+P-0-1481
+Easy Startup/techfunc mode velocity: Ramp
+00000011001000100000000000000001
+mm/min
+--
+--
+2000.000
+|
+P-0-1482
+Easy Startup/techfunc mode: Travel distance
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+0.0000
+|
+P-0-1483
+Easy Startup/techfunc mode: Dwell time
+00000011001000100000000000000001
+s
+--
+--
+0.200
+|
+P-0-1484
+Easy Startup/techfunc mode: End position, positive
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+5.0000
+|
+P-0-1485
+Easy Startup/techfunc mode: End position, negative
+00000100001000100000000000000001
+mm
+-5000.0000
+5000.0000
+-5.0000
+|
+P-0-1862
+DRIVElink function: Configuration
+01100000001100010000000000000001
+--
+--
+--
+0x0000
+|
+P-0-1864
+DRIVElink function: Target State in CM
+00000000000100010000000000000001
+--
+0
+4
+4
+|
+P-0-1865
+DRIVElink connection 2: Consumer data, topology index
+00000000000101010000000000000001
+--
+0
+9
+2
+8
+0
+|
+P-0-2290
+Extrapolator: Input value
+01100000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+P-0-2291
+Extrapolator: Number of steps
+01100000000100010000000000000001
+--
+0
+3
+0
+|
+P-0-1714
+Optional firmware functions: Selection
+01100000001101100000000000000001
+--
+--
+--
+0
+128
+|
+P-0-2207
+Brake delay time, type plate: Drive Off
+01100000000100100000000000000001
+ms
+--
+--
+0
+|
+P-0-1783
+Analog input 1: Control word
+01000000000000010000000000000001
+--
+--
+--
+0000.0001.0010.0000
+|
+P-0-1784
+Analog input 1: Target parameter
+01000000010100010000000000000001
+--
+--
+--
+S-0-0000
+|
+P-0-1785
+Analog input 1: Nominal value
+01000000001000100000000000000001
+--
+--
+--
+0
+|
+P-0-1786
+Analog input 1: Offset
+01000000001000100000000000000001
+--
+--
+--
+0
+|
+P-0-1787
+Analog input 1: Filter time
+01000011000100010000000000000001
+ms
+1.000
+65.535
+1.000
+|
+P-0-1788
+Analog input 1: Lower limit of signal range
+01000011001000010000000000000001
+V
+-10.000
+10.000
+-10.000
+|
+P-0-1789
+Analog input 1: Upper limit of signal range
+01000011001000010000000000000001
+V
+-10.000
+10.000
+10.000
+|
+P-0-3480
+Analog input 1: Wire break threshold
+00000011000100010000000000000001
+V
+0.000
+10.000
+0.000
+|
+P-0-1791
+Analog input function: Control word adjustment
+00000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-1793
+Analog input function: Maximum value for adjustment
+00000000001000100000000000000001
+--
+--
+--
+0
+|
+P-0-1733
+Motor cooling: Fan switch-on temperature
+01100001001000010000000000000001
+-ÝC
+-50.0
+400.0
+0.0
+|
+P-0-1734
+Motor temperature monitoring: Speed-dependent reduction
+01100001000100010000000000000001
+-ÝC
+0.0
+6553.5
+7.4
+|
+P-0-1735
+Motor thermal model 2 config.: Mounting method
+01100000000100010000000000000001
+--
+0
+2
+1
+|
+P-0-1736
+Motor temperature monitoring: Shutdown reduction/1000rpm
+01100001000101010000000000000001
+-ÝC
+--
+--
+6
+6
+11.5
+7.4
+6.5
+|
+P-0-1748
+Motor temperature sensor: Coefficients
+01100000011001100000000000000001
+--
+--
+--
+28
+28
+0
+0
+0
+0
+0
+0
+0
+|
+P-0-1737
+Motor thermal model 2 config.: Charact. values
+01100100001001100000000000000001
+--
+--
+--
+16
+16
+1.7730
+2.2590
+18.5000
+44.0000
+|
+P-0-3940
+Reluctance motor data: Torque at nominal current
+01100011000100100000000000000001
+Nm
+0.000
+4294967.295
+0.000
+|
+P-0-3941
+Reluctance motor data: Torque at maximum current
+01100011000100100000000000000001
+Nm
+0.000
+4294967.295
+0.000
+|
+P-0-3942
+Reluctance motor data: Angle at nominal current
+01100001000100010000000000000001
+Deg
+0.0
+6553.5
+0.0
+|
+P-0-3943
+Reluctance motor data: Angle at maximum current
+01100001000100010000000000000001
+Deg
+0.0
+6553.5
+0.0
+|
+P-0-3944
+Reluctance motor data: Torque at maximum current w/o reluct.
+01000011000100100000000000000001
+Nm
+0.000
+4294967.295
+0.000
+|
+P-0-3945
+Motor control function: Configuration 2
+00000000001100010000000000000001
+--
+--
+--
+0x0801
+|
+P-0-4002
+Synchron. motor data: Charact. of q-ind., factor inductances
+01100011000101010000000000000001
+--
+0.000
+30.000
+8
+8
+1.007
+0.806
+0.556
+0.444
+|
+P-0-4003
+Synchron. motor data: Charact. of q-ind., factor currents
+01100011000101010000000000000001
+--
+0.000
+30.000
+8
+8
+0.833
+2.222
+3.889
+4.806
+|
+P-0-4004
+Induction motor data: Magnetizing current
+01100011000100100000000000000001
+A
+--
+--
+0.500
+|
+P-0-4005
+Synchron. motor data: Direct current limit value
+01100011001000100000000000000001
+A
+--
+--
+-6.700
+|
+P-0-4010
+Axis mechanical data: Load inertia
+00000111000100100000000000000001
+kgm-Ý
+--
+--
+0.0003593
+|
+P-0-1761
+EtherCAT bus: Syncmanager for diagnostics
+00000000000100010000000000000001
+--
+--
+--
+2
+|
+P-0-4013
+Synchron. motor data: Current limit of demagnetization
+01100000000100010000000000000001
+%
+100
+150
+120
+|
+P-0-4014
+Motor basic data: Type of construction
+01100000000000010000000000000001
+--
+--
+--
+0001.0100.0000.0110
+|
+P-0-4015
+Synchron. motor data: Voltage constant
+01100100000100100000000000000001
+V
+0.0000
+429496.7295
+0.0000
+|
+P-0-4016
+Synchron. motor data: Direct-axis inductance
+01100011000100100000000000000001
+mH
+0.000
+4294967.295
+14.400
+|
+P-0-4017
+Synchron. motor data: Q-inductance
+01100011000100100000000000000001
+mH
+0.000
+4294967.295
+14.400
+|
+P-0-4032
+Motor, type plate: Data
+01100011000101100000000000000001
+--
+0.000
+250000.000
+24
+24
+4.000
+380.000
+50.000
+925.000
+0.760
+1.500
+|
+P-0-4034
+Motor thermal model 1 config.: Time const., motor winding
+01100001000100010000000000000001
+s
+0.0
+3276.7
+0.0
+|
+P-0-4035
+Motor thermal model 1 config.: Time const., motor housing
+01100001000100010000000000000001
+min
+0.0
+3276.7
+0.0
+|
+P-0-4036
+Motor basic data: Rated speed
+01100100000100100000000000000001
+rpm
+0.0000
+250000.0000
+0.0000
+|
+P-0-4037
+Motor thermal model 1 config.: Intermittent overload factor
+01100001000100010000000000000001
+--
+1.0
+4.5
+2.2
+|
+P-0-4039
+Induction motor data: Stator leakage inductance
+01100011000100100000000000000001
+mH
+0.001
+4294967.295
+5.000
+|
+P-0-4040
+Induction motor data: Rotor leakage inductance
+01100011000100100000000000000001
+mH
+0.001
+4294967.295
+5.000
+|
+P-0-4041
+Induction motor data: Motor magnetizing inductance
+01100011000100100000000000000001
+mH
+0.010
+4294967.295
+50.000
+|
+P-0-4042
+Induction motor data: Charact. of magn. inductance
+01100011000101010000000000000001
+--
+0.500
+2.000
+18
+18
+1.000
+1.000
+1.000
+1.000
+1.000
+1.000
+1.000
+1.000
+1.000
+|
+P-0-4043
+Induction motor data: Rotor time constant
+00000011000100100000000000000001
+ms
+0.100
+10000.000
+100.000
+|
+P-0-4044
+Motor choke: Phase inductance
+01100011000100100000000000000001
+mH
+0.001
+4294967.295
+0.001
+|
+P-0-4048
+Motor basic data: Stator resistance
+01100011000100100000000000000001
+Ohm
+0.000
+2000.000
+4.870
+|
+P-0-3748
+Password: Configuration
+00000000001100010000000000000001
+--
+--
+--
+0x0000
+|
+P-0-3749
+Password: Hash value
+01000000001101000000000000000001
+--
+--
+--
+12
+32
+0x30
+0x30
+0x37
+0x00
+0x4D
+0x79
+0x52
+0x6E
+0x64
+0x53
+0x00
+0x00
+|
+P-0-4084
+Drive profile function: Selected
+01100000001100010000000000000001
+--
+--
+--
+0x0002
+|
+P-0-2780
+Drive profile function: Configuration
+01100000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-4088
+Subdevice STM: Master communication configuration
+01000000000000010000000000000001
+--
+--
+--
+0000.0000.0000.0000
+|
+P-0-2310
+MCI configuration: Master communication, protocol
+01100000000100100000000000000001
+--
+--
+--
+5
+|
+P-0-2311
+MCI identification: Device name
+00000000010001000000000000000001
+--
+--
+--
+0 0 
+|
+P-0-2757
+EtherCAT bus: SII Configured Station Alias
+00000000000100010000000000000001
+--
+--
+--
+0
+|
+P-0-0195
+Process data, retain: IDN list of retain data
+01110000010101010000000000000001
+--
+--
+--
+18
+24
+S-0-0430
+S-0-2019
+P-0-0177
+P-0-3819
+P-0-0178
+P-0-3919
+P-0-1738
+P-0-1739
+P-0-1741
+|
+S-0-0430
+Positioning profile: Effective target position
+01100100001000100000000000000001
+mm
+--
+--
+0.0000
+|
+S-0-2019
+Mains measurement: Long-term energy counter
+00000010001000100000000000000001
+kWh
+--
+--
+45.36
+|
+P-0-0177
+Absolute encoder buffer ENC_1: Retain data
+01100000001101100000000000000001
+--
+--
+--
+44
+44
+0x0044C020
+0x2FC70000
+0xFFEACA54
+0xA9DF0000
+0xFFFBE13F
+0x98F3C15A
+0x00000000
+0x00B3325C
+0x00000000
+0x00000000
+0x00000000
+|
+P-0-3819
+Absolute encoder buffer ENC_1: Static data
+01100000001101100000000000000001
+--
+--
+--
+52
+52
+0x00000001
+0x9736F4E5
+0x00000000
+0x3E800000
+0x00000000
+0x00000000
+0x41A86A00
+0x02FAF080
+0x00000041
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+|
+P-0-0178
+Absolute encoder buffer ENC_2: Retain data
+01100000001101100000000000000001
+--
+--
+--
+0
+44
+|
+P-0-3919
+Absolute encoder buffer ENC_2: Static data
+01100000001101100000000000000001
+--
+--
+--
+52
+52
+0x00000000
+0x5AA55AA5
+0x5AA55AA5
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+|
+P-0-1738
+Module/firmware history: Time stamp
+00000000011101110000000000000001
+--
+--
+--
+256
+256
+2024-07-31T15:16:21.886031215Z
+2024-07-31T14:32:13.038589050Z
+2024-07-31T18:32:38.900918569Z
+2000-01-01T00:00:05.209508470Z
+2000-01-01T00:00:07.574999730Z
+2000-01-01T00:02:38.928390550Z
+2022-02-09T07:20:55.799912980Z
+2021-11-11T15:18:05.338162302Z
+2021-11-11T14:40:25.117287649Z
+2021-11-11T14:40:25.117287649Z
+2021-11-11T14:40:25.117287649Z
+2021-11-11T14:40:25.117287649Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+1970-01-01T00:00:00.000000000Z
+|
+P-0-1739
+Module/firmware history: Component designation
+00000000010001000000000000000001
+--
+--
+--
+993 1024 20.12,7162554084075;            V-0402N-NN-04;                  20.12,;                         V-0402N-NN-03;                  V-0312N-NN.00;                  20.12,7162554084075;            V-0306N-NN.02;                  20.12,;                         20.12,7260417762427;            1.12,7260420578198;             0.12,7260420578191;             V-0304N-NN.00;                  ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;                               ;
+|
+P-0-1741
+Module/firmware history: Cause of error
+00000000001101100000000000000001
+--
+--
+--
+128
+128
+0x070F2807
+0x000F4034
+0x000F4034
+0x000F4034
+0x000F4034
+0x070F2807
+0x00000000
+0x00000000
+0x070F2804
+0x070F2804
+0x070F2804
+0x070F2804
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+0x00000000
+|
+P-0-3839
+Control section data: Axis type data in device
+01110000001101100000000000000001
+--
+--
+--
+68
+252
+0x00010001
+0x0000003C
+0x0000000C
+0x00080008
+0x2D525443
+0x53495841
+0x00018A8D
+0x70150001
+0x00040004
+0x00010001
+0x00028A8D
+0x70150001
+0x00040004
+0x00010001
+0x002B8A32
+0x70620001
+0x40400000
+
