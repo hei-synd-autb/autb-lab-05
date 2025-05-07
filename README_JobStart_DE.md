@@ -376,7 +376,7 @@ Klicken Sie mit der rechten Maustaste, um die Daten anzuzeigen:
 > Sie können die im Anhang bereitgestellten PLC- und Node-RED-Programme verwenden, um den Betrieb in den Zuständen **Auto** und **Execute** zu überprüfen.
 
 ## Bereiten Sie eine Bewegung mit vor
-$\ +/- 50 [mm]$ mit einer Geschwindigkeit von $\ 0.3 [m/s]$ und einer Beschleunigung von $\ 1 [m/s^2] $.
+$\ +/- 50 [mm]$ mit einer Geschwindigkeit von $\ 0.04 [m/s]$ und einer Beschleunigung von $\ 1 [m/s^2] $.
 - Stärke in Rot
 - Geschwindigkeit in Blau
 - Die Position in Grün

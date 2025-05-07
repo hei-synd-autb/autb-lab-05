@@ -380,7 +380,7 @@ Utiliser click droit pour visualiser les données :
 > Vous pouvez utiliser les programmes PLC et Node-RED fournis en annexe pour vérfier le fonctionnemet en état **Automatic** et **Execute**.
 
 ## Préparer un mouvement avec
-$\ +/- 50 [mm]$ avec une vitesse de $\ 0.3 [m/s]$ et une accélération de $\ 1 [m/s^2] $.
+$\ +/- 50 [mm]$ avec une vitesse de $\ 0.04 [m/s]$ et une accélération de $\ 1 [m/s^2] $.
 -   La force en rouge
 -   La vitesse en bleu
 -   La position en vert
