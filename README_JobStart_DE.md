@@ -32,11 +32,13 @@ Diese Software wurde entwickelt, um:
 
 Schließen Sie das Laufwerk über USB-C an und verwenden Sie die X-Achse. Möglich ist dies, indem Sie Ihren eigenen PC verwenden, um den Labor-PC für andere Aufgaben freizuhalten.
  
+ <div style="text-align: center;">
 <figure>
     <img src="./img/DriveSelectConnection.png"
          alt="Image lost: DriveSelectConnection.png">
     <figcaption>Connection to drive with USB-C</figcaption>
 </figure>
+</div>
 
 > Es ist möglich, auf verschiedene Arten eine Verbindung herzustellen.
 
@@ -46,6 +48,8 @@ Sichern Sie die aktuellen Einstellungen, damit Sie sie bei Bedarf wiederherstell
 Vor dem Speichern der Parameter wechseln Sie am besten in den PM-Modus, den Parametermodus. Dazu darf der Motor spannungsfrei sein.
 
 SelectParameterMode
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/SelectParameterMode.png"
          alt="Image lost: SelectParameterMode">
@@ -57,6 +61,7 @@ SelectParameterMode
          alt="Image lost: /img/Save_Backup_Parameters.png">
     <figcaption>Save a backup of drive parameters to restore them if needed</figcaption>
 </figure>
+</div>
 
 Die Parameter sind nach dem [Sercos](https://www.sercos.org)-System nummeriert.
 Auf eine Vielzahl von Parametern kann in Echtzeit oder Nicht-Echtzeit, lesend oder schreibend, zugegriffen werden. Bestimmte Parameter können nur geändert werden, wenn der Motor kein Drehmoment mehr hat oder sich der Antrieb im Parametermodus befindet.
@@ -66,48 +71,58 @@ Auf eine Vielzahl von Parametern kann in Echtzeit oder Nicht-Echtzeit, lesend od
 
 Stellen Sie nach dem Archivieren der Einstellungen den OM-Modus wieder her.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ActivateOperatingMode.png"
          alt="Image lost: ActivateOperatingMode">
     <figcaption>Restore OM Operating Mode</figcaption>
 </figure>
+</div>
 
 # Scaling
 Um die Encoderposition in anwendungsgerechte Einheiten umrechnen zu können, muss die Achse die mechanischen Parameter des Systems kennen.
 
 In unserem Fall wird die Position des Encoders unter anderem in mm für die lineare Position der X-Achse umgerechnet.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/AxisMechanicalScaling.png"
          alt="Image lost: AxisMechanicalScaling">
     <figcaption>Go to Axis Mechanical Scaling</figcaption>
 </figure>
+</div>
 
-Um die Ergebnisse leichter interpretierbar zu machen, ändern wir einen Parameter, sodass das System das Motordrehmoment in eine Kraft umwandelt, um die lineare Kraft am Ausgang der Kugelumlaufspindel abzulesen.
+Um die Ergebnisse leichter interpretierbar zu machen, ändern wir einen Parameter, sodass das System das Motordrehmoment in eine Kraft umwandelt, um die lineare Kraft am Ausgang der Kugelumlaufspindel abzulesen. **Vorsicht mit der Geschwindigkeit**, hier arbeiten wir in $\ [m/s]$.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ChangeScalingToForce.png"
          alt="Image lost: /img/ChangeScalingToForce">
     <figcaption>Change scaling to force</figcaption>
 </figure>
+</div>
 
 Es ist zu beachten, dass ein Wechsel der Einheit unter keinen Umständen möglich ist. Die Achse muss sich im **CM**-Modus, **Configuration Mode**, befinden, um eine Änderung der Einheit zuzulassen.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ConfigurationMode.png"
          alt="Image lost: GoToParameterModeAgain">
     <figcaption>You must be in Configuration Mode to modify a scaling parameter</figcaption>
 </figure>
+</div>
 
 ## Grenzen ändern
 Das System weiß nicht, wie Grenzwerte beim Ändern der Einheit von Drehmoment in Kraft korrekt umgerechnet werden.
 Sie müssen die Kraftgrenzen ändern, sonst können Sie die Achse nicht verwenden!
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ParametersForLimits.png"
          alt="Image lost: ParametersForLimits">
     <figcaption>Display some parameters used for this lab</figcaption>
 </figure>
+</div>
 
 Sie können die Liste der anzuzeigenden Parameter speichern. Dateityp ipg.
 Sie können auch die mit den Dokumenten bereitgestellte Datei verwenden, siehe: ``..\ctrlxDriveFiles\WatchListForTuning.ipg``.
@@ -137,6 +152,7 @@ Wir kennen die Eigenschaften des Kugelgewindetriebs.
 
 # Fahren Sie den Motor im manuellen Modus
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/EasyStartupMode.png"
          alt="Image lost: EasyStartupMode.png">
@@ -154,15 +170,18 @@ Wir kennen die Eigenschaften des Kugelgewindetriebs.
          alt="Image lost: EasyStartupModeFirstMotionPosition.png">
     <figcaption>Start your first motion in Drive Controlled positionning</figcaption>
 </figure>
+</div>
 
 # Trace data
 Zeichnen Sie eine klassische Kurve für Position, Geschwindigkeit, Beschleunigung oder Drehmoment und Spurfehler.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/OscilloscopeTraceYourData.png"
          alt="Image lost: OscilloscopeTraceYourData">
     <figcaption>Trace the motion of Easy Startup Mode</figcaption>
 </figure>
+</div>
 
 ## Parameter zum Anzeigen und Kommentieren:
 ``S-0-0084`` Stärke
@@ -170,6 +189,7 @@ Zeichnen Sie eine klassische Kurve für Position, Geschwindigkeit, Beschleunigun
 ``S-0-0040`` Geschwindigkeit
 ``S-0-0189`` Tracking-Fehler
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/OscilloscopeTraceConfigureData.png"
          alt="Image lost: OscilloscopeTraceConfigureData">
@@ -181,6 +201,7 @@ Zeichnen Sie eine klassische Kurve für Position, Geschwindigkeit, Beschleunigun
          alt="Image lost: OscilloscopeScaleData">
     <figcaption>Scale data</figcaption>
 </figure>
+</div>
 
 # Statische Reibung.
 - Messen Sie die Kraft, die zur Überwindung der Haftreibung erforderlich ist.
@@ -195,11 +216,13 @@ Wie viel Kraft ist ungefähr nötig, um die dynamische Reibung zu überwinden?
 
 # Bei der manuellen Abstimmung handelt es sich um einen Vergleich mit der automatischen Abstimmung.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerOverview.png"
          alt="Image lost: VelocityControllerOverview">
     <figcaption>Velocity controller</figcaption>
 </figure>
+</div>
 
 1. Grenzwerte: Ermöglicht Ihnen, die Motorgeschwindigkeit zu begrenzen
 2. V-Loop-Filter: 2 oder 4 konfigurierbare Filter + 1 Tiefpassfilter
@@ -207,11 +230,13 @@ Wie viel Kraft ist ungefähr nötig, um die dynamische Reibung zu überwinden?
 4. S-0-0101: Komponente I, Tempomatintegral.
 5. S-0-0163: Gewichtskompensation, für Vertikalachsen
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerTransferFunction.png"
          alt="Image lost: VelocityControllerTransferFunction">
     <figcaption>Velocity controller transfer function</figcaption>
 </figure>
+</div>
 
 ## Verfahren
 ### Empirisches Setting
@@ -234,11 +259,13 @@ Erhöhen Sie die Verstärkung **allmählich**, bis das System zu vibrieren begin
 
 Grundsätzlich ist die Vibration hörbar, ansonsten sehen Sie sich das Signal ``S-0-0100`` auf dem Oszilloskop an.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerVibrationExample.png"
          alt="Image lost: VelocityControllerVibrationExample">
     <figcaption>Velocity controller vibration</figcaption>
 </figure>
+</div>
 
 - Verringern Sie die Verstärkung, bis die Vibration aufhört. Das ist der entscheidende Gewinn.
 - Teilen Sie den kritischen Gewinn durch 2.
@@ -261,11 +288,13 @@ Die Schwingung erscheint bei 0,6 und verschwindet bei 0,7. Der kritische Wert li
 ### Visualisierung mit dem Oszilloskop
 Dabei wird das Drehmoment in Rot und die Geschwindigkeit in Blau angezeigt.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerExample.png"
          alt="Image lost: VelocityControllerExample">
     <figcaption>Velocity controller example on the scope </figcaption>
 </figure>
+</div>
 
 - Die Skalen werden manuell angepasst, um in derselben Tabelle die beiden Werte für eine Drehzahl von 600 U/min anzuzeigen.
 - Wir sehen, dass die Drehzahl um weniger als 2 U/min < 0,5 % schwankt.
@@ -287,26 +316,35 @@ Start und automatische Skalierung bei Signalverfügbarkeit
 
 ## Vergleichen Sie mit Autotuning
 Merken Sie sich Ihre Werte von ``S-0-0100`` und ``S-0-0101`` und vergleichen Sie diese mit der automatischen Abstimmung.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/AutoTuning_1.png"
          alt="Image lost: AutoTuning_1">
     <figcaption>Start Auto-Tuning </figcaption>
 </figure>
+</div>
  
 Konfiguriert ohne Feed-Forward und ohne Filter.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/AutoTuning_2.png"
          alt="Image lost: AutoTuning_2">
     <figcaption>Continue in Expert Mode</figcaption>
 </figure>
+</div>
 
 **Do not** optimize position controller and frequency response.
 **Do not** optimize  acceleration feedforward.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/AutoTuning_3.png"
          alt="Image lost: AutoTuning_3">
     <figcaption>Select Handling and parameters to set</figcaption>
 </figure>
+</div>
  
 Ergebnisse ansehen und kommentieren
 
@@ -324,11 +362,14 @@ Versuchen Sie es mit Feed-Forward und vergleichen Sie
 > Es wäre besser, den Geschwindigkeitsmodus zu verwenden, aber dieser hat derzeit einen **Fehler** und bewegt sich auf einigen Maschinen nicht hin und her.
 
 Klicken Sie mit der rechten Maustaste, um die Daten anzuzeigen:
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/OscilloscopeShowCharValues.png"
          alt="Image lost: OscilloscopeShowCharValues">
     <figcaption>Show characteristic values</figcaption>
 </figure>
+</div>
 
 # Letzten Endes
 

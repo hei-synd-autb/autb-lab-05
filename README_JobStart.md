@@ -22,22 +22,26 @@ Ce logiciel est conçu pour:
 -   Piloter l'axe en mode manuel pour optimiser son comportement.
 -   Lancer une procédure de **Auto-Tuning**.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ctrlX Drive Engineering.png"
          alt="Image lost: ctrlX Drive Engineering">
     <figcaption>Use CtrlX Drive Engineering</figcaption>
 </figure>
+</div>
 
 # Connect
 
 Se connecter au drive avec USB-C, utiliser l'axe X. 
 Possible en utilisant son propre PC pour garder le PC labo libre pour d'autres tâches.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/DriveSelectConnection.png"
          alt="Image lost: DriveSelectConnection.png">
     <figcaption>Connection to drive with USB-C</figcaption>
 </figure>
+</div>
 
 > Il est possible de se connecter de différentes manières.
 
@@ -47,6 +51,8 @@ Sauvegarder les paramètres actuels pour pouvoir les restaurer si nécessaire.
 Avant de sauvegarder les paramètres, il est préférable de passer en mode PM, Parameter Mode. Pour cela, le moteur ne doit pas être sous tension.
 
 SelectParameterMode
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/SelectParameterMode.png"
          alt="Image lost: SelectParameterMode">
@@ -58,6 +64,7 @@ SelectParameterMode
          alt="Image lost: /img/Save_Backup_Parameters.png">
     <figcaption>Save a backup of drive parameters to restore them if needed</figcaption>
 </figure>
+</div>
 
 Les paramètres sont numérotés selon le système [Sercos](https://www.sercos.org).
 Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en lecture ou en écriture. Certains paramètres ne peuvent être modifiés que quand le moteur est hors couple, voir même quand le drive est en mode Parameter.
@@ -67,48 +74,58 @@ Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en le
 
 Après avec archivé les paramètres, restaurer le mode OM.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ActivateOperatingMode.png"
          alt="Image lost: ActivateOperatingMode">
     <figcaption>Restore OM Operating Mode</figcaption>
 </figure>
+</div>
 
 # Scaling
 L'axe doit connaitre les paramètres mécaniques du système pour pouvoir convertir la position du codeur en unités qui conviennent à l'application.
 
 Dans notre cas de figure, la position du codeur est convertie, entre autres, en mm pour la position linéaire de l'axe X.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/AxisMechanicalScaling.png"
          alt="Image lost: AxisMechanicalScaling">
     <figcaption>Go to Axis Mechanical Scaling</figcaption>
 </figure>
+</div>
 
-Pour faciliter l'interprétation des résultats, nous modifions un paramètre afin que le système convertisse le couple du moteur en Force pour la lecture de l'effort linéaire en sortie de la vis à bille.
+Pour faciliter l'interprétation des résultats, nous modifions un paramètre afin que le système convertisse le couple du moteur en Force pour la lecture de l'effort linéaire en sortie de la vis à bille. **Attention à la vitesse**, ici on travaille en $\ [m/s]$.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ChangeScalingToForce.png"
          alt="Image lost: /img/ChangeScalingToForce">
     <figcaption>Change scaling to force</figcaption>
 </figure>
+</div>
 
 Il faut noter qu'un changement d'unité ne peut pas se faire sous n'importe quelle condition. L'axe doit être en mode **CM**, **Configuration Mode**, pour autoriser un changement d'unité.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ConfigurationMode.png"
          alt="Image lost: GoToParameterModeAgain">
     <figcaption>You must be in Configuration Mode to modify a scaling parameter</figcaption>
 </figure>
+</div>
 
 ## Modification des limites
 Le système ne sait pas convertir correctement les limites lors du changement d'unités de couple vers force.
 Il faut modifier les limites de force, sous peine de ne pas réussir à utiliser l'axe !
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/ParametersForLimits.png"
          alt="Image lost: ParametersForLimits">
     <figcaption>Display some parameters used for this lab</figcaption>
 </figure>
+</div>
 
 Vous pouvez sauver la liste des paramètres à afficher. Fichier de type ipg.
 Vous pouvez aussi utiliser le fichier fournit avec les documents, voir: ``..\ctrlxDriveFiles\WatchListForTuning.ipg``.
@@ -136,6 +153,8 @@ On connait les caractéristiques de la vis à bille.
 |x   |565      |5.0        |0.3         |15            |8.22     |ccw |1   |
 
 # Piloter le moteur en mode manuel
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/EasyStartupMode.png"
          alt="Image lost: EasyStartupMode.png">
@@ -153,14 +172,18 @@ On connait les caractéristiques de la vis à bille.
          alt="Image lost: EasyStartupModeFirstMotionPosition.png">
     <figcaption>Start your first motion in Drive Controlled positionning</figcaption>
 </figure>
+</div>
 
 # Trace data
 Tracer une courbe classique Position, vitesse, accélération ou torque et erreur de poursuite.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/OscilloscopeTraceYourData.png"
          alt="Image lost: OscilloscopeTraceYourData">
     <figcaption>Trace the motion of Easy Startup Mode</figcaption>
 </figure>
+</div>
 
 ## Paramètres à visualiser et commenter:
 ``S-0-0084``	Force
@@ -168,6 +191,7 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
 ``S-0-0040``	Vitesse
 ``S-0-0189``	Erreur de poursuite
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/OscilloscopeTraceConfigureData.png"
          alt="Image lost: OscilloscopeTraceConfigureData">
@@ -179,6 +203,7 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
          alt="Image lost: OscilloscopeScaleData">
     <figcaption>Scale data</figcaption>
 </figure>
+</div>
 
 # Frottement statique.
 -   Mesurer la force nécessaire pour vaincre le frottement statique.
@@ -193,11 +218,13 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
 
 # Faire un tuning manuel est le comparer avec l’auto-tuning.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerOverview.png"
          alt="Image lost: VelocityControllerOverview">
     <figcaption>Velocity controller</figcaption>
 </figure>
+</div>
 
 1.	Limit Values : Permet de limiter la vitesse du moteur
 2.	V-loop Filter : 2 ou 4 filtres paramétrables + 1 filtre passe-bas
@@ -205,11 +232,13 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
 4.	S-0-0101 : Composante I, intégrale du régulateur de vitesse.
 5.	S-0-0163 : Compensation de poids, pour les axes verticaux
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerTransferFunction.png"
          alt="Image lost: VelocityControllerTransferFunction">
     <figcaption>Velocity controller transfer function</figcaption>
 </figure>
+</div>
 
 ## Procédure
 ### Réglage empirique
@@ -232,11 +261,13 @@ Augmenter **progressivement** le gain jusqu'à ce que le système commence à vi
 
 En principe, la vibration est audible, sinon, visualiser le signal ``S-0-0100`` sur l’oscilloscope.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerVibrationExample.png"
          alt="Image lost: VelocityControllerVibrationExample">
     <figcaption>Velocity controller vibration</figcaption>
 </figure>
+</div>
 
 -   Diminuer le gain jusqu'à ce que la vibration cesse. C’est le gain critique.
 -   Diviser le gain critique par 2.
@@ -259,11 +290,13 @@ L’oscillation apparaît à 0.6 et disparait à 0.7. La valeur critique est de 
 ### Visualisation avec l’oscilloscope
 Ici, affichage du couple en rouge et de la vitesse en bleu.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/VelocityControllerExample.png"
          alt="Image lost: VelocityControllerExample">
     <figcaption>Velocity controller example on the scope </figcaption>
 </figure>
+</div>
 
 -   Les échelles sont ajustées manuellement pour visualiser sur le même tableau les deux valeurs pour une vitesse de 600 rpm.
 -   On voit que la vitesse oscille de moins de 2 rpm < 0.5%
@@ -285,26 +318,35 @@ Commenter le graph
 
 ## Comparer avec l'auto tuning
         Mémorisez vos valeurs de S-0-0100 et ``S-0-0101`` et les comparer avec le tuning automatique.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/AutoTuning_1.png"
          alt="Image lost: AutoTuning_1">
     <figcaption>Start Auto-Tuning </figcaption>
 </figure>
+</div>
  
 Configuré sans feed-forward et sans filtre.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/AutoTuning_2.png"
          alt="Image lost: AutoTuning_2">
     <figcaption>Continue in Expert Mode</figcaption>
 </figure>
+</div>
 
 **Do not** optimize position controller and frequency response.
 **Do not** optimize  acceleration feedforward.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/AutoTuning_3.png"
          alt="Image lost: AutoTuning_3">
     <figcaption>Select Handling and parameters to set</figcaption>
 </figure>
+</div>
  
 Afficher les résultats et commenter
 
@@ -324,11 +366,14 @@ Essayer avec Feed-Forward et comparer
     Comparer avec les spécifications du moteur.
 
 Utiliser click droit pour visualiser les données :
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/OscilloscopeShowCharValues.png"
          alt="Image lost: OscilloscopeShowCharValues">
     <figcaption>Show characteristic values</figcaption>
 </figure>
+</div>
 
 # En finalité
 

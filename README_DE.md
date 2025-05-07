@@ -56,63 +56,84 @@ Dieser Laborarbeit geht eine Phase der Präsentation der verschiedenen Parameter
 Diese Präsentation beinhaltet:
 ## Power Supply
 Ermöglicht die Überprüfung der Stromversorgung der elektrischen Achse. Konfigurieren Sie es bei Bedarf.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BasePowerSupplyDC.png"
          alt="Image lost: BasePowerSupplyDC">
     <figcaption>Power Supply Mains connection overview</figcaption>
 </figure>
+</div>
 
 # Master Communication
 Hier konfigurieren wir die Kommunikation des Antriebs mit der SPS, hier über Ethercat. In unserem Fall erfolgt die Kommunikation innerhalb der X-Achsen-Hardware, da sie die SPS in ihren Prozessor integriert.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseMasterConnectionMDT.png"
          alt="Image lost: BaseMasterConnectionMDT">
     <figcaption>Cycle time and registers sent to the drive from PLC</figcaption>
 </figure>
+</div>
 
 # Motor Drive, mechanics and measuring system.
 Konfiguration von Motor, Encoder und Mechanik.
 
 Diese Parameterliste reicht im Allgemeinen aus, damit der Antrieb einen Motor steuern kann.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseMotorDataSheetMinimalSetOfParam.png"
          alt="Image lost: BaseMotorDataSheetMinimalSetOfParam">
     <figcaption>Motor parameters</figcaption>
 </figure>
+</div>
 
 *Beachten Sie den fehlenden Wert: Rated motor speed 3320 [rpm].*
 
 Für einen integrierten Rotationsmotor stellt das Temperaturmodell grundsätzlich kein Problem dar. Für Linearmotoren, deren thermische Zeitkonstante von der spezifischen Mechanik abhängt, muss es sehr fein konfiguriert werden.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseMotorTemperatureModel.png"
          alt="Image lost: BaseMotorTemperatureModel">
     <figcaption>Temperature model</figcaption>
 </figure>
+</div>
 
 In unserem Fall erübrigt sich die Konfiguration, da der Typ des digitalen Gebers beim Starten des Antriebs automatisch erkannt wird.
 
 Dieser Encodertyp speichert auch die Motorparameter, die er misst und beim Start an den Antrieb überträgt.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseMotorEncoder.png"
          alt="Image lost: BaseMotorEncoder">
     <figcaption>Motor encoder configuration</figcaption>
 </figure>
+</div>
 
 Diese Konfiguration ermöglicht es dem Antrieb unter anderem, Informationen vom Encoder in die Position entlang der Kugelumlaufspindel umzuwandeln.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseMotorAxisMechanics.png"
          alt="Image lost: BaseMotorAxisMechanics">
     <figcaption>Axis mechanic configuration</figcaption>
 </figure>
+</div>
 
 ## Operation modes
 Bei Ethercat wird die Achse im Positionsmodus gesteuert, auch wenn wir einen Funktionsblock vom Typ MC_MoveVelocity verwenden.
 Für Drehzahlen wie die unseres Motors bleibt diese Betriebsart akzeptabel, reicht aber für eine Hochgeschwindigkeits-Bearbeitungsspindel, die zehnmal schneller dreht, nicht aus.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseOperationModePosition.png"
          alt="Image lost: BaseOperationModePosition">
     <figcaption>Operation mode, position, velocity, torque and so on.</figcaption>
 </figure>
+</div>
 
 ## Limit values
 Ermöglicht den Schutz des Prozesses, der Mechanik und dann des Motors.
@@ -120,11 +141,14 @@ Ermöglicht den Schutz des Prozesses, der Mechanik und dann des Motors.
 Nachfolgend die für die Achsen des Automatisierungslabors der HES-SO Valais/Wallis vorgesehenen Grenzwerte.
 
 > Der Einbau von mechanischen Endschaltern würde das System nicht unbedingt robuster machen, da diese ebenso wie die internen Positionsgrenzen konfigurierbar sind.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseLimitValuesMotion.png"
          alt="Image lost: BaseLimitValuesMotion">
     <figcaption>Position and velocity limits</figcaption>
 </figure>
+</div>
 
 |Axe |Smax [mm]|u[mm/U]    |Vmax[m/s]   |amax [m/s2]   |Mmax[Nm] | d  |i   |
 |----|---------|-----------|------------|--------------|---------|----|----|
@@ -134,48 +158,59 @@ Nachfolgend die für die Achsen des Automatisierungslabors der HES-SO Valais/Wal
 
 Beachten Sie weiter unten, dass die Drehmomentgrenze eine direkte Beziehung zwischen dem maximal zulässigen Strom und der Motordrehmomentkonstante [Nm/A] ist.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseLimitsTorque.png"
          alt="Image lost: BaseLimitsTorque">
     <figcaption>Torque/Force limits</figcaption>
 </figure>
+</div>
 
 > Ändern Sie für das Labor die positiven Kraftgrenzwerte ``S-0-0082`` und die negativen ``S-0-0083`` in +1500 [N] und -1500 [S].
 
 ## Drive Control
 
 Die Parameter des Stromreglers werden vom Antrieb anhand der elektrischen Parameter des Motors geschätzt. Mit sehr seltenen Ausnahmen werden wir die Parameter dieses Reglers niemals ändern.
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseDriveControlMotorControlDependsOfMotor.png"
          alt="Image lost: BaseDriveControlMotorControlDependsOfMotor">
     <figcaption>Motor operation and configuration</figcaption>
 </figure>
+</div>
 
 Diese Methode wird verwendet, um die Position des Encoders relativ zu den Magneten zu bestimmen, falls diese Informationen nicht vom Motorlieferanten kalibriert werden konnten. Im Prinzip unbrauchbar für einen Rotationsmotor, oft unerlässlich für den Einsatz eines Linearmotors mit *selbstgebauter* Mechanik.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseDriveMotorCommutationSetting.png"
          alt="Image lost: BaseDriveMotorCommutationSetting">
     <figcaption>Commuation setting if position of encoder relative to magnets is unknown at startup</figcaption>
 </figure>
+</div>
 
 Die Hauptaufgabe des Automatisierungsingenieurs besteht darin, die richtigen P- und I-Parameter des Tempomaten zu finden
 .
 Der Parameter **Acceleration Feedforward** des Geschwindigkeitsreglers ist nur sinnvoll, wenn die Achse im Geschwindigkeitsmodus gefahren wird. Wir verweisen auf die Erläuterung dieses Parameters für den Positionsregler.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
          alt="Image lost: BaseDriveControlAxisControlVelocityDependsOfMechanic">
     <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
 </figure>
+</div>
 
 Wir arbeiten im Allgemeinen nur an der Verstärkung des Reglers, und diese bleibt in der Praxis oft bei **1**.
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/BaseDriveAxisPositionDependsOfProcess.png"
          alt="Image lost: BaseDriveAxisPositionDependsOfProcess">
     <figcaption>Settings of the position controller</figcaption>
 </figure>
+</div>
 
 ### Feed Forward
 Mit dem Parameter **Feed-Forward** können wir die Reaktionsfähigkeit des Systems anpassen. Ohne auf die Details der Übertragungsfunktion einzugehen, die ohnehin nicht im Programm der gesamten Klasse enthalten ist, können wir diesen Parameter intuitiv relativ einfach erklären.
