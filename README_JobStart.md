@@ -13,7 +13,30 @@ Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
 # LAB 05 (suite)
 Mise en service d'un axe électrique avec une vis à bille.
 
-Job starts with:
+## Before to start
+You have to remember that there is a motion controller between the PLC App and the Drive.
+That is: to modify velocity, acceleration and jerk from the User Interface using the PLC, you have to check if these values are not limited in the motion controller.
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/SetParametersInMotionApp.png"
+         alt="Image lost: SetParametersInMotionApp">
+    <figcaption>Limits in the Motion App.</figcaption>
+</figure>
+</div>
+
+De manière générale, si vous ne savez pas trop quelle valeur de base choisir, vous pouvez utiliser une règle simple basée sur l'expérience.
+
+\[
+acceleration = 10 \times velocity
+\]
+
+\[
+Jerk = 10 \times acceleration
+\]
+
+**As max admissible velocity for X axis is 0.3 [m/s], select max acceleration to 3 [m/s2] and max jerk to 30[m/s3].**
+
 
 # CtrlX Drive Engineering
 Ce logiciel est conçu pour:
@@ -153,6 +176,10 @@ On connait les caractéristiques de la vis à bille.
 |x   |565      |5.0        |0.3         |15            |8.22     |ccw |1   |
 
 # Piloter le moteur en mode manuel
+
+Attention: **ne pas utiliser le mode Velocity Control**. Pour les essais on est en mode Position. 
+
+> On peut essayer avec précaution le mode Torque Force pour estimer la force de nécessaire pour vaincre les frottements de l'axe X. A partir de 250 [N] environ.
 
 <div style="text-align: center;">
 <figure>
@@ -357,9 +384,9 @@ Essayer avec Feed-Forward et comparer
 
 # Frottement dynamique
 -   Mesurer la force nécessaire a faible vitesse constante
--   Utiliser le mode **Drive-controlled positioning**, mais sur +- 50 mm pour faire cette mesure, augmenter le temps de mesure sur la trace.
--   Faire des mesures à 600 mm/min
--   Puis 6000 mm/min (soit 100 mm/s)
+-   Utiliser le mode **Drive-controlled positioning**, mais sur $\ +- 50 [mm]$ pour faire cette mesure, augmenter le temps de mesure sur la trace.
+-   Faire des mesures à $\ 10 [mm/s]$
+-   Puis $\ 100 [mm/s]$ 
 
 > Il serait préférable d'utiliser le mode vitesse, mais celui-ci a actuellement un **bug** et ne fait pas de mouvement aller-retour sur certaines machines.
 
@@ -384,7 +411,7 @@ $\ +/- 50 [mm]$ avec une vitesse de $\ 0.04 [m/s]$ et une accélération de $\ 1
 -   La force en rouge
 -   La vitesse en bleu
 -   La position en vert
--   L'erreur de vitesse en noir
+-   L'erreur de position en noir
 
 ## Proposer votre tunning idéal, le justifier et le commenter
 Sachant que:
@@ -405,4 +432,8 @@ Sachant que:
 
 
 ## Ne pas quitter la salle avant d'avoir restauré les paramètres !
-## Après avoir chargé les paramètres, remettre le drive en mode **OM**, Operating Mode!
+
+Après avoir chargé les paramètres: 
+## remettre le drive en mode **OM**, Operating Mode!
+
+## Ne pas laisser le drive en Startup Mode, Merci !

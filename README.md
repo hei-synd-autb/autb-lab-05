@@ -40,7 +40,7 @@ John G. Ziegler et Nathaniel B. Nichols ont développé une méthode empirique p
 
 > la méthode de Ziegler-Nichols n'est pas toujours applicable et peut même s'avérer **dangereuse** sur des systèmes de forte puissance.
 
-Quelques paramètres qui sont souvent manquant pour permettre le calcul précis des paramètres d'une fonction de transfert:
+Quelques paramètres qui sont souvent manquants pour permettre le calcul précis des paramètres d'une fonction de transfert:
 
 -   frottements,
 -   vibrations,
@@ -155,7 +155,7 @@ Ci-dessous, les valeurs limites fournies pour les axes du laboratoire d'automati
 |y   |350      |5.0        |0.38        |15            |6.76     |ccw |1   |
 |z   |320      |5.0        |0.57        |15            |2.39     |cw  |1   |
 
-Noter ci-dessous, que la limite de couple est une relation directe entre le courant maximal admissible et la constante de couple du moteur [Nm/A].
+Noter ci-dessous, que la limite de couple est une relation directe entre le courant maximal admissible et la constante de couple du moteur $\ [Nm/A]$.
 
 <div style="text-align: center;">
 <figure>
@@ -169,6 +169,8 @@ Noter ci-dessous, que la limite de couple est une relation directe entre le cour
 
 ## Drive Control
 
+### Régulateur de courant
+
 Les paramètres du régulateur de courant sont estimés par le drive en fonction des paramètres électriques du moteur. Sauf très rares exceptions, on ne modifiera jamais les paramètres de ce régulateur.
 
 <div style="text-align: center;">
@@ -179,6 +181,65 @@ Les paramètres du régulateur de courant sont estimés par le drive en fonction
 </figure>
 </div>
 
+<div style="text-align: center;">
+<figure>
+    <img src="./img/New_MotorFor_X_Axis.png"
+         alt="Image lost: New_MotorFor_X_Axis">
+    <figcaption>X Axis motor data</figcaption>
+</figure>
+</div>
+
+> Pour un moteur synchrone, le régulateur de courant peut être considéré comme un régulateur d'accélération, ou accélération angulaire, à une constante près.
+
+On a donc: 
+Accélération angulaire = Courant * Constante du moteur / moment d'inertie.
+
+
+\[
+\text{Force} = \text{masse} \times \text{accélération}
+\]
+
+
+
+\[
+\text{Couple} = \text{moment d'inertie} \times \text{accélération angulaire}
+\]
+
+
+\[
+\text{Accélération angulaire} = \frac{\text{Couple}}{\text{moment d'inertie}}
+\]
+
+Le moment d'inertie du moteur est une constante, ici : Rotor Inertia en $\ [kgm^2]$.
+
+Torque Force constant du moteur en $\ [Nm/A]$.
+
+Ou encore, le couple en Nm est donné par :
+
+\[
+\text{Couple} = \text{Courant}[A] \times \text{Constante du moteur} [Nm/A]
+\]
+
+Ainsi, on obtient :
+
+\[
+\text{Accélération angulaire} = \frac{\text{Courant} \times \text{Constante du moteur}}{\text{moment d'inertie (constante)}}
+\]
+
+Et finalement:
+
+
+\[
+\text{Accélération angulaire} = \text{Courant} [A] \times \frac{ \text{Constante du moteur} [\frac{\text{Nm}}{\text{A}}] }{\text{Rotor inertia}[{\text{kgm}}^2]}
+\]
+
+
+On constate que, à une constante près, l'accélération est directement proportionelle au courant. Même si cela reste une approximation.
+
+
+
+### Angle de commutation
+
 Cette méthode sert à déterminer la position du codeur relative aux aimants dans le cas où cette information n'aurait pas pu être calibrée par le fournisseur du moteur. En principe inutile pour un moteur rotatif, souvent indispensable pour l'utilisation d'un moteur linéaire avec une mécanique *faite maison*.
 
 <div style="text-align: center;">
@@ -188,6 +249,8 @@ Cette méthode sert à déterminer la position du codeur relative aux aimants da
     <figcaption>Commuation setting if position of encoder relative to magnets is unknown at startup</figcaption>
 </figure>
 </div>
+
+### Régulateur de vitesse
 
 Le principal travail de l'automaticien consiste à trouver les bons paramètres P et I du régulateur de vitesse.
 
@@ -200,6 +263,28 @@ Le paramètre **acceleration feedforward** du régulateur de vitesse n'est utile
     <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
 </figure>
 </div>
+
+#### S-0-0100 le gain $\ Kp$ du régulateur de vitesse.
+Plus le gain $\ Kp$ est important, plus le l'amplification de l'écart de vitesse est important.
+
+#### S-0-0101 le temps d'intégration $\ Tn$ du régulateur de vitesse, 
+ou l'inverse de $\ Ki = \frac{1}{Tn}$
+
+Plus $\ Tn$ est petit, plus la sortie du régulateur de vitesse intégrera rapidement l'écart de vitesse.
+
+
+La fonction de transfert peut être exprimée comme suit :
+
+\[
+v(t) = K_p e(t) + K_i \int e(t) \, dt
+\]
+
+où :
+- \( e(t) \) est l'erreur en fonction du temps,
+- \( K_p \) est le gain proportionnel,
+- \( K_i \) est le gain intégral.
+
+### Régulateur de position
 
 On travaille en général uniquement sur le gain du régulateur, et celui-ci, dans la pratique, est souvent laissé à **1**.
 
@@ -240,7 +325,7 @@ Prenons les caractéristiques d'un moteur linéaire d'origine Etel.
 </figure>
 </div>
 
-> Caractéristiques partielles d'un moteur ILF+03-030 / KA / Free Air Cooling
+> Caractéristiques partielles d'un moteur linéaire ILF+03-030 / KA / Free Air Cooling
 
 |    |                  |Unit   | ILF+03-030 KA|
 |----|------------------|-------|--------------|
