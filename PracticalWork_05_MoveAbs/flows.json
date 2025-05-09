@@ -382,6 +382,33 @@
         "h": 222
     },
     {
+        "id": "2a2eee82647e59d9",
+        "type": "group",
+        "z": "66b713bff26c6577",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "0712c9aaa2576642",
+            "ed59cf58bbaea28e",
+            "80507e940c54522a",
+            "0265b75427dfa0c3",
+            "051a0634f2c0cbe1",
+            "e8fed109d69f0dd5",
+            "32de8d7d424907ee"
+        ],
+        "x": 114,
+        "y": 1273,
+        "w": 864,
+        "h": 600
+    },
+    {
         "id": "fab458635840f194",
         "type": "group",
         "z": "66b713bff26c6577",
@@ -452,33 +479,6 @@
         "y": 979,
         "w": 572,
         "h": 82
-    },
-    {
-        "id": "2a2eee82647e59d9",
-        "type": "group",
-        "z": "66b713bff26c6577",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "0712c9aaa2576642",
-            "ed59cf58bbaea28e",
-            "80507e940c54522a",
-            "0265b75427dfa0c3",
-            "051a0634f2c0cbe1",
-            "e8fed109d69f0dd5",
-            "32de8d7d424907ee"
-        ],
-        "x": 114,
-        "y": 1273,
-        "w": 864,
-        "h": 600
     },
     {
         "id": "ed59cf58bbaea28e",
@@ -623,7 +623,7 @@
     {
         "id": "66c6923e3822666a",
         "type": "ui-page",
-        "name": "CtrlX Data Layer Test",
+        "name": "User Interface for Lab 05",
         "ui": "926d3079c9560d19",
         "path": "/robot",
         "icon": "robot-happy-outline",
@@ -653,8 +653,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "e45e312c80fc001e",
@@ -1906,8 +1906,7 @@
         "g": "c3317933d6ba62d6",
         "name": "Reset",
         "links": [
-            "3721ba1125f3e447",
-            "3616175747057469"
+            "3721ba1125f3e447"
         ],
         "x": 355,
         "y": 1280,
@@ -2628,7 +2627,7 @@
         "z": "66b713bff26c6577",
         "g": "6ccb574154e3475d",
         "group": "bb97738361048557",
-        "order": 4,
+        "order": 5,
         "width": 0,
         "height": 0,
         "name": "Z",
@@ -2966,7 +2965,7 @@
         "name": "",
         "label": "Y Abs. Position",
         "tooltip": "",
-        "order": 6,
+        "order": 4,
         "width": "0",
         "height": "0",
         "passthru": false,
@@ -3041,7 +3040,7 @@
         "name": "",
         "label": "Z Abs. Position",
         "tooltip": "",
-        "order": 5,
+        "order": 6,
         "width": "0",
         "height": "0",
         "passthru": false,
@@ -3484,7 +3483,7 @@
         "g": "f4220918acb442d2",
         "group": "aad8bd12c162de85",
         "name": "",
-        "label": "Jerk",
+        "label": "Jerk [m/s3]",
         "tooltip": "",
         "order": 5,
         "width": "0",
@@ -3505,7 +3504,7 @@
         "colorTrack": "",
         "colorThumb": "",
         "showTextField": true,
-        "x": 430,
+        "x": 450,
         "y": 1780,
         "wires": [
             [

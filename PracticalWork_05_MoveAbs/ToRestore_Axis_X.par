@@ -1,6 +1,6 @@
 SERCOS-ASCII
-5/7/2025 9:20:30 AM
-Axis_x
+5/9/2025 9:37:48 AM
+X_Axis
 FWA-XD1-AXS-V-0402N-NN-04 | XCS2-W0023ARN-02AX3T0NNET-S0402N2NNNN0NN | MS2N04-D0BQN-CMSH0-NNNNE-NN | CUS2-02X3-T0NNNN
 1
 |
@@ -103,25 +103,25 @@ Axis operation modes: Secondary operation mode 3
 S-0-0038
 Velocity limitation: Limit value, positive
 00000011001000100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 0.000
 |
 S-0-0039
 Velocity limitation: Limit value, negative
 00000011001000100000000000000001
-mm/min
--30500.000
+mm/s
+-508.333
 0.000
 0.000
 |
 S-0-0041
 Homing speeds: Speed during search for switch
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 1000.000
 |
 S-0-0042
@@ -146,7 +146,7 @@ Velocity data scaling: Type
 --
 --
 --
-0000.0000.0100.0001
+0000.0000.0110.1001
 |
 S-0-0045
 Velocity data scaling: Factor
@@ -246,19 +246,19 @@ Position data scaling: Rotational resolution
 |
 S-0-0082
 Torque/force limitation: Limit value, positive
-00000001001000010000000000000001
-%
-0.0
-409.2
-176.6
+00000000001000010000000000000001
+N
+0
+23909
+1766
 |
 S-0-0083
 Torque/force limitation: Limit value, negative
-00000001001000010000000000000001
-%
--409.2
-0.0
--176.6
+00000000001000010000000000000001
+N
+-23909
+0
+-1766
 |
 S-0-0085
 Axis polarity: Torque/force
@@ -274,23 +274,23 @@ Torque/force data scaling: Type
 --
 --
 --
-0000.0000.0100.0000
+0000.0000.0100.0001
 |
 S-0-0091
 Velocity limitation: Max profile velocity
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 18000.000
 |
 S-0-0092
 Torque/force limitation: Limit value, bipolar
-00000001000100010000000000000001
-%
-0.0
-409.2
-176.6
+00000000000100010000000000000001
+N
+0
+23909
+1766
 |
 S-0-0093
 Torque/force data scaling: Factor
@@ -306,7 +306,7 @@ Torque/force data scaling: Exponent
 --
 -15
 6
--1
+0
 |
 S-0-0097
 Class 2 diagnostics: Mask
@@ -330,7 +330,7 @@ Velocity controller: Proportional gain
 Nm/(rad/s)
 0.000
 4294967.295
-0.209
+0.202
 |
 S-0-0101
 Velocity controller: Integral action time
@@ -338,7 +338,7 @@ Velocity controller: Integral action time
 ms
 0.0
 6553.5
-14.2
+14.3
 |
 S-0-0103
 Maximum travel range: Modulo format
@@ -439,26 +439,26 @@ mm/Rev
 S-0-0124
 Velocity status: Standstill window
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 200.000
 |
 S-0-0125
 Velocity status: Threshold value
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 10000.000
 |
 S-0-0126
 Torque/force status: Threshold value
-00000001000100010000000000000001
-%
-0.0
-409.2
-100.0
+00000000000100010000000000000001
+N
+0
+23909
+1000
 |
 S-0-0138
 Acceleration limitation: Bipolar profile limit value
@@ -511,9 +511,9 @@ mm
 S-0-0157
 Velocity status: Static window
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 1000.000
 |
 S-0-0158
@@ -558,11 +558,11 @@ Acceleration data scaling: Exponent
 |
 S-0-0163
 Velocity controller: Counterbalance value
-00000001001000010000000000000001
-%
--409.2
-409.2
-0.0
+00000000001000010000000000000001
+N
+-23909
+23909
+0
 |
 S-0-0165
 Distance-coded reference offset: A
@@ -655,9 +655,9 @@ Temperature data scaling: Type
 S-0-0259
 Positioning profile: Profile velocity
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 100.000
 |
 S-0-0260
@@ -820,7 +820,7 @@ Acceleration feedforward: Gain position control loop
 mNm/(rad/s-Ý)
 0.0000
 214748.3647
-0.0000
+0.4010
 |
 S-0-0349
 Jerk limitation: Value
@@ -915,9 +915,9 @@ SoE protocol: Bit number of real-time status bit 2
 S-0-0417
 Positioning profile: Velocity threshold in modulo mode
 00000011000100100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 0.000
 |
 S-0-0418
@@ -955,9 +955,9 @@ mm/s-Ý
 S-0-0446
 Acceleration data scaling: Ramp reference velocity
 01100011000100100000000000000001
-mm/min
+mm/s
 0.001
-30500.000
+508.333
 30000.000
 |
 S-0-0448
@@ -1136,11 +1136,11 @@ us
 |
 S-0-0530
 Fixed stop: Torque/force limit value
-00000001000100010000000000000001
-%
-0.0
-409.2
-0.0
+00000000000100010000000000000001
+N
+0
+23909
+0
 |
 S-0-0532
 Travel range limitation: Configuration
@@ -1788,11 +1788,11 @@ Incr
 |
 S-0-0822
 Torque/force control: Value
-00000001000100010000000000000001
-%
-0.0
-6553.5
-0.0
+00000000000100010000000000000001
+N
+0
+65535
+0
 |
 S-0-0823
 Torque/force control: Time
@@ -1804,11 +1804,11 @@ ms
 |
 S-0-0826
 Torque/force status: Window
-00000001000100010000000000000001
-%
-0.0
-409.2
-0.0
+00000000000100010000000000000001
+N
+0
+23909
+0
 |
 S-0-0915
 SoE protocol: Telegram type parameter FSoE
@@ -1914,7 +1914,7 @@ Application: Type
 --
 --
 --
-6 40 Axis_x
+6 40 X_Axis
 |
 S-0-2001
 Power supply, topology: List of supplied drives
@@ -2176,11 +2176,11 @@ STO function: Configuration
 |
 P-0-0109
 Torque/force limitation: Peak limit value
-00000001000100010000000000000001
-%
-0.0
-409.2
-176.6
+00000000000100010000000000000001
+N
+0
+23909
+1766
 |
 P-0-0113
 Axis mechanical data: Velocity limit, bipolar
@@ -2289,9 +2289,9 @@ mm/s-Ý
 P-0-0143
 Position control synchronization: Velocity
 00000011001000100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 100.000
 |
 P-0-0147
@@ -2388,7 +2388,7 @@ Axis control optimization: Max. accel. to be parameterized
 mm/s-Ý
 --
 --
-2153.151
+2230.552
 |
 P-0-0169
 Axis control optimization: Travel distance
@@ -2409,10 +2409,10 @@ mm/s-Ý
 P-0-0171
 Axis control optimization: Velocity
 00000011001000100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
-1000.000
+508.333
+20.000
 |
 P-0-0180
 Acceleration feedforward: Smoothing time constant
@@ -2670,8 +2670,8 @@ Average value filter for display: Signal selection
 --
 8
 8
-S-0-0000
-S-0-0000
+S-0-0084
+S-0-0164
 S-0-0000
 S-0-0000
 |
@@ -2683,8 +2683,8 @@ ms
 2000.000
 16
 16
-0.000
-0.000
+20.000
+20.000
 0.000
 0.000
 |
@@ -3105,19 +3105,19 @@ V
 |
 P-0-0545
 Brake check: Maximum static friction at released brake
-00000001001000010000000000000001
-%
-0.0
-409.2
-0.0
+00000000001000010000000000000001
+N
+0
+23909
+0
 |
 P-0-0547
 Brake check: Nominal load of holding system
-00000001001000010000000000000001
-%
-0.0
-409.2
-0.0
+00000000001000010000000000000001
+N
+0
+23909
+0
 |
 P-0-0548
 Brake check: Position window for brake check
@@ -3800,9 +3800,9 @@ mm/s-Ý
 P-0-1202
 Velocity profile: Final speed 1
 00000011001000100000000000000001
-mm/min
+mm/s
 0.000
-30500.000
+508.333
 0.000
 |
 P-0-1203
@@ -3848,10 +3848,10 @@ ms
 P-0-1451
 Easy Startup/techfunc mode positioning: Velocity
 00000011000100100000000000000001
-mm/min
+mm/s
 --
 --
-600.000
+50.000
 |
 P-0-1452
 Easy Startup/techfunc mode positioning: Acceleration
@@ -3859,7 +3859,7 @@ Easy Startup/techfunc mode positioning: Acceleration
 mm/s-Ý
 --
 --
-2000.000
+500.000
 |
 P-0-1453
 Easy Startup/techfunc mode positioning: Deceleration
@@ -3867,7 +3867,7 @@ Easy Startup/techfunc mode positioning: Deceleration
 mm/s-Ý
 --
 --
-2000.000
+500.000
 |
 P-0-1456
 Easy Startup/techfunc mode positioning: Jerk
@@ -3875,7 +3875,7 @@ Easy Startup/techfunc mode positioning: Jerk
 mm/s-Ý
 --
 --
-0.000
+5000.000
 |
 P-0-1461
 Easy Startup/techfunc mode velocity: Acceleration ramp
@@ -3895,11 +3895,11 @@ mm/s-Ý
 |
 P-0-1466
 Easy Startup/techfunc mode torque/force: Ramp
-00000001001000010000000000000001
-%
+00000000001000010000000000000001
+N
 --
 --
-0.0
+0
 |
 P-0-1467
 Easy Startup/techfunc mode torque/force: Ramp time
@@ -3920,10 +3920,10 @@ Easy Startup/techfunc mode velocity: Control word
 P-0-1481
 Easy Startup/techfunc mode velocity: Ramp
 00000011001000100000000000000001
-mm/min
+mm/s
 --
 --
-2000.000
+50.000
 |
 P-0-1482
 Easy Startup/techfunc mode: Travel distance
@@ -3947,7 +3947,7 @@ Easy Startup/techfunc mode: End position, positive
 mm
 -5000.0000
 5000.0000
-5.0000
+20.0000
 |
 P-0-1485
 Easy Startup/techfunc mode: End position, negative
@@ -3955,7 +3955,7 @@ Easy Startup/techfunc mode: End position, negative
 mm
 -5000.0000
 5000.0000
--5.0000
+-20.0000
 |
 P-0-1862
 DRIVElink function: Configuration
@@ -4257,7 +4257,7 @@ Axis mechanical data: Load inertia
 kgm-Ý
 --
 --
-0.0003593
+0.0003413
 |
 P-0-1761
 EtherCAT bus: Syncmanager for diagnostics
@@ -4529,7 +4529,7 @@ Mains measurement: Long-term energy counter
 kWh
 --
 --
-45.36
+46.24
 |
 P-0-0177
 Absolute encoder buffer ENC_1: Retain data
@@ -4540,13 +4540,13 @@ Absolute encoder buffer ENC_1: Retain data
 44
 44
 0x0044C020
-0x2FC70000
-0xFFEACA54
-0xA9DF0000
-0xFFFBE13F
-0x98F3C15A
+0x306B0000
+0xFFFB6775
+0x306B0000
+0xFFFB6775
+0x979756C6
 0x00000000
-0x00B3325C
+0x00000000
 0x00000000
 0x00000000
 0x00000000
