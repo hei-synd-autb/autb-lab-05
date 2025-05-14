@@ -310,8 +310,8 @@ Ce que dit le documentation du fournisseur:
 
 > The drive firmware automatically adjusts the unit and decimal places to the type of construction of the motor (rotary or linear) entered in ``P-0-4014, Motor type``.
 
--   rotary motor: $\ [mN*m / rad/s^2] → [g*m^2] $
--   Linear motor: $\ [mN / mm/s2 → kg] $
+-   rotary motor: $\ [mN*m / rad/s^2] → [g*m^2]$
+-   Linear motor: $\ [mN / mm/s2 → kg]$
 
 ### Feed Forward, le principe
 Il est probablement un peu plus simple d'expliquer le principe sur la base d'un moteur linéaire. Pour lequel la force est équivalente au courant multiplié par la constante de force. **Le principe du Feed Forward est d'ailleurs particulièrement efficace pour un moteur en prise directe sur la charge tel un moteur linéaire** ou un moteur couple.
