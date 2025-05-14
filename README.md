@@ -195,20 +195,20 @@ On a donc:
 Accélération angulaire = Courant * Constante du moteur / moment d'inertie.
 
 
-\[
+$$
 \text{Force} = \text{masse} \times \text{accélération}
-\]
+$$
 
 
 
-\[
+$$
 \text{Couple} = \text{moment d'inertie} \times \text{accélération angulaire}
-\]
+$$
 
 
-\[
+$$
 \text{Accélération angulaire} = \frac{\text{Couple}}{\text{moment d'inertie}}
-\]
+$$
 
 Le moment d'inertie du moteur est une constante, ici : Rotor Inertia en $\ [kgm^2]$.
 
@@ -216,22 +216,22 @@ Torque Force constant du moteur en $\ [Nm/A]$.
 
 Ou encore, le couple en Nm est donné par :
 
-\[
+$$
 \text{Couple} = \text{Courant}[A] \times \text{Constante du moteur} [Nm/A]
-\]
+$$
 
 Ainsi, on obtient :
 
-\[
+$$
 \text{Accélération angulaire} = \frac{\text{Courant} \times \text{Constante du moteur}}{\text{moment d'inertie (constante)}}
-\]
+$$
 
 Et finalement:
 
 
-\[
+$$
 \text{Accélération angulaire} = \text{Courant} [A] \times \frac{ \text{Constante du moteur} [\frac{\text{Nm}}{\text{A}}] }{\text{Rotor inertia}[{\text{kgm}}^2]}
-\]
+$$
 
 
 On constate que, à une constante près, l'accélération est directement proportionelle au courant. Même si cela reste une approximation.
@@ -275,9 +275,9 @@ Plus $\ Tn$ est petit, plus la sortie du régulateur de vitesse intégrera rapid
 
 La fonction de transfert peut être exprimée comme suit :
 
-\[
+$$
 v(t) = K_p e(t) + K_i \int e(t) \, dt
-\]
+$$
 
 où :
 - \( e(t) \) est l'erreur en fonction du temps,
