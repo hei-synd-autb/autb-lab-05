@@ -331,7 +331,7 @@ Ici, affichage du couple en rouge et de la vitesse en bleu.
 -   On obtient donc pour un moteur simple, un régulateur de vitesse stable.
 
 
-## Visualise your data en mode **Velocity Control**,
+## Visualise your data en mode **Position Control**,
  
 Tracer les courbes sur 4 secondes pour :
 -   ``S-0-0084``	Force
